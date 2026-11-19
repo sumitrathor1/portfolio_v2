@@ -190,5 +190,5 @@ Target: `portfolio_v2` (React + Vite static frontend)
 - **Functionality Migrated:** Single-page application route rewrites and asset caching headers in `vercel.json`, complete setup, development, architecture and deployment documentation in `README.md`, verified responsive layouts across viewports from 320px to 1440px+, and verified dual-image CSS fallback handling.
 - **Testing Performed:** Production build tested cleanly with manual chunk code-splitting.
 - **Build Status:** SUCCESS (built in 6.45s)
-- **Git Commit:** (Pending push)
-- **Push Status:** (Pending push)
+- **Git Commit:** d9a7c46
+- **Push Status:** SUCCESS (pushed to origin/main)
