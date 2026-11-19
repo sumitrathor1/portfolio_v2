@@ -12,6 +12,7 @@ import EducationSection from './components/sections/EducationSection';
 import ProjectsSection from './components/sections/ProjectsSection';
 import SkillsSection from './components/sections/SkillsSection';
 import AchievementsSection from './components/sections/AchievementsSection';
+import ContactSection from './components/sections/ContactSection';
 import { useTiltEffect } from './hooks/useTiltEffect';
 import { useScrollAnimations } from './hooks/useScrollAnimations';
 
@@ -35,6 +36,7 @@ export default function App() {
           <ProjectsSection />
           <SkillsSection />
           <AchievementsSection />
+          <ContactSection />
         </main>
 
         <Footer />
