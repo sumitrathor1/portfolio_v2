@@ -20,13 +20,14 @@ export default function Header() {
   return (
     <header className="site-header">
       <nav className="navbar navbar-expand-lg nav-floating position-fixed w-100">
-        <div id="mainNavbar" className="container-fluid container-xxl nav-shell glass-panel">
+        <div id="mainNavbar" className="container-fluid container-xxl nav-shell glass-panel border-primary" style={{ backgroundColor: '#0E122E' }}>
           <a className="navbar-brand text-gradient" href="#hero" onClick={closeNavbar}>
             SUMIT RATHOR
           </a>
 
           <button
-            className="navbar-toggler border-0"
+            className="navbar-toggler border-primary"
+            style={{ backgroundColor: '#0E122E' }}
             type="button"
             aria-controls="navbarSupportedContent"
             aria-expanded={isOpen}

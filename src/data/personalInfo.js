@@ -5,6 +5,8 @@ export const personalInfo = {
   lead: "Full Stack Developer building web applications, AI-powered tools, and practical solutions with modern web technologies.",
   tags: ["Full Stack Development", "AI & Automation", "Backend Systems"],
   heroImage: "/assets/images/hero-image.png",
+  heroBgImage: "/assets/images/bg-dark.png",
+  bodyBgImage: "/assets/images/bg-dark1.png",
   profileImage: "/assets/images/sumit.jpg",
   resumePath: "/assets/public/Sumit Rathor Resume.pdf",
   email: "sumitrathor142272@gmail.com",

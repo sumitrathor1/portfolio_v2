@@ -26,11 +26,12 @@
 
 body {
   font-family: var(--font-primary);
-  background: radial-gradient(circle at top, rgba(68, 38, 154, 0.35), transparent 45%),
-    radial-gradient(circle at 20% 20%, rgba(8, 195, 255, 0.25), transparent 55%),
-    linear-gradient(180deg, #010313, #020617 45%, #03071f 100%);
+  background-color: #010313;
+  background-image: url('/assets/images/bg-dark1.png');
+  background-repeat: repeat;
+  background-position: top center;
   color: var(--text-primary);
-    padding-top: clamp(4.25rem, 5vw, 5.5rem);
+  padding-top: clamp(4.25rem, 5vw, 5.5rem);
   overflow-x: hidden;
 }
 
