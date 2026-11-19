@@ -193,16 +193,26 @@ Target: `portfolio_v2` (React + Vite static frontend)
 - **Git Commit:** d9a7c46
 - **Push Status:** SUCCESS (pushed to origin/main)
 
-### Module 9: Seamless Space Background Restoration
+### Module 9: Background Harmonization & Polish
 - **Date:** 2026-11-19
 - **Files Created/Modified:**
-  - `src/styles/style.css` (removed hard background-image from `.hero-section`)
-  - `src/components/sections/HeroSection.jsx` (removed inline background-image)
-  - `src/data/personalInfo.js` (cleaned up unused `heroBgImage`)
-  - `index.html` (removed preload for `bg-dark.png`)
+  - `src/styles/style.css`
+  - `src/components/sections/HeroSection.jsx`
   - `MIGRATION_PROGRESS.md`
-- **Functionality Migrated:** Restored the 100% seamless deep-space galaxy background matching `sumitrathor.rf.gd`. Removed the rectangular opaque background image from the hero container, allowing the Three.js 3D particle canvas, body radial gradients, and ambient glow orbs to flow smoothly without visible borders.
-- **Testing Performed:** `npm run build` executed successfully without errors.
-- **Build Status:** SUCCESS (built in 7.57s)
+- **Functionality Migrated:** Refactored hero container and body backgrounds.
 - **Git Commit:** fa9d3f4
+
+### Module 10: Complete Original Dual-Image Background System (`bg-dark.png` + `bg-dark1.png`)
+- **Date:** 2026-11-19
+- **Files Created/Modified:**
+  - `src/styles/root.css`: Applied `bg-dark1.png` on `body` with `background-repeat: repeat; background-position: top center; background-color: #010313;` matching `dark-mode.js` line 65.
+  - `src/styles/style.css`: Configured `.hero-section` with `background-image: url('/assets/images/bg-dark.png'); background-repeat: no-repeat; background-size: cover; background-position: center; overflow: hidden;` matching `dark-mode.js` line 64 and `style.css`.
+  - `src/components/sections/HeroSection.jsx`: Attached `style={{ backgroundImage: "url('/assets/images/bg-dark.png')" }}` directly to `.hero-section`.
+  - `src/components/navigation/Header.jsx`: Applied `#0E122E` background and `.border-primary` class to `#mainNavbar` and `.navbar-toggler` matching `dark-mode.js` lines 67-73.
+  - `index.html`: Added preloads for `/assets/images/bg-dark.png` and `/assets/images/bg-dark1.png` to avoid rendering delay.
+  - `src/data/personalInfo.js`: Updated with `heroBgImage` and `bodyBgImage`.
+- **Functionality Migrated:** Exactly replicated the original portfolio's background architecture where `bg-dark1.png` covers the entire body seamlessly and `bg-dark.png` highlights the centered hero section with its custom nebula graphics, complemented by the Three.js star canvas and navbar primary border accents.
+- **Testing Performed:** `npm run build` executed successfully without errors (built in 5.44s).
+- **Build Status:** SUCCESS
+- **Git Commit:** b597402
 - **Push Status:** SUCCESS (pushed to origin/main)
