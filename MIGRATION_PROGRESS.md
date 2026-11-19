@@ -193,16 +193,16 @@ Target: `portfolio_v2` (React + Vite static frontend)
 - **Git Commit:** d9a7c46
 - **Push Status:** SUCCESS (pushed to origin/main)
 
-### Module 9: Hero Section Background Texture Integration
+### Module 9: Seamless Space Background Restoration
 - **Date:** 2026-11-19
 - **Files Created/Modified:**
-  - `src/styles/style.css` (configured `.hero-section` background-image)
-  - `src/components/sections/HeroSection.jsx` (dynamic background-image inline fallback)
-  - `src/data/personalInfo.js` (exported `heroBgImage: '/assets/images/bg-dark.png'`)
-  - `index.html` (preloaded `/assets/images/bg-dark.png`)
+  - `src/styles/style.css` (removed hard background-image from `.hero-section`)
+  - `src/components/sections/HeroSection.jsx` (removed inline background-image)
+  - `src/data/personalInfo.js` (cleaned up unused `heroBgImage`)
+  - `index.html` (removed preload for `bg-dark.png`)
   - `MIGRATION_PROGRESS.md`
-- **Functionality Migrated:** Integrated `bg-dark.png` as the hero section ambient background texture matching the original website's dark mode visual layer. Preloaded the asset in HTML head to prevent flicker on load.
+- **Functionality Migrated:** Restored the 100% seamless deep-space galaxy background matching `sumitrathor.rf.gd`. Removed the rectangular opaque background image from the hero container, allowing the Three.js 3D particle canvas, body radial gradients, and ambient glow orbs to flow smoothly without visible borders.
 - **Testing Performed:** `npm run build` executed successfully without errors.
-- **Build Status:** SUCCESS (built in 11.53s)
-- **Git Commit:** 1ef4f4e
-- **Push Status:** SUCCESS (pushed to origin/main)
+- **Build Status:** SUCCESS (built in 7.57s)
+- **Git Commit:** (Pending push)
+- **Push Status:** (Pending push)
