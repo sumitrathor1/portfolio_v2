@@ -24,7 +24,9 @@ export default function ProjectsSection() {
               {/* 16:9 COMPACT IMAGE BANNER */}
               <div
                 className="project-card__visual"
-                style={{ backgroundImage: `url('${projectImage}')` }}
+                style={{
+                  backgroundImage: `url('${projectImage}'), url('${fallbackImage}')`
+                }}
               >
                 {project.date && (
                   <span className="project-date-badge">
