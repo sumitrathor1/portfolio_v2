@@ -50,9 +50,9 @@ Target: `portfolio_v2` (React + Vite static frontend)
 - [x] Status: **Committed & Pushed**
 
 ### Phase 5: Experience and Education Sections
-- [ ] Implement `ExperienceSection` (Interactive timeline cards, company logos/initials, stack pills, bullets, certificates, 3D card tilt)
-- [ ] Implement `EducationSection` (Academic records, score badges, institution, key coursework chips)
-- [ ] Status: **Pending**
+- [x] Implement `ExperienceSection` (Interactive timeline cards, company logos/initials, stack pills, bullets, certificates, 3D card tilt)
+- [x] Implement `EducationSection` (Academic records, score badges, institution, key coursework chips)
+- [x] Status: **Committed & Pushed**
 
 ### Phase 6: Projects, Skills, and Achievements Sections
 - [ ] Implement `ProjectsSection` (16:9 banner preview, dates, descriptions, tech pills, GitHub/Live links)
@@ -138,5 +138,18 @@ Target: `portfolio_v2` (React + Vite static frontend)
 - **Functionality Migrated:** Hero section with eyebrow chip & pulsing dot, dynamic typing effect on name ("Sumit Rathor"), resume download CTA, projects & contact CTAs, social icons, hero portrait frame, left and right hero ambient glows. About Me section with B.Tech CS & Design card, internship/project/community badges, skillset chips, profile header with "Open to Opportunities" status badge, and 4 visual stat boxes with gradients.
 - **Testing Performed:** Production build tested with zero warnings or errors.
 - **Build Status:** SUCCESS (built in 9.56s)
+- **Git Commit:** 17fb183
+- **Push Status:** SUCCESS (pushed to origin/main)
+
+### Module 5: Experience and Education Sections
+- **Date:** 2026-11-19
+- **Files Created/Modified:**
+  - `src/components/sections/ExperienceSection.jsx`
+  - `src/components/sections/EducationSection.jsx`
+  - `src/App.jsx`
+  - `MIGRATION_PROGRESS.md`
+- **Functionality Migrated:** Experience section with 4 chronological internship cards (DRDO-CFEES, Coders Cafe Club, Gurukul Dream Foundation, Indo American Children's Academy), company logo fallback to uppercase company initials on error, calendar date badges, work mode indicators, code icon tech pills, concise bullet points, external certificate and company website links. Education section with 3 academic levels (B.Tech, Diploma, Higher Secondary), score & CGPA badges, institution names with icon, and subject-wise key coursework chip tags.
+- **Testing Performed:** Production build tested cleanly with zero errors.
+- **Build Status:** SUCCESS (built in 7.00s)
 - **Git Commit:** (Pending push)
 - **Push Status:** (Pending push)

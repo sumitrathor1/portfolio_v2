@@ -7,6 +7,8 @@ import ScrollProgress from './components/common/ScrollProgress';
 import FuturisticCursor from './components/common/FuturisticCursor';
 import HeroSection from './components/sections/HeroSection';
 import AboutSection from './components/sections/AboutSection';
+import ExperienceSection from './components/sections/ExperienceSection';
+import EducationSection from './components/sections/EducationSection';
 import { useTiltEffect } from './hooks/useTiltEffect';
 import { useScrollAnimations } from './hooks/useScrollAnimations';
 
@@ -25,6 +27,8 @@ export default function App() {
         <main>
           <HeroSection />
           <AboutSection />
+          <ExperienceSection />
+          <EducationSection />
         </main>
 
         <Footer />
