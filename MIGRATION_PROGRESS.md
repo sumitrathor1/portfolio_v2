@@ -192,3 +192,17 @@ Target: `portfolio_v2` (React + Vite static frontend)
 - **Build Status:** SUCCESS (built in 6.45s)
 - **Git Commit:** d9a7c46
 - **Push Status:** SUCCESS (pushed to origin/main)
+
+### Module 9: Hero Section Background Texture Integration
+- **Date:** 2026-11-19
+- **Files Created/Modified:**
+  - `src/styles/style.css` (configured `.hero-section` background-image)
+  - `src/components/sections/HeroSection.jsx` (dynamic background-image inline fallback)
+  - `src/data/personalInfo.js` (exported `heroBgImage: '/assets/images/bg-dark.png'`)
+  - `index.html` (preloaded `/assets/images/bg-dark.png`)
+  - `MIGRATION_PROGRESS.md`
+- **Functionality Migrated:** Integrated `bg-dark.png` as the hero section ambient background texture matching the original website's dark mode visual layer. Preloaded the asset in HTML head to prevent flicker on load.
+- **Testing Performed:** `npm run build` executed successfully without errors.
+- **Build Status:** SUCCESS (built in 11.53s)
+- **Git Commit:** (Pending push)
+- **Push Status:** (Pending push)

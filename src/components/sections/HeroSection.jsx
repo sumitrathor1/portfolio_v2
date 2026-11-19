@@ -50,7 +50,11 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="section hero-section container-xxl" id="hero">
+    <section
+      className="section hero-section container-xxl"
+      id="hero"
+      style={{ backgroundImage: `url('${personalInfo.heroBgImage}')` }}
+    >
       <div className="hero-glow hero-glow-left" />
       <div className="hero-glow hero-glow-right" />
 
