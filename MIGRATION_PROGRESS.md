@@ -204,5 +204,5 @@ Target: `portfolio_v2` (React + Vite static frontend)
 - **Functionality Migrated:** Integrated `bg-dark.png` as the hero section ambient background texture matching the original website's dark mode visual layer. Preloaded the asset in HTML head to prevent flicker on load.
 - **Testing Performed:** `npm run build` executed successfully without errors.
 - **Build Status:** SUCCESS (built in 11.53s)
-- **Git Commit:** (Pending push)
-- **Push Status:** (Pending push)
+- **Git Commit:** 1ef4f4e
+- **Push Status:** SUCCESS (pushed to origin/main)
