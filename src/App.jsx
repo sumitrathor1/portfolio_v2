@@ -5,6 +5,8 @@ import StarCanvas from './components/layout/StarCanvas';
 import StarOverlay from './components/layout/StarOverlay';
 import ScrollProgress from './components/common/ScrollProgress';
 import FuturisticCursor from './components/common/FuturisticCursor';
+import HeroSection from './components/sections/HeroSection';
+import AboutSection from './components/sections/AboutSection';
 import { useTiltEffect } from './hooks/useTiltEffect';
 import { useScrollAnimations } from './hooks/useScrollAnimations';
 
@@ -16,12 +18,13 @@ export default function App() {
     <>
       <StarCanvas />
       <FuturisticCursor />
-      
+
       <div id="content">
         <Header />
 
         <main>
-          {/* Main sections will go here */}
+          <HeroSection />
+          <AboutSection />
         </main>
 
         <Footer />
