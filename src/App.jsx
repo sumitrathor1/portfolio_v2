@@ -22,19 +22,23 @@ export default function App() {
 
   return (
     <>
+      <a href="#main-content" className="skip-to-content">
+        Skip to main content
+      </a>
+
       <StarCanvas />
       <FuturisticCursor />
 
       <div id="content">
         <Header />
 
-        <main>
+        <main id="main-content">
           <HeroSection />
           <AboutSection />
           <ExperienceSection />
-          <EducationSection />
           <ProjectsSection />
           <SkillsSection />
+          <EducationSection />
           <AchievementsSection />
           <ContactSection />
         </main>

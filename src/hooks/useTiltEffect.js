@@ -3,7 +3,8 @@ import { useEffect } from 'react';
 export function useTiltEffect() {
   useEffect(() => {
     const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-    if (isTouch) return;
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (isTouch || prefersReduced) return;
 
     const maxTilt = 6;
 

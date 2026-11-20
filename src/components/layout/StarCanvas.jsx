@@ -110,7 +110,9 @@ export default function StarCanvas() {
       camera.lookAt(scene.position);
 
       renderer.render(scene, camera);
-      animationFrameId = requestAnimationFrame(animate);
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        animationFrameId = requestAnimationFrame(animate);
+      }
     };
 
     animate();

@@ -6,8 +6,9 @@ export default function FuturisticCursor() {
 
   useEffect(() => {
     const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    if (!isTouch) {
+    if (!isTouch && !prefersReduced) {
       const dot = dotRef.current;
       const ring = ringRef.current;
       if (!dot || !ring) return;

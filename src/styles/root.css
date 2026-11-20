@@ -1414,4 +1414,69 @@ main, .content-shell, .section {
         opacity: 0;
     }
 }
+
+/* ==========================================================================
+   Accessibility & Keyboard Navigation (a11y)
+   ========================================================================== */
+.skip-to-content {
+    position: absolute;
+    top: -120px;
+    left: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    background: #0E122E;
+    color: #f8f9ff;
+    border: 2px solid #38bdf8;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    z-index: 9999999;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8), 0 0 20px rgba(56, 189, 248, 0.4);
+    transition: top 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.skip-to-content:focus {
+    top: 1.5rem;
+    outline: 2px solid #a855f7;
+    outline-offset: 3px;
+}
+
+:focus-visible {
+    outline: 2px solid #38bdf8;
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid #38bdf8 !important;
+    outline-offset: 3px !important;
+}
+
+/* ==========================================================================
+   Reduced Motion Preferences
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    ::before,
+    ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .custom-cursor-dot,
+    .custom-cursor-ring,
+    .touch-sparkle,
+    .shooting-stars,
+    .stars,
+    .floating,
+    .pulse-dot {
+        display: none !important;
+    }
+}
+
 
