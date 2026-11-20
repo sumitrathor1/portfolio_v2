@@ -1,13 +1,20 @@
 import React from 'react';
 import { skillsData } from '../../data/skills';
 
-export default function SkillsSection() {
+export default function SkillsSection({ onSelectSkill }) {
   const groups = Object.entries(skillsData);
 
   return (
     <section className="section skills-section container-xxl" id="skills">
-      <div className="section-heading text-center mb-5" data-aos="fade-up">
-        <h2 className="mb-3">✨Skills & Technologies✨</h2>
+      <div className="section-heading text-center mb-4" data-aos="fade-up">
+        <h2 className="mb-2">✨Skills & Technologies✨</h2>
+        <p className="text-muted small mx-auto" style={{ maxWidth: '600px' }}>
+          Production-tested full-stack frameworks, AI/RAG architectures, and hardware protocols.
+          <span className="d-block text-info mt-1">
+            <i className="fa-solid fa-hand-pointer me-1.5" />
+            Click any skill chip below to inspect verified real-world project applications.
+          </span>
+        </p>
       </div>
 
       <div className="row g-4" data-aos="fade-up" style={{ marginInline: '0.75rem' }}>
@@ -27,13 +34,20 @@ export default function SkillsSection() {
                 {skills.map((skill) => {
                   const isDevicon = skill.icon.includes('devicon-');
                   return (
-                    <span key={skill.name} className="skill-chip hover-lift">
+                    <button
+                      key={skill.name}
+                      type="button"
+                      className="skill-chip hover-lift clickable-skill"
+                      onClick={() => onSelectSkill?.(skill.name)}
+                      title={`Inspect projects built with ${skill.name}`}
+                    >
                       <i
                         className={skill.icon}
                         style={{ fontSize: isDevicon ? '1.1rem' : '0.85rem' }}
                       />
                       <span>{skill.name}</span>
-                    </span>
+                      <i className="fa-solid fa-arrow-up-right-from-square skill-chip-icon-hint" />
+                    </button>
                   );
                 })}
               </div>

@@ -1,6 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
 
-export default function Header({ onOpenRecruiter }) {
+export default function Header({
+  onOpenRecruiter,
+  onOpenTerminal,
+  onOpenCommandPalette
+}) {
   const [isOpen, setIsOpen] = useState(false);
   const [isRotating, setIsRotating] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
@@ -101,10 +105,43 @@ export default function Header({ onOpenRecruiter }) {
               })}
             </ul>
 
+            {onOpenCommandPalette && (
+              <button
+                type="button"
+                className="nav-search-pill hover-lift ms-lg-2 my-2 my-lg-0"
+                onClick={() => {
+                  closeNavbar();
+                  onOpenCommandPalette();
+                }}
+                title="Quick Search & Navigation (Ctrl+K)"
+                aria-label="Search and Navigation (Ctrl+K)"
+              >
+                <i className="fa-solid fa-magnifying-glass me-1.5 text-info" />
+                <span className="d-none d-xl-inline">Search</span>
+                <kbd className="nav-kbd ms-1">⌘K</kbd>
+              </button>
+            )}
+
+            {onOpenTerminal && (
+              <button
+                type="button"
+                className="nav-terminal-pill hover-lift ms-lg-2 my-2 my-lg-0"
+                onClick={() => {
+                  closeNavbar();
+                  onOpenTerminal();
+                }}
+                title="Open Developer Terminal (Ctrl+~)"
+                aria-label="Open Developer Terminal"
+              >
+                <i className="fa-solid fa-terminal me-1 text-success" />
+                <span>CLI</span>
+              </button>
+            )}
+
             {onOpenRecruiter && (
               <button
                 type="button"
-                className="nav-recruiter-pill hover-lift ms-lg-3 my-2 my-lg-0"
+                className="nav-recruiter-pill hover-lift ms-lg-2 my-2 my-lg-0"
                 onClick={() => {
                   closeNavbar();
                   onOpenRecruiter();

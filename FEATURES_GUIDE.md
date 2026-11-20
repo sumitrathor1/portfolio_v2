@@ -10,18 +10,23 @@ All major features are controlled by centralized boolean flags in `src/config/fe
 
 ```javascript
 export const features = {
-  chatbot: true,            // Interactive AI Portfolio Assistant
-  recruiterSnapshot: true,  // 60-Second Recruiter Brief Modal
-  developerActivity: true,  // GitHub stats, Repositories, LeetCode & Open Source
-  projectExplorer: true,    // Interactive Category filtering, search & Quick View
-  resumeDownload: true,     // Direct PDF resume downloads with analytics tracking
-  contactForm: true,        // Serverless email dispatch with anti-bot honeypot
-  backToTop: true,          // Smooth floating scroll-to-top button
-  starCanvas: true,         // Three.js 4500-particle interactive galaxy
-  futuristicCursor: true,   // Desktop interactive cursor / mobile sparkle
-  cardTilt: true,           // Interactive 3D card tilt & hover lighting
-  blog: false,              // Technical Articles (Staged for future expansion)
-  testimonials: false       // Recommendations (Staged for future expansion)
+  chatbot: true,              // Interactive AI Portfolio Assistant
+  recruiterSnapshot: true,    // 60-Second Recruiter Brief Modal
+  developerActivity: true,    // GitHub stats, Repositories, LeetCode & Open Source
+  projectExplorer: true,      // Interactive Category filtering, search & Quick View
+  terminal: true,             // Interactive Developer Command Line (ZSH / Matrix)
+  commandPalette: true,       // Quick Spotlight Navigation & Search (Ctrl+K / Cmd+K)
+  skillsExplorer: true,       // Skills-to-Project Verified Matrix Explorer
+  architectureExplorer: true, // Visual System Architecture Diagram Inspector
+  easterEgg: true,            // Konami Code listener (↑↑↓↓←→←→BA) & DevTools Banner
+  resumeDownload: true,       // Direct PDF resume downloads with analytics tracking
+  contactForm: true,          // Serverless email dispatch with anti-bot honeypot
+  backToTop: true,            // Smooth floating scroll-to-top button
+  starCanvas: true,           // Three.js 4500-particle interactive galaxy
+  futuristicCursor: true,     // Desktop interactive cursor / mobile sparkle
+  cardTilt: true,             // Interactive 3D card tilt & hover lighting
+  blog: false,                // Technical Articles (Staged for future expansion)
+  testimonials: false         // Recommendations (Staged for future expansion)
 };
 ```
 

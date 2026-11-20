@@ -3,7 +3,7 @@ import { projectsData } from '../../data/projects';
 import { trackProjectClick } from '../../utils/analytics';
 import ProjectModal from '../common/ProjectModal';
 
-export default function ProjectsSection() {
+export default function ProjectsSection({ onOpenArchitecture }) {
   const [activeCategory, setActiveCategory] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedProject, setSelectedProject] = useState(null);
@@ -80,6 +80,19 @@ export default function ProjectsSection() {
             </button>
           ))}
         </div>
+
+        {/* SYSTEM ARCHITECTURE EXPLORER TRIGGER */}
+        {onOpenArchitecture && (
+          <button
+            type="button"
+            className="project-arch-toggle-btn hover-lift"
+            onClick={onOpenArchitecture}
+            title="Inspect Deep System Architecture Diagrams"
+          >
+            <i className="fa-solid fa-diagram-project text-primary me-1.5" />
+            <span>Architecture Explorer</span>
+          </button>
+        )}
 
         {/* SEARCH INPUT */}
         <div className="project-search-wrapper">

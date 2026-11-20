@@ -10,6 +10,21 @@ export const features = {
   // Interactive Chatbot Assistant (offline predefined Q&A engine with future AI readiness)
   chatbot: true,
 
+  // Interactive Developer Command Center (Terminal CLI with history, autocomplete & tools)
+  terminal: true,
+
+  // Quick Command Palette (Ctrl+K / Cmd+K Spotlight search across sections & projects)
+  commandPalette: true,
+
+  // Interactive Skills-to-Project Matrix (Clicking a skill reveals verified project usage)
+  skillsExplorer: true,
+
+  // Project Architecture Explorer (Visual layer inspector for Rakshak AI, Mandola, Inventory)
+  architectureExplorer: true,
+
+  // Developer Easter Eggs (Konami code, console greeting, secret commands)
+  easterEgg: true,
+
   // Recruiter Snapshot (30-60 second high-impact summary modal & header action)
   recruiterSnapshot: true,
 
