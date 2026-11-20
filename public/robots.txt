@@ -1,4 +1,9 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://sumitrathor.rf.gd/sitemap.xml
+# Robots.txt for https://sumitrathor.rf.gd/
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://sumitrathor.rf.gd/sitemap.xml
+
+# LLM & AI Discoverability Dossier
+# See https://sumitrathor.rf.gd/llms.txt

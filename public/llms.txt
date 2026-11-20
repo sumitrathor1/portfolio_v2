@@ -1,0 +1,89 @@
+# Sumit Rathor - Professional Developer Profile
+
+> Full Stack Software Engineer & Web Developer  
+> Location: Gwalior, Madhya Pradesh, India  
+> Portfolio: https://sumitrathor.rf.gd/  
+> LinkedIn: https://www.linkedin.com/in/sumitrathor/  
+> GitHub: https://github.com/sumitrathor1  
+> LeetCode: https://leetcode.com/u/SumitRathor/  
+> Contact: sumitrathor142272@gmail.com  
+
+---
+
+## Professional Overview
+Sumit Rathor (also referenced as Sumit Rathore) is a Full Stack Software Engineer and B.Tech graduate in Computer Science & Design from Madhav Institute of Technology & Science (MITS), Gwalior. He specializes in designing, building, and deploying modern web applications, real-time communication systems, AI-powered developer utilities, and IoT hardware platforms.
+
+## Core Technical Competencies
+- **Languages:** JavaScript (ES6+), TypeScript, PHP, Python, SQL, C++, HTML5, CSS3.
+- **Frontend Frameworks & Libraries:** React.js, Next.js, Vite, Bootstrap 5, Tailwind CSS, Three.js, SweetAlert2.
+- **Backend & APIs:** Node.js, Express, PHP, CodeIgniter 4, RESTful APIs, AJAX, WebSockets.
+- **Databases & Cloud:** MySQL, PostgreSQL, Supabase (Auth, RLS, Realtime), Hostinger, Vercel.
+- **IoT & Hardware:** ESP32-CAM, Arduino, Computer Vision, L298N motor drivers.
+- **AI & Automation:** OpenAI API, Google Gemini API, Automated ATS resume parsing, QR verification engines.
+- **Developer Tools:** Git, GitHub, Postman, Linux CLI, NPM, VS Code.
+
+---
+
+## Flagship Projects
+
+1. **Certificate Authentication & Verification Portal**
+   - High-performance React application for live camera QR code certificate authentication and bulk Excel-to-QR generation with automated ZIP export.
+   - Stack: React, JavaScript, PDF.js, SheetJS, Google Apps Script API.
+   - Live URL: https://innovation-and-diy-certificate.vercel.app/
+
+2. **Hardware Inventory & Borrowing Portal**
+   - Campus inventory and borrowing system featuring domain-restricted Gmail OTP authentication, Supabase Row-Level Security, and atomic stock transactions.
+   - Stack: Next.js 16, React 19, Supabase PostgreSQL, Supabase Auth, Nodemailer, TypeScript, Tailwind CSS.
+   - Live URL: https://innovation-and-diy-inventory.vercel.app/
+
+3. **11acre.ai - Real Estate & PropTech Platform**
+   - Commercial real estate portal with category filtering (buy/rent/plots), multi-attribute property search, and buyer-agent onboarding workflows.
+   - Stack: CodeIgniter 4, MySQL, AJAX, REST APIs, JavaScript.
+   - Live URL: https://11acreai.in/
+
+4. **FPV Surveillance Robot**
+   - Wireless teleoperation robot with real-time first-person-view video streaming, sub-second movement controls, and ESP32-CAM firmware integration.
+   - Stack: ESP32-CAM, C++, L298N, Computer Vision, REST API.
+   - GitHub: https://github.com/sumitrathor1/FPV_Car
+   - Live URL: https://sumitrathor.rf.gd/FPV_Car/
+
+5. **Data Science Quiz & Skill Assessment Platform**
+   - Timed technical evaluation engine covering Python, ML, and Statistics with instant score calculation, detailed solutions, and admin performance analytics.
+   - Stack: PHP, MySQL, JavaScript, Bootstrap.
+   - GitHub: https://github.com/sumitrathor1/Data-Science-Quiz
+   - Live URL: https://sumitrathor.rf.gd/Data-Science-Quiz/
+
+6. **Smart Resume - AI Resume Builder**
+   - Interactive resume platform with ATS-friendly templates, OpenAI/Gemini integration, section reordering, and PDF export.
+   - Stack: PHP, MySQL, JavaScript, Gemini API, Bootstrap.
+   - GitHub: https://github.com/sumitrathor1/smartresume
+   - Live URL: https://sumitrathor.rf.gd/smartresume/
+
+7. **VibeTune - Music Streaming Platform**
+   - Modern audio platform supporting AJAX-based continuous playback, track upload workflows, dynamic playlist curation, and responsive glassmorphism UI.
+   - Stack: PHP, MySQL, JavaScript, AJAX, Bootstrap.
+   - GitHub: https://github.com/sumitrathor1/VibeTune
+   - Live URL: https://sumitrathor.rf.gd/VibeTune/
+
+---
+
+## Practical Experience & Internships
+- **Full Stack Web Developer Intern | Bitzech Technologies** (Nov 2025 – Apr 2026): Engineered production REST APIs, designed responsive dashboard interfaces, and built database schemas for enterprise and PropTech platforms (11acre.ai, 36brokinghub.com).
+- **Web Developer & Coordinator | Innovation & DIY Club, MITS Gwalior** (Aug 2025 – Present): Developed student portal systems, digital certification engines, and equipment management portals.
+- **Web Development Intern | Coders-Café** (Apr 2025 – Jul 2025): Developed interactive modules, user authentication systems, and testing pipelines.
+
+---
+
+## Education
+- **Bachelor of Technology (B.Tech) in Computer Science & Design**
+  - Institution: Madhav Institute of Technology & Science (MITS), Gwalior
+  - Timeline: 2022 – 2026
+  - Focus Areas: Data Structures & Algorithms, Object-Oriented Programming, Database Management Systems, Computer Networks, Operating Systems, Web Technologies.
+
+---
+
+## Verification & Public Links
+- Main Website: https://sumitrathor.rf.gd/
+- Vercel Mirror: https://sumitrathor.vercel.app/
+- Official Resume: https://sumitrathor.rf.gd/assets/public/Sumit%20Rathor%20Resume.pdf
+- Sitemap: https://sumitrathor.rf.gd/sitemap.xml
