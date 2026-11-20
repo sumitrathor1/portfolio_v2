@@ -256,3 +256,52 @@ Target: `portfolio_v2` (React + Vite static frontend)
 - **Build Status:** SUCCESS
 - **Git Commit:** 0d6de45
 - **Push Status:** SUCCESS (pushed to origin/main)
+
+### Module 14: Canonical Domain Alignment to Vercel
+- **Date:** 2026-11-20
+- **Files Created/Modified:**
+  - `src/data/personalInfo.js`: Centralized `canonicalDomain: "https://sumitrathor.vercel.app"`.
+  - `index.html`: Updated `<link rel="canonical">`, OpenGraph, Twitter, and Schema.org `@graph` IDs and URLs to `https://sumitrathor.vercel.app/`.
+  - `public/sitemap.xml`: Configured all URLs with `https://sumitrathor.vercel.app/`.
+  - `public/robots.txt`: Pointed `Sitemap` directive to `https://sumitrathor.vercel.app/sitemap.xml`.
+  - `public/llms.txt`: Updated canonical profile URLs.
+- **Testing Performed:** `npm run build` executed successfully (built in 6.30s).
+- **Build Status:** SUCCESS
+- **Git Commit:** ed9045b
+- **Push Status:** SUCCESS (pushed to origin/main)
+
+### Module 15: Google Analytics 4 & Conversion Event Tracking
+- **Date:** 2026-11-20
+- **Files Created/Modified:**
+  - `src/utils/analytics.js`: Created lightweight, privacy-conscious GA4 event tracking utility supporting `VITE_GA_MEASUREMENT_ID`.
+  - `src/App.jsx`: Injected GA4 initialization hook.
+  - `src/components/sections/HeroSection.jsx`: Wired up `trackResumeDownload` and `trackSocialClick`.
+  - `src/components/sections/ProjectsSection.jsx`: Wired up `trackProjectClick` for GitHub and live demos.
+  - `src/components/sections/ContactSection.jsx`: Wired up `trackContactSubmit` and resume tracking.
+  - `src/components/layout/Footer.jsx`: Wired up resume and social link tracking.
+- **Testing Performed:** `npm run build` executed successfully (built in 6.41s).
+- **Build Status:** SUCCESS
+- **Git Commit:** facbbcc
+- **Push Status:** SUCCESS (pushed to origin/main)
+
+### Module 16: Project Architecture Slugs & Case Study Action Buttons
+- **Date:** 2026-11-20
+- **Files Created/Modified:**
+  - `src/data/projects.js`: Added URL slugs, problem statements, technical architecture descriptions to all projects, and integrated the verified `JEE & NEET Prep & Test Tracking Platform` from `C:\xampp\htdocs\JeeneetTracker`.
+  - `src/components/sections/ProjectsSection.jsx`: Added "Case Study" action buttons linking directly to `/projects/${project.slug}/`.
+  - `src/styles/root.css`: Added `.project-btn-details` with cyan accent and hover glow, updated card title and subtitle line-clamps to 2 lines for improved mobile readability, and added `flex-wrap: wrap` to `.project-card__actions`.
+- **Testing Performed:** `npm run build` executed successfully (built in 5.96s).
+- **Build Status:** SUCCESS
+- **Git Commit:** e9ecabd
+- **Push Status:** SUCCESS (pushed to origin/main)
+
+### Module 17: Build-Time Prerendering & Dedicated Static Project Pages
+- **Date:** 2026-11-20
+- **Files Created/Modified:**
+  - `scripts/prerender.js`: Created automated build-time static HTML generator that injects complete semantic portfolio markup into `dist/index.html` (74KB) and generates individual project pages under `dist/projects/<slug>/index.html` with unique titles, meta descriptions, canonical URLs, and Schema.org `SoftwareApplication` JSON-LD.
+  - `package.json`: Updated `"build": "vite build && node scripts/prerender.js"`.
+  - `vercel.json`: Added clean project routes and trailing slash support.
+- **Testing Performed:** `npm run build` executed successfully (built in 5.07s; verified 74KB crawlable HTML in `dist/index.html` and 10 individual project case studies).
+- **Build Status:** SUCCESS
+- **Git Commit:** 1595729
+- **Push Status:** SUCCESS (pushed to origin/main)
