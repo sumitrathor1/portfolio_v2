@@ -93,13 +93,13 @@ export default function AboutSection() {
             {personalInfo.stats.map((stat, idx) => (
               <div
                 key={idx}
-                className="stat-box p-2.5 rounded-4 text-center"
+                className="stat-box p-2.5 rounded-4 text-center d-flex flex-column align-items-center justify-content-center gap-2"
                 style={{
                   background: 'rgba(255, 255, 255, 0.03)',
                   border: '1px solid rgba(255, 255, 255, 0.08)'
                 }}
               >
-                <i className={`${stat.icon} mb-1 ${stat.colorClass}`} style={{ fontSize: '1.25rem' }} />
+                <i className={`${stat.icon} ${stat.colorClass}`} style={{ fontSize: '1.35rem' }} />
                 <p
                   className={`value mb-0 ${stat.colorClass}`}
                   style={{
@@ -115,9 +115,10 @@ export default function AboutSection() {
                   className="label mb-0"
                   style={{
                     fontWeight: 600,
-                    fontSize: '0.72rem',
+                    fontSize: '0.74rem',
                     letterSpacing: '0.08em',
-                    textTransform: 'uppercase'
+                    textTransform: 'uppercase',
+                    color: '#cbd5e1'
                   }}
                 >
                   {stat.label}

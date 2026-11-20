@@ -432,4 +432,36 @@ Target: `portfolio_v2` (React + Vite static frontend)
   - Automated responsive test suite `scratch/test_responsive.mjs`: all 7 audit checks passed.
   - Production build compiled successfully (`npm run build` in 9.27s).
 - **Build Status:** SUCCESS
-- **Git Commit:** Pending
+- **Git Commit:** dd4855f
+- **Push Status:** SUCCESS (pushed to origin/main)
+
+### Module 24: UI Contrast & Visibility Fixes, Universal Document Preview Modal & Layout Polish
+- **Date:** 2026-11-20
+- **Audits & Enhancements Performed:**
+  - **Universal Text Visibility & WCAG AA Contrast**:
+    - Identified that Bootstrap 5's `.text-muted` override (`#6c757d`) produced an unacceptable 2.6:1 contrast ratio against the dark space background (`#080c22` / `#010313`).
+    - Elevated all muted text elements (`.text-muted, p.text-muted, span.text-muted, div.text-muted, small.text-muted`) to Tailwind Slate-300 (`#cbd5e1`), achieving a **9.8:1 WCAG AAA** contrast ratio.
+    - Specifically fixed the two highlighted Developer Activity paragraphs:
+      - *"Building open-source developer utilities, RAG workflows, and full-stack systems. Project Admin for GirlScript Summer of Code 2025."*
+      - *"Practicing Core Data Structures, Algorithms, Dynamic Programming, Graph Theory, and System Design patterns in C++ and Python."*
+    - Added high-contrast `.dev-profile-desc` class and ensured high contrast on `.label` in About Me stat-boxes (`color: #cbd5e1`).
+  - **About Me Stat-Box Alignment & Centering**:
+    - Updated `stat-box` in `src/components/sections/AboutSection.jsx` with `d-flex flex-column align-items-center justify-content-center gap-2 text-center`.
+    - Centered the icon (`1.35rem`), prominent stat value (`1.65rem`), and clear uppercase label (`0.74rem`) both horizontally and vertically with consistent 8px spacing.
+  - **Developer Activity Heading & Spacing Polish**:
+    - Introduced `.dev-activity-heading` with responsive fluid clamp `clamp(1.45rem, 3.2vw, 2.15rem)` so "💻 Developer Activity & Repositories 💻" scales gracefully without overwhelming viewports or wrapping awkwardly.
+    - Increased spacing between icons and text across profile cards, copy buttons, meta pills (`gap-2`, `gap-3`, `me-2`, `ms-2`).
+  - **Universal In-Page Document & Certificate Preview Modal (`DocumentPreviewModal.jsx`)**:
+    - Investigated the 404 certificate link: Verified that `certificate_0f1b22906295e245e8d60208.jpg` was an orphan record from the source MySQL database that had no physical file committed in the repository.
+    - Replaced external broken 404 links with an in-page preview modal mounted in `src/App.jsx`.
+    - Integrated with both `ExperienceSection.jsx` and `AchievementsSection.jsx`.
+    - Features:
+      - Interactive image zoom in, zoom out, fit-to-screen, and scale reset.
+      - Embedded PDF viewer with toolbar controls.
+      - Direct download button and open-in-new-tab actions.
+      - Loading spinner and error handling state with contact fallback (`#contact-us`) instead of broken browser 404 pages.
+      - ESC key listener, backdrop click-to-close, and background scroll locking (`body.doc-preview-open`).
+- **Testing & Verification:**
+  - Production build compiled successfully (`npm run build` in 6.42s).
+  - Prerendered static HTML for all routes without errors.
+- **Build Status:** SUCCESS

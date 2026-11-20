@@ -1,7 +1,7 @@
 import React from 'react';
 import { achievementsData } from '../../data/achievements';
 
-export default function AchievementsSection() {
+export default function AchievementsSection({ onPreviewDocument }) {
   return (
     <section className="section achievements-section container-xxl" id="achievements">
       <div className="section-heading text-center mb-4" data-aos="fade-up">
@@ -56,14 +56,33 @@ export default function AchievementsSection() {
                 )}
 
                 {item.certificate_url && (
-                  <a
-                    href={item.certificate_url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="achievement-link"
-                  >
-                    Proof <i className="fa-solid fa-arrow-up-right-from-square ms-1" style={{ fontSize: '0.65rem' }} />
-                  </a>
+                  item.certificate_url.startsWith('http') ? (
+                    <a
+                      href={item.certificate_url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="achievement-link"
+                      aria-label={`View external credential for ${item.title}`}
+                    >
+                      Proof <i className="fa-solid fa-arrow-up-right-from-square ms-1" style={{ fontSize: '0.65rem' }} />
+                    </a>
+                  ) : (
+                    <button
+                      type="button"
+                      className="achievement-link"
+                      onClick={() => {
+                        onPreviewDocument?.({
+                          title: item.title,
+                          url: item.certificate_url,
+                          type: item.certificate_url.toLowerCase().endsWith('.pdf') ? 'pdf' : 'image',
+                          description: item.description
+                        });
+                      }}
+                      aria-label={`Preview credential for ${item.title}`}
+                    >
+                      <span>Proof</span> <i className="fa-solid fa-expand ms-1" style={{ fontSize: '0.7rem' }} />
+                    </button>
+                  )
                 )}
               </div>
             )}

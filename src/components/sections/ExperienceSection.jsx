@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { experienceData } from '../../data/experience';
 
-export default function ExperienceSection() {
+export default function ExperienceSection({ onPreviewDocument }) {
   const [imageErrors, setImageErrors] = useState({});
 
   const handleImageError = (id) => {
@@ -87,15 +87,21 @@ export default function ExperienceSection() {
                 {(exp.certificate_path || exp.company_website) && (
                   <div className="d-flex flex-wrap gap-2 pt-2 border-top border-secondary border-opacity-10 mt-2">
                     {exp.certificate_path && (
-                      <a
-                        href={exp.certificate_path}
+                      <button
+                        type="button"
                         className="btn btn-sm btn-secondary-ghost hover-lift py-1 px-3"
-                        target="_blank"
-                        rel="noopener noreferrer"
                         style={{ fontSize: '0.78rem' }}
+                        onClick={() => {
+                          onPreviewDocument?.({
+                            title: `${exp.role} @ ${exp.company} Certificate`,
+                            url: exp.certificate_path,
+                            type: exp.certificate_path.toLowerCase().endsWith('.pdf') ? 'pdf' : 'image',
+                            description: `Internship Certificate for ${exp.role} at ${exp.company} (${exp.period}).`
+                          });
+                        }}
                       >
-                        <i className="fa-solid fa-certificate me-1 text-warning" /> Certificate
-                      </a>
+                        <i className="fa-solid fa-certificate me-1.5 text-warning" /> Certificate
+                      </button>
                     )}
                     {exp.company_website && (
                       <a

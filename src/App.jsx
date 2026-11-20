@@ -21,6 +21,7 @@ import DeveloperTerminal from './features/terminal/DeveloperTerminal';
 import CommandPalette from './features/palette/CommandPalette';
 import SkillsExplorerModal from './features/skills/SkillsExplorerModal';
 import ArchitectureExplorer from './features/projects/ArchitectureExplorer';
+import DocumentPreviewModal from './components/common/DocumentPreviewModal';
 import { features } from './config/features';
 import { useTiltEffect } from './hooks/useTiltEffect';
 import { useScrollAnimations } from './hooks/useScrollAnimations';
@@ -35,6 +36,7 @@ export default function App() {
   const [selectedSkillForExplorer, setSelectedSkillForExplorer] = useState(null);
   const [isArchitectureOpen, setIsArchitectureOpen] = useState(false);
   const [easterEggUnlocked, setEasterEggUnlocked] = useState(false);
+  const [previewDoc, setPreviewDoc] = useState(null);
 
   if (features.cardTilt) {
     useTiltEffect();
@@ -79,7 +81,7 @@ export default function App() {
         <main id="main-content">
           <HeroSection />
           <AboutSection />
-          <ExperienceSection />
+          <ExperienceSection onPreviewDocument={(doc) => setPreviewDoc(doc)} />
           {features.developerActivity && <DeveloperActivity />}
           <ProjectsSection
             onOpenArchitecture={() => setIsArchitectureOpen(true)}
@@ -91,7 +93,7 @@ export default function App() {
             }}
           />
           <EducationSection />
-          <AchievementsSection />
+          <AchievementsSection onPreviewDocument={(doc) => setPreviewDoc(doc)} />
           <ContactSection />
         </main>
 
@@ -179,6 +181,12 @@ export default function App() {
           </div>
         </div>
       )}
+      {/* UNIVERSAL IN-PAGE DOCUMENT / CERTIFICATE PREVIEW MODAL */}
+      <DocumentPreviewModal
+        isOpen={Boolean(previewDoc)}
+        doc={previewDoc}
+        onClose={() => setPreviewDoc(null)}
+      />
     </>
   );
 }

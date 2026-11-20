@@ -81,7 +81,7 @@ export default function DeveloperActivity() {
     <section className="section developer-activity-section container-xxl" id="developer-activity">
       <div className="section-heading text-center mb-4" data-aos="fade-up">
         <p className="eyebrow">Engineering Profiles</p>
-        <h2 className="mb-2">💻 Developer Activity & Repositories 💻</h2>
+        <h2 className="mb-2 dev-activity-heading">💻 Developer Activity & Repositories 💻</h2>
         <p className="subtitle mx-auto" style={{ maxWidth: '640px' }}>
           Explore open-source contributions, verified GitHub projects, and algorithmic problem-solving profiles.
         </p>
@@ -93,7 +93,7 @@ export default function DeveloperActivity() {
         <div className="col-12 col-md-6">
           <div className="dev-profile-card glass-panel hover-lift h-100">
             <div className="d-flex align-items-center justify-content-between mb-3">
-              <div className="d-flex align-items-center gap-2.5">
+              <div className="d-flex align-items-center gap-3">
                 <div className="dev-profile-icon github-icon">
                   <i className="fa-brands fa-github" />
                 </div>
@@ -104,10 +104,10 @@ export default function DeveloperActivity() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-info text-decoration-none"
-                    style={{ fontSize: '0.82rem' }}
+                    style={{ fontSize: '0.84rem' }}
                     onClick={() => trackSocialClick('GitHub')}
                   >
-                    @sumitrathor1 <i className="fa-solid fa-arrow-up-right-from-square ms-1" style={{ fontSize: '0.68rem' }} />
+                    @sumitrathor1 <i className="fa-solid fa-arrow-up-right-from-square ms-2" style={{ fontSize: '0.7rem' }} />
                   </a>
                 </div>
               </div>
@@ -117,24 +117,24 @@ export default function DeveloperActivity() {
                 onClick={handleCopyGithub}
                 title="Copy GitHub URL"
               >
-                <i className={copiedLink ? 'fa-solid fa-check text-success me-1' : 'fa-regular fa-copy me-1'} />
+                <i className={copiedLink ? 'fa-solid fa-check text-success me-2' : 'fa-regular fa-copy me-2'} />
                 {copiedLink ? 'Copied!' : 'Copy'}
               </button>
             </div>
 
-            <p className="text-muted mb-3" style={{ fontSize: '0.84rem' }}>
+            <p className="dev-profile-desc mb-3">
               Building open-source developer utilities, RAG workflows, and full-stack systems. Project Admin for GirlScript Summer of Code 2025.
             </p>
 
             <div className="d-flex flex-wrap gap-2 pt-2 border-top border-secondary-subtle">
               <span className="dev-meta-pill">
-                <i className="fa-solid fa-code-fork me-1 text-primary" /> 16+ Public Repos
+                <i className="fa-solid fa-code-fork me-2 text-primary" /> 16+ Public Repos
               </span>
               <span className="dev-meta-pill">
-                <i className="fa-solid fa-circle-nodes me-1 text-info" /> Open Source Contributor
+                <i className="fa-solid fa-circle-nodes me-2 text-info" /> Open Source Contributor
               </span>
               <span className="dev-meta-pill">
-                <i className="fa-solid fa-award me-1 text-warning" /> GSSoC '25 Admin
+                <i className="fa-solid fa-award me-2 text-warning" /> GSSoC '25 Admin
               </span>
             </div>
           </div>
@@ -144,7 +144,7 @@ export default function DeveloperActivity() {
         <div className="col-12 col-md-6">
           <div className="dev-profile-card glass-panel hover-lift h-100">
             <div className="d-flex align-items-center justify-content-between mb-3">
-              <div className="d-flex align-items-center gap-2.5">
+              <div className="d-flex align-items-center gap-3">
                 <div className="dev-profile-icon leetcode-icon">
                   <i className="fa-solid fa-code" />
                 </div>
@@ -155,10 +155,10 @@ export default function DeveloperActivity() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-warning text-decoration-none"
-                    style={{ fontSize: '0.82rem' }}
+                    style={{ fontSize: '0.84rem' }}
                     onClick={() => trackSocialClick('LeetCode')}
                   >
-                    @SumitRathor <i className="fa-solid fa-arrow-up-right-from-square ms-1" style={{ fontSize: '0.68rem' }} />
+                    @SumitRathor <i className="fa-solid fa-arrow-up-right-from-square ms-2" style={{ fontSize: '0.7rem' }} />
                   </a>
                 </div>
               </div>
@@ -168,24 +168,24 @@ export default function DeveloperActivity() {
                 onClick={handleSharePortfolio}
                 title="Share Portfolio Link"
               >
-                <i className={shareSuccess ? 'fa-solid fa-check text-success me-1' : 'fa-solid fa-share-nodes me-1'} />
+                <i className={shareSuccess ? 'fa-solid fa-check text-success me-2' : 'fa-solid fa-share-nodes me-2'} />
                 {shareSuccess ? 'Copied URL!' : 'Share Portfolio'}
               </button>
             </div>
 
-            <p className="text-muted mb-3" style={{ fontSize: '0.84rem' }}>
+            <p className="dev-profile-desc mb-3">
               Practicing Core Data Structures, Algorithms, Dynamic Programming, Graph Theory, and System Design patterns in C++ and Python.
             </p>
 
             <div className="d-flex flex-wrap gap-2 pt-2 border-top border-secondary-subtle">
               <span className="dev-meta-pill">
-                <i className="fa-solid fa-sitemap me-1 text-warning" /> DSA Practice
+                <i className="fa-solid fa-sitemap me-2 text-warning" /> DSA Practice
               </span>
               <span className="dev-meta-pill">
-                <i className="fa-solid fa-terminal me-1 text-danger" /> C++ & Python
+                <i className="fa-solid fa-terminal me-2 text-danger" /> C++ & Python
               </span>
               <span className="dev-meta-pill">
-                <i className="fa-solid fa-cubes me-1 text-success" /> OOP Architecture
+                <i className="fa-solid fa-cubes me-2 text-success" /> OOP Architecture
               </span>
             </div>
           </div>
@@ -203,7 +203,7 @@ export default function DeveloperActivity() {
               className="repo-highlight-card glass-panel hover-lift text-decoration-none d-block h-100"
             >
               <div className="d-flex align-items-center justify-content-between mb-2">
-                <div className="d-flex align-items-center gap-1.5 text-primary">
+                <div className="d-flex align-items-center gap-2 text-primary">
                   <i className="fa-regular fa-folder" />
                   <span className="repo-name">{repo.name}</span>
                 </div>
