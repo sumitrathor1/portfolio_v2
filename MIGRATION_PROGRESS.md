@@ -355,3 +355,23 @@ Target: `portfolio_v2` (React + Vite static frontend)
 - **Build Status:** SUCCESS
 - **Git Commit:** 1d89dc4
 - **Push Status:** SUCCESS (pushed to origin/main)
+
+### Module 21: Advanced Developer Portfolio: Personal Chatbot Assistant, Recruiter Snapshot & Modular Architecture
+- **Date:** 2026-11-20
+- **Files Created/Modified:**
+  - `src/config/features.js`: Created central feature configuration system with modular flags for chatbot, recruiterSnapshot, developerActivity, projectExplorer, and future staged flags (blog, testimonials).
+  - `src/data/chatbotKnowledge.js`: Built comprehensive verified knowledge base with 23 categorized questions covering About Me, Technical Skills, Projects (Rakshak AI, Mandola, FPV Smart Car, BitZech, live demos), Experience (DRDO internship, Innovation Club leadership, open-source work), and Career/Contact.
+  - `src/services/chatbotService.js`: Built deterministic query matching engine with direct ID lookup, alias normalization, token relevance scoring, and asynchronous hook for future AI / LLM integration.
+  - `src/features/chatbot/`: Created complete chatbot suite including `Chatbot.jsx`, `ChatWindow.jsx`, `ChatMessage.jsx`, `SuggestedQuestions.jsx`, and `ChatFloatingButton.jsx` with mobile responsive views, typing indicators, timestamps, and restart/minimize controls.
+  - `src/features/recruiter/RecruiterSnapshotModal.jsx`: Created 60-second Recruiter Brief modal summarizing education, DRDO internship, core competencies, verified achievements, resume download, and quick copy actions.
+  - `src/components/navigation/Header.jsx`: Added eye-catching `Recruiter Brief` action pill to the navigation bar.
+  - `src/features/developer/DeveloperActivity.jsx`: Implemented verified GitHub repository highlights (`Rakshak-AI-Ragbot`, `FPV_Car`, `Data-Science-Quiz`, `bitBrief`), LeetCode problem-solving stats, open-source GSSoC metrics, and 1-click portfolio sharing.
+  - `src/App.jsx`: Mounted `DeveloperActivity`, `Chatbot`, and `RecruiterSnapshotModal` gated by their respective feature flags.
+  - `src/styles/root.css`: Added styles for chatbot launcher, chat window, message bubbles, typing dots, suggested questions, recruiter modal, and developer activity cards.
+  - `FEATURES_GUIDE.md`: Authored comprehensive developer guide explaining feature flags, adding new sections, adding chatbot Q&As, adding projects, connecting future AI models, and testing.
+- **Testing Performed:**
+  - Executed automated unit tests on `chatbotService.js` (23/23 direct retrievals passed, 11/11 natural language queries matched, and fallback query verified).
+  - Executed full production build (`npm run build` in 10.72s) with Vite compilation and static HTML generation for all routes.
+- **Build Status:** SUCCESS
+- **Git Commit:** Pending
+- **Push Status:** Pending

@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 
-export default function Header() {
+export default function Header({ onOpenRecruiter }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isRotating, setIsRotating] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
@@ -100,6 +100,22 @@ export default function Header() {
                 );
               })}
             </ul>
+
+            {onOpenRecruiter && (
+              <button
+                type="button"
+                className="nav-recruiter-pill hover-lift ms-lg-3 my-2 my-lg-0"
+                onClick={() => {
+                  closeNavbar();
+                  onOpenRecruiter();
+                }}
+                title="Open 60-Second Recruiter Brief"
+                aria-label="Open 60-Second Recruiter Brief"
+              >
+                <i className="fa-solid fa-bolt text-warning me-1.5" />
+                <span>Recruiter Brief</span>
+              </button>
+            )}
 
             <span id="themeModebtn" className="d-none">
               <span id="themeIcon" />
