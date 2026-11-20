@@ -2,6 +2,7 @@ export const personalInfo = {
   name: "Sumit Rathor",
   alternateNames: ["Sumit Rathore", "Sumit Kumar Rathor"],
   role: "Full Stack Developer · Software Engineer",
+  canonicalDomain: "https://sumitrathor.vercel.app",
   lead: "Full Stack Developer building web applications, AI-powered tools, and practical solutions with modern web technologies.",
   tags: ["Full Stack Development", "AI & Automation", "Backend Systems"],
   heroImage: "/assets/images/hero-image.png",

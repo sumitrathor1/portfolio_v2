@@ -2,34 +2,58 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Main Portfolio Homepage -->
   <url>
-    <loc>https://sumitrathor.rf.gd/</loc>
+    <loc>https://sumitrathor.vercel.app/</loc>
     <lastmod>2026-11-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-  <!-- Live Project Subpaths on Host -->
+  <!-- Flagship Projects -->
   <url>
-    <loc>https://sumitrathor.rf.gd/Data-Science-Quiz/</loc>
+    <loc>https://sumitrathor.vercel.app/projects/hardware-inventory/</loc>
     <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://sumitrathor.rf.gd/FPV_Car/</loc>
+    <loc>https://sumitrathor.vercel.app/projects/fpv-surveillance-robot/</loc>
     <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://sumitrathor.rf.gd/smartresume/</loc>
+    <loc>https://sumitrathor.vercel.app/projects/certificate-portal/</loc>
     <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://sumitrathor.rf.gd/VibeTune/</loc>
+    <loc>https://sumitrathor.vercel.app/projects/11acre-ai/</loc>
     <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://sumitrathor.vercel.app/projects/smart-resume/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://sumitrathor.vercel.app/projects/data-science-quiz/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://sumitrathor.vercel.app/projects/vibetune/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://sumitrathor.vercel.app/projects/jeeneet-tracker/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
   </url>
 </urlset>

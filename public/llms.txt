@@ -2,7 +2,7 @@
 
 > Full Stack Software Engineer & Web Developer  
 > Location: Gwalior, Madhya Pradesh, India  
-> Portfolio: https://sumitrathor.rf.gd/  
+> Canonical Portfolio: https://sumitrathor.vercel.app/  
 > LinkedIn: https://www.linkedin.com/in/sumitrathor/  
 > GitHub: https://github.com/sumitrathor1  
 > LeetCode: https://leetcode.com/u/SumitRathor/  
@@ -24,46 +24,54 @@ Sumit Rathor (also referenced as Sumit Rathore) is a Full Stack Software Enginee
 
 ---
 
-## Flagship Projects
+## Flagship Projects & Case Studies
 
-1. **Certificate Authentication & Verification Portal**
-   - High-performance React application for live camera QR code certificate authentication and bulk Excel-to-QR generation with automated ZIP export.
-   - Stack: React, JavaScript, PDF.js, SheetJS, Google Apps Script API.
-   - Live URL: https://innovation-and-diy-certificate.vercel.app/
-
-2. **Hardware Inventory & Borrowing Portal**
+1. **Hardware Inventory & Borrowing Portal**
    - Campus inventory and borrowing system featuring domain-restricted Gmail OTP authentication, Supabase Row-Level Security, and atomic stock transactions.
    - Stack: Next.js 16, React 19, Supabase PostgreSQL, Supabase Auth, Nodemailer, TypeScript, Tailwind CSS.
+   - Project Page: https://sumitrathor.vercel.app/projects/hardware-inventory/
    - Live URL: https://innovation-and-diy-inventory.vercel.app/
+
+2. **Certificate Authentication & Verification Portal**
+   - High-performance React application for live camera QR code certificate authentication and bulk Excel-to-QR generation with automated ZIP export.
+   - Stack: React, JavaScript, PDF.js, SheetJS, Google Apps Script API.
+   - Project Page: https://sumitrathor.vercel.app/projects/certificate-portal/
+   - Live URL: https://innovation-and-diy-certificate.vercel.app/
 
 3. **11acre.ai - Real Estate & PropTech Platform**
    - Commercial real estate portal with category filtering (buy/rent/plots), multi-attribute property search, and buyer-agent onboarding workflows.
    - Stack: CodeIgniter 4, MySQL, AJAX, REST APIs, JavaScript.
+   - Project Page: https://sumitrathor.vercel.app/projects/11acre-ai/
    - Live URL: https://11acreai.in/
 
 4. **FPV Surveillance Robot**
    - Wireless teleoperation robot with real-time first-person-view video streaming, sub-second movement controls, and ESP32-CAM firmware integration.
    - Stack: ESP32-CAM, C++, L298N, Computer Vision, REST API.
+   - Project Page: https://sumitrathor.vercel.app/projects/fpv-surveillance-robot/
    - GitHub: https://github.com/sumitrathor1/FPV_Car
-   - Live URL: https://sumitrathor.rf.gd/FPV_Car/
 
-5. **Data Science Quiz & Skill Assessment Platform**
-   - Timed technical evaluation engine covering Python, ML, and Statistics with instant score calculation, detailed solutions, and admin performance analytics.
-   - Stack: PHP, MySQL, JavaScript, Bootstrap.
-   - GitHub: https://github.com/sumitrathor1/Data-Science-Quiz
-   - Live URL: https://sumitrathor.rf.gd/Data-Science-Quiz/
-
-6. **Smart Resume - AI Resume Builder**
+5. **Smart Resume - AI Resume Builder**
    - Interactive resume platform with ATS-friendly templates, OpenAI/Gemini integration, section reordering, and PDF export.
    - Stack: PHP, MySQL, JavaScript, Gemini API, Bootstrap.
+   - Project Page: https://sumitrathor.vercel.app/projects/smart-resume/
    - GitHub: https://github.com/sumitrathor1/smartresume
-   - Live URL: https://sumitrathor.rf.gd/smartresume/
+
+6. **Data Science Quiz & Skill Assessment Platform**
+   - Timed technical evaluation engine covering Python, ML, and Statistics with instant score calculation, detailed solutions, and admin performance analytics.
+   - Stack: PHP, MySQL, JavaScript, Bootstrap.
+   - Project Page: https://sumitrathor.vercel.app/projects/data-science-quiz/
+   - GitHub: https://github.com/sumitrathor1/Data-Science-Quiz
 
 7. **VibeTune - Music Streaming Platform**
    - Modern audio platform supporting AJAX-based continuous playback, track upload workflows, dynamic playlist curation, and responsive glassmorphism UI.
    - Stack: PHP, MySQL, JavaScript, AJAX, Bootstrap.
+   - Project Page: https://sumitrathor.vercel.app/projects/vibetune/
    - GitHub: https://github.com/sumitrathor1/VibeTune
-   - Live URL: https://sumitrathor.rf.gd/VibeTune/
+
+8. **JEE & NEET Tracker Platform**
+   - Full-stack preparation and performance benchmarking platform with Firebase authentication, JWT-secured endpoints, course scheduling, and monthly progress tracking.
+   - Stack: PHP, MySQL, Firebase, JWT, Bootstrap.
+   - Project Page: https://sumitrathor.vercel.app/projects/jeeneet-tracker/
 
 ---
 
@@ -83,7 +91,6 @@ Sumit Rathor (also referenced as Sumit Rathore) is a Full Stack Software Enginee
 ---
 
 ## Verification & Public Links
-- Main Website: https://sumitrathor.rf.gd/
-- Vercel Mirror: https://sumitrathor.vercel.app/
-- Official Resume: https://sumitrathor.rf.gd/assets/public/Sumit%20Rathor%20Resume.pdf
-- Sitemap: https://sumitrathor.rf.gd/sitemap.xml
+- Canonical Website: https://sumitrathor.vercel.app/
+- Official Resume: https://sumitrathor.vercel.app/assets/public/Sumit%20Rathor%20Resume.pdf
+- Sitemap: https://sumitrathor.vercel.app/sitemap.xml

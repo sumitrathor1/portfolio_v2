@@ -1,9 +1,9 @@
-# Robots.txt for https://sumitrathor.rf.gd/
+# Robots.txt for https://sumitrathor.vercel.app/
 User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://sumitrathor.rf.gd/sitemap.xml
+Sitemap: https://sumitrathor.vercel.app/sitemap.xml
 
 # LLM & AI Discoverability Dossier
-# See https://sumitrathor.rf.gd/llms.txt
+# See https://sumitrathor.vercel.app/llms.txt
