@@ -373,5 +373,5 @@ Target: `portfolio_v2` (React + Vite static frontend)
   - Executed automated unit tests on `chatbotService.js` (23/23 direct retrievals passed, 11/11 natural language queries matched, and fallback query verified).
   - Executed full production build (`npm run build` in 10.72s) with Vite compilation and static HTML generation for all routes.
 - **Build Status:** SUCCESS
-- **Git Commit:** Pending
-- **Push Status:** Pending
+- **Git Commit:** 92bb45e
+- **Push Status:** SUCCESS (pushed to origin/main)
