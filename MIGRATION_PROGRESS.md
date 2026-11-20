@@ -316,5 +316,5 @@ Target: `portfolio_v2` (React + Vite static frontend)
   - `scripts/prerender.js`: Synchronized inline body prerender styles with `0 0` tiling and auto sizing.
 - **Testing Performed:** Production build and prerender verified cleanly (`npm run build`).
 - **Build Status:** SUCCESS
-- **Git Commit:** Pending
-- **Push Status:** Pending
+- **Git Commit:** 972ad61
+- **Push Status:** SUCCESS (pushed to origin/main)
