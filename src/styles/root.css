@@ -584,7 +584,7 @@ select:focus {
     color: var(--text-primary);
     margin-bottom: 0.25rem;
     display: -webkit-box;
-    -webkit-line-clamp: 1;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
@@ -595,7 +595,7 @@ select:focus {
     color: #38bdf8;
     margin-bottom: 0.45rem;
     display: -webkit-box;
-    -webkit-line-clamp: 1;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
@@ -636,7 +636,8 @@ select:focus {
 .project-card__actions {
     display: flex;
     align-items: center;
-    gap: 0.6rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
     padding-top: 0.75rem;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
@@ -646,14 +647,27 @@ select:focus {
     align-items: center;
     justify-content: center;
     gap: 0.35rem;
-    flex: 1;
-    padding: 0.38rem 0.75rem;
+    flex: 1 1 auto;
+    padding: 0.42rem 0.75rem;
     font-size: 0.76rem;
     font-weight: 600;
     border-radius: 8px;
     text-decoration: none;
     transition: all 0.2s ease;
     white-space: nowrap;
+}
+
+.project-btn-details {
+    color: #38bdf8;
+    background: rgba(56, 189, 248, 0.08);
+    border: 1px solid rgba(56, 189, 248, 0.25);
+}
+
+.project-btn-details:hover {
+    color: #fff;
+    background: rgba(56, 189, 248, 0.22);
+    border-color: #38bdf8;
+    box-shadow: 0 0 12px rgba(56, 189, 248, 0.35);
 }
 
 .project-btn-ghost {

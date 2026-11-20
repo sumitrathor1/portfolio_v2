@@ -78,8 +78,18 @@ export default function ProjectsSection() {
                 </div>
 
                 {/* ACTION BUTTONS */}
-                {(project.github || project.live) && (
+                {(project.github || project.live || project.slug) && (
                   <div className="project-card__actions">
+                    {project.slug && (
+                      <a
+                        href={`/projects/${project.slug}/`}
+                        className="project-btn project-btn-details hover-lift"
+                        onClick={() => trackProjectClick(project.title, 'details')}
+                        title={`View ${project.title} Case Study`}
+                      >
+                        <i className="fa-solid fa-circle-info" /> Case Study
+                      </a>
+                    )}
                     {project.github && (
                       <a
                         href={project.github}
