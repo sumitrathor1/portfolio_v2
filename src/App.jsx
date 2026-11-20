@@ -4,6 +4,7 @@ import Footer from './components/layout/Footer';
 import StarCanvas from './components/layout/StarCanvas';
 import StarOverlay from './components/layout/StarOverlay';
 import ScrollProgress from './components/common/ScrollProgress';
+import BackToTop from './components/common/BackToTop';
 import FuturisticCursor from './components/common/FuturisticCursor';
 import HeroSection from './components/sections/HeroSection';
 import AboutSection from './components/sections/AboutSection';
@@ -50,6 +51,7 @@ export default function App() {
 
         <Footer />
         <ScrollProgress />
+        <BackToTop />
         <div className="end-line" />
       </div>
 

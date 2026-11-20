@@ -331,5 +331,27 @@ Target: `portfolio_v2` (React + Vite static frontend)
   - `public/llms.txt`: Added Rakshak AI case study, vector database capabilities, and updated competencies.
 - **Testing Performed:** Executed `npm run build` with Vite compilation and static HTML prerendering.
 - **Build Status:** SUCCESS
+- **Git Commit:** f5a7cf1
+- **Push Status:** SUCCESS (pushed to origin/main)
+
+### Module 20: Final Portfolio Enhancement: Design, Functionality, UX & Security
+- **Date:** 2026-11-20
+- **Files Created/Modified:**
+  - `api/contact.js`: Built secure Vercel Serverless Function endpoint with anti-bot honeypot trapping, strict input validation, HTML sanitization, in-memory IP rate limiting (max 4 per 5 min), and native Resend API email dispatching.
+  - `.env.example`: Created comprehensive environment variable reference template documenting `RESEND_API_KEY`, `CONTACT_SENDER_EMAIL`, `CONTACT_RECEIVER_EMAIL`, and `VITE_GA_MEASUREMENT_ID`.
+  - `.gitignore`: Hardened with strict exclusions for all `.env*` files (allowing `.env.example` only) and `.vercel`.
+  - `vercel.json`: Added production HTTP security headers (`nosniff`, `SAMEORIGIN`, `strict-origin-when-cross-origin`, `Permissions-Policy`) and updated rewrite rules to ensure `/api/*` serverless routes bypass SPA rewrites.
+  - `src/components/sections/ContactSection.jsx`: Integrated `/api/contact` with real-time field validation, error indicators, character counter, 1-click email copy button with tooltip feedback, and transparent status handling.
+  - `src/components/common/ProjectModal.jsx`: Created accessible, animated Quick-View modal dialog for deep-dive exploration of project challenges, architecture, stack, and features without leaving page context.
+  - `src/components/sections/ProjectsSection.jsx`: Added category filter tabs (All, Full Stack, AI & Systems, IoT & Hardware), live technology/keyword search input, Quick View modal triggers, and graceful empty states.
+  - `src/components/common/BackToTop.jsx`: Implemented floating glass Back-to-Top button appearing past 400px scroll with smooth upward navigation.
+  - `src/components/sections/HeroSection.jsx`: Added 1-click "Copy Email" action pill in the hero social row for streamlined recruiter outreach.
+  - `src/styles/root.css`: Added styles for project filter tabs, search input, quick view button, modal dialog, empty states, copy buttons, form error states, and back-to-top floating button.
+  - `src/App.jsx`: Wired up `BackToTop` component.
+  - `src/data/projects.js`: Added category tags (`ai`, `fullstack`, `iot`) across all projects for dynamic filtering.
+- **Testing Performed:**
+  - Unit-tested `api/contact.js` across 4 test suites: GET rejection (405), input validation (400), honeypot anti-spam trap (200 silent discard), and unconfigured key disclosure (200 transparent).
+  - Executed full production build (`npm run build` in 6.28s) with Vite compilation and static HTML generation for all routes.
+- **Build Status:** SUCCESS
 - **Git Commit:** Pending
 - **Push Status:** Pending

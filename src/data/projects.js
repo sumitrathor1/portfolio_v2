@@ -2,6 +2,7 @@ export const projectsData = [
   {
     "id": 13,
     "slug": "rakshak-ai",
+    "category": "ai",
     "title": "Enterprise Local Knowledge Assistant (Rakshak AI)",
     "subtitle": "Offline RAG Knowledge Assistant · DRDO CFEES",
     "description": "A fully offline, local Retrieval-Augmented Generation (RAG) assistant developed during research internship at DRDO-CFEES (Centre for Fire, Explosive and Environment Safety, Delhi). Enables defence scientists and engineers to query sensitive technical documents, safety manuals, and research PDFs securely with zero external network connectivity or cloud API dependencies.",
@@ -30,6 +31,7 @@ export const projectsData = [
   {
     "id": 11,
     "slug": "certificate-portal",
+    "category": "fullstack",
     "title": "Certificate Authentication & Verification Portal",
     "subtitle": "Innovation & DIY Club, MITS Gwalior",
     "description": "A high-performance React application for instant certificate authentication and automated bulk QR code generation. Features real-time live camera QR scanning, multi-engine image/PDF QR extraction, and Excel-based batch QR code zip generation for club events and workshops.",
@@ -134,6 +136,7 @@ export const projectsData = [
   {
     "id": 5,
     "slug": "fpv-surveillance-robot",
+    "category": "iot",
     "title": "FPV Surveillance Robot",
     "subtitle": "ESP32-CAM based FPV robot with real-time video streaming, remote navigation.",
     "description": "Built a real-time surveillance robot capable of live video streaming and wireless movement control using ESP32-CAM and Arduino-based hardware integration. The system is designed for low-latency monitoring and future AI object detection integration.",

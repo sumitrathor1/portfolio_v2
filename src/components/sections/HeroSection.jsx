@@ -25,6 +25,25 @@ export default function HeroSection() {
     return () => clearInterval(interval);
   }, []);
 
+  const [copiedEmail, setCopiedEmail] = useState(false);
+
+  const handleCopyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(personalInfo.email);
+      setCopiedEmail(true);
+      setTimeout(() => setCopiedEmail(false), 2200);
+    } catch {
+      const input = document.createElement('input');
+      input.value = personalInfo.email;
+      document.body.appendChild(input);
+      input.select();
+      document.execCommand('copy');
+      document.body.removeChild(input);
+      setCopiedEmail(true);
+      setTimeout(() => setCopiedEmail(false), 2200);
+    }
+  };
+
   const handleSecretClick = () => {
     clickCountRef.current += 1;
     if (clickTimerRef.current) {
@@ -133,13 +152,23 @@ export default function HeroSection() {
                 <i className="fab fa-github" />
               </a>
               <a
-                href="mailto:sumitrathor142272@gmail.com"
+                href={`mailto:${personalInfo.email}`}
                 className="hover-lift"
                 aria-label="Send Email to Sumit Rathor"
                 onClick={() => trackSocialClick('Email')}
               >
                 <i className="fa-solid fa-envelope" />
               </a>
+              <button
+                type="button"
+                onClick={handleCopyEmail}
+                className="hero-copy-btn hover-lift"
+                title="Copy email to clipboard"
+                aria-label="Copy email address"
+              >
+                <i className={copiedEmail ? 'fa-solid fa-check text-success' : 'fa-regular fa-copy'} />
+                <span>{copiedEmail ? 'Email Copied!' : 'Copy Email'}</span>
+              </button>
             </div>
           </div>
 
