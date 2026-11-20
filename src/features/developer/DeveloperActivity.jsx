@@ -107,7 +107,7 @@ export default function DeveloperActivity() {
                     style={{ fontSize: '0.84rem' }}
                     onClick={() => trackSocialClick('GitHub')}
                   >
-                    @sumitrathor1 <i className="fa-solid fa-arrow-up-right-from-square ms-2" style={{ fontSize: '0.7rem' }} />
+                    @sumitrathor1 <i className="fa-solid fa-arrow-up-right-from-square ms-1.5" style={{ fontSize: '0.7rem' }} />
                   </a>
                 </div>
               </div>
@@ -158,7 +158,7 @@ export default function DeveloperActivity() {
                     style={{ fontSize: '0.84rem' }}
                     onClick={() => trackSocialClick('LeetCode')}
                   >
-                    @SumitRathor <i className="fa-solid fa-arrow-up-right-from-square ms-2" style={{ fontSize: '0.7rem' }} />
+                    @SumitRathor <i className="fa-solid fa-arrow-up-right-from-square ms-1.5" style={{ fontSize: '0.7rem' }} />
                   </a>
                 </div>
               </div>
@@ -203,7 +203,7 @@ export default function DeveloperActivity() {
               className="repo-highlight-card glass-panel hover-lift text-decoration-none d-block h-100"
             >
               <div className="d-flex align-items-center justify-content-between mb-2">
-                <div className="d-flex align-items-center gap-2 text-primary">
+                <div className="d-flex align-items-center gap-1.5 text-primary">
                   <i className="fa-regular fa-folder" />
                   <span className="repo-name">{repo.name}</span>
                 </div>
