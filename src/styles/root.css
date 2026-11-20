@@ -554,6 +554,19 @@ select:focus {
     z-index: 2;
 }
 
+.project-card__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-card:hover .project-card__img {
+    transform: scale(1.05);
+}
+
 /* Card Body */
 .project-card__body {
     padding: 1.15rem 1.25rem 1.25rem;

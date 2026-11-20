@@ -22,12 +22,21 @@ export default function ProjectsSection() {
               style={{ marginInline: '0.75rem' }}
             >
               {/* 16:9 COMPACT IMAGE BANNER */}
-              <div
-                className="project-card__visual"
-                style={{
-                  backgroundImage: `url('${projectImage}'), url('${fallbackImage}')`
-                }}
-              >
+              <div className="project-card__visual">
+                <img
+                  src={projectImage}
+                  alt={`${project.title} screenshot`}
+                  className="project-card__img"
+                  loading="lazy"
+                  decoding="async"
+                  width="600"
+                  height="356"
+                  onError={(e) => {
+                    if (e.target.src !== fallbackImage) {
+                      e.target.src = fallbackImage;
+                    }
+                  }}
+                />
                 {project.date && (
                   <span className="project-date-badge">
                     <i className="fa-regular fa-calendar me-1" />

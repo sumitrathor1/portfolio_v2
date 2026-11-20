@@ -115,7 +115,7 @@ export default function HeroSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover-lift"
-                aria-label="LinkedIn"
+                aria-label="LinkedIn Profile"
               >
                 <i className="fab fa-linkedin" />
               </a>
@@ -124,14 +124,14 @@ export default function HeroSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover-lift"
-                aria-label="GitHub"
+                aria-label="GitHub Profile"
               >
                 <i className="fab fa-github" />
               </a>
               <a
                 href="mailto:sumitrathor142272@gmail.com"
                 className="hover-lift"
-                aria-label="Email"
+                aria-label="Send Email to Sumit Rathor"
               >
                 <i className="fa-solid fa-envelope" />
               </a>
@@ -142,7 +142,14 @@ export default function HeroSection() {
           <div className="col-12 col-lg-6 d-flex justify-content-end hero-visual" data-aos="fade-left">
             <div className="hero-portrait">
               <div className="portrait-frame">
-                <img src={personalInfo.heroImage} alt="Sumit Rathor portrait" />
+                <img
+                  src={personalInfo.heroImage}
+                  alt="Sumit Rathor - Full Stack Software Engineer portrait"
+                  width="540"
+                  height="540"
+                  fetchpriority="high"
+                  decoding="sync"
+                />
               </div>
             </div>
           </div>

@@ -176,12 +176,12 @@ export default function ContactSection() {
             </div>
 
             <div className="col-12 col-md-6">
-              <label htmlFor="email" className="form-label">
+              <label htmlFor="user_email" className="form-label">
                 Email <span>*</span>
               </label>
               <input
                 type="email"
-                id="email"
+                id="user_email"
                 name="user_email"
                 value={formData.user_email}
                 onChange={handleChange}

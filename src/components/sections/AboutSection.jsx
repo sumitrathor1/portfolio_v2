@@ -68,7 +68,11 @@ export default function AboutSection() {
           <div className="profile-header pb-2.5 border-bottom border-secondary border-opacity-10">
             <img
               src={personalInfo.profileImage}
-              alt="Sumit Rathor"
+              alt="Sumit Rathor - Profile Avatar"
+              width="72"
+              height="72"
+              loading="lazy"
+              decoding="async"
               style={{ boxShadow: '0 0 20px rgba(56, 189, 248, 0.3)' }}
             />
             <div>
