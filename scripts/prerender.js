@@ -510,7 +510,7 @@ projectsData.forEach((project) => {
     }
     </script>
 </head>
-<body class="portfolio-site" style="background-color: #010313; background-image: url('/assets/images/bg-dark1.png'); background-repeat: repeat; background-position: top center; color: #f8f9ff;">
+<body class="portfolio-site" style="background-color: #010313; background-image: url('/assets/images/bg-dark1.png'); background-repeat: repeat; background-position: 0 0; background-size: auto; color: #f8f9ff;">
     <!-- Navigation Bar -->
     <header class="site-header">
       <nav class="navbar navbar-expand-lg nav-floating position-fixed w-100">

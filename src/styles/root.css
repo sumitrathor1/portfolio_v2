@@ -29,7 +29,8 @@ body {
   background-color: #010313;
   background-image: url('/assets/images/bg-dark1.png');
   background-repeat: repeat;
-  background-position: top center;
+  background-position: 0 0;
+  background-size: auto;
   color: var(--text-primary);
   padding-top: clamp(4.25rem, 5vw, 5.5rem);
   overflow-x: hidden;
