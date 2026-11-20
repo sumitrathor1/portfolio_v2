@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Swal from 'sweetalert2';
 import { personalInfo } from '../../data/personalInfo';
+import { trackResumeDownload, trackSocialClick } from '../../utils/analytics';
 
 export default function HeroSection() {
   const [typedText, setTypedText] = useState('');
@@ -98,6 +99,7 @@ export default function HeroSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-secondary-ghost hover-lift"
+                onClick={() => trackResumeDownload()}
               >
                 Download Resume
               </a>
@@ -116,6 +118,7 @@ export default function HeroSection() {
                 rel="noopener noreferrer"
                 className="hover-lift"
                 aria-label="LinkedIn Profile"
+                onClick={() => trackSocialClick('LinkedIn')}
               >
                 <i className="fab fa-linkedin" />
               </a>
@@ -125,6 +128,7 @@ export default function HeroSection() {
                 rel="noopener noreferrer"
                 className="hover-lift"
                 aria-label="GitHub Profile"
+                onClick={() => trackSocialClick('GitHub')}
               >
                 <i className="fab fa-github" />
               </a>
@@ -132,6 +136,7 @@ export default function HeroSection() {
                 href="mailto:sumitrathor142272@gmail.com"
                 className="hover-lift"
                 aria-label="Send Email to Sumit Rathor"
+                onClick={() => trackSocialClick('Email')}
               >
                 <i className="fa-solid fa-envelope" />
               </a>

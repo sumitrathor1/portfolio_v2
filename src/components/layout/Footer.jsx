@@ -1,5 +1,6 @@
 import React from 'react';
 import { personalInfo } from '../../data/personalInfo';
+import { trackResumeDownload, trackSocialClick } from '../../utils/analytics';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -27,6 +28,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="footer-minimal__link"
                 aria-label={link.name}
+                onClick={() => trackSocialClick(link.name)}
               >
                 <i className={link.icon.includes('linkedin') ? 'fab fa-linkedin-in' : link.icon} />{' '}
                 {link.name}
@@ -38,6 +40,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="footer-minimal__link footer-minimal__link--resume"
               aria-label="Resume"
+              onClick={() => trackResumeDownload()}
             >
               Resume &rarr;
             </a>

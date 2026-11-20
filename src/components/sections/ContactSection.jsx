@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Swal from 'sweetalert2';
 import { personalInfo } from '../../data/personalInfo';
+import { trackResumeDownload, trackSocialClick, trackContactSubmit } from '../../utils/analytics';
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -26,6 +27,7 @@ export default function ContactSection() {
     }
 
     setIsSubmitting(true);
+    trackContactSubmit();
 
     // Show immediate feedback to user
     setTimeout(() => {
@@ -131,6 +133,7 @@ export default function ContactSection() {
               target="_blank"
               rel="noopener noreferrer"
               style={{ fontSize: '0.85rem' }}
+              onClick={() => trackResumeDownload()}
             >
               <i className="fa-solid fa-download me-1.5 text-primary" /> Download Resume
             </a>
@@ -145,6 +148,7 @@ export default function ContactSection() {
                   className="contact-social-btn"
                   aria-label={link.name}
                   title={link.name}
+                  onClick={() => trackSocialClick(link.name)}
                 >
                   <i className={link.icon.includes('linkedin') ? 'fab fa-linkedin-in' : link.icon} />
                 </a>

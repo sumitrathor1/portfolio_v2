@@ -1,5 +1,6 @@
 import React from 'react';
 import { projectsData } from '../../data/projects';
+import { trackProjectClick } from '../../utils/analytics';
 
 export default function ProjectsSection() {
   const fallbackImage = '/assets/images/project-image/4ff159345bfd216b4d7db7fffd5eccc4.png';
@@ -85,6 +86,7 @@ export default function ProjectsSection() {
                         className="project-btn project-btn-ghost hover-lift"
                         target="_blank"
                         rel="noopener noreferrer"
+                        onClick={() => trackProjectClick(project.title, 'github')}
                       >
                         <i className="fa-brands fa-github" /> GitHub
                       </a>
@@ -95,6 +97,7 @@ export default function ProjectsSection() {
                         className="project-btn project-btn-primary hover-lift"
                         target="_blank"
                         rel="noopener noreferrer"
+                        onClick={() => trackProjectClick(project.title, 'live')}
                       >
                         <i className="fa-solid fa-arrow-up-right-from-square" /> Live Demo
                       </a>

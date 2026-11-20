@@ -15,10 +15,15 @@ import AchievementsSection from './components/sections/AchievementsSection';
 import ContactSection from './components/sections/ContactSection';
 import { useTiltEffect } from './hooks/useTiltEffect';
 import { useScrollAnimations } from './hooks/useScrollAnimations';
+import { initGA } from './utils/analytics';
 
 export default function App() {
   useTiltEffect();
   useScrollAnimations();
+
+  React.useEffect(() => {
+    initGA();
+  }, []);
 
   return (
     <>
