@@ -17,88 +17,146 @@ export const skillsData = {
       "icon": "devicon-react-original colored"
     },
     {
-      "name": "AJAX",
-      "icon": "fa-solid fa-arrows-rotate text-info"
+      "name": "Tailwind CSS",
+      "icon": "devicon-tailwindcss-plain colored"
     },
     {
-      "name": "Bootstrap",
+      "name": "Bootstrap 5",
       "icon": "devicon-bootstrap-plain colored"
+    },
+    {
+      "name": "AJAX",
+      "icon": "fa-solid fa-arrows-rotate text-info"
     }
   ],
   "Backend Development": [
-    {
-      "name": "PHP",
-      "icon": "devicon-php-plain colored"
-    },
     {
       "name": "Node.js",
       "icon": "devicon-nodejs-plain colored"
     },
     {
-      "name": "MySQL",
-      "icon": "devicon-mysql-original colored"
+      "name": "Express.js",
+      "icon": "devicon-express-original"
+    },
+    {
+      "name": "PHP",
+      "icon": "devicon-php-plain colored"
     },
     {
       "name": "REST APIs",
       "icon": "fa-solid fa-network-wired text-warning"
+    },
+    {
+      "name": "WebSockets",
+      "icon": "fa-solid fa-bolt text-warning"
+    },
+    {
+      "name": "Supabase",
+      "icon": "devicon-supabase-plain colored"
     }
   ],
-  "Tools & Platforms": [
+  "AI, RAG & Vector Systems": [
     {
-      "name": "Git",
-      "icon": "devicon-git-plain colored"
+      "name": "LangChain",
+      "icon": "fa-solid fa-link text-success"
     },
     {
-      "name": "GitHub",
-      "icon": "devicon-github-original"
+      "name": "Ollama (Local LLMs)",
+      "icon": "fa-solid fa-brain text-primary"
     },
     {
-      "name": "VS Code",
-      "icon": "devicon-vscode-plain colored"
+      "name": "ChromaDB",
+      "icon": "fa-solid fa-database text-info"
+    },
+    {
+      "name": "RAG Architecture",
+      "icon": "fa-solid fa-diagram-project text-warning"
+    },
+    {
+      "name": "Streamlit",
+      "icon": "devicon-streamlit-plain colored"
+    },
+    {
+      "name": "Vector Embeddings",
+      "icon": "fa-solid fa-shapes text-danger"
+    }
+  ],
+  "Databases & Cloud": [
+    {
+      "name": "MySQL",
+      "icon": "devicon-mysql-original colored"
+    },
+    {
+      "name": "PostgreSQL",
+      "icon": "devicon-postgresql-plain colored"
+    },
+    {
+      "name": "Google Cloud",
+      "icon": "devicon-googlecloud-plain colored"
     },
     {
       "name": "Vercel",
       "icon": "devicon-vercel-original"
+    },
+    {
+      "name": "Git & GitHub",
+      "icon": "devicon-git-plain colored"
+    },
+    {
+      "name": "GitHub Actions",
+      "icon": "devicon-githubactions-plain colored"
     }
   ],
   "Programming Languages": [
     {
-      "name": "C/C++",
+      "name": "Python",
+      "icon": "devicon-python-plain colored"
+    },
+    {
+      "name": "JavaScript (ES6+)",
+      "icon": "devicon-javascript-plain colored"
+    },
+    {
+      "name": "C / C++",
       "icon": "devicon-cplusplus-plain colored"
+    },
+    {
+      "name": "PHP",
+      "icon": "devicon-php-plain colored"
+    },
+    {
+      "name": "SQL",
+      "icon": "fa-solid fa-database text-warning"
     },
     {
       "name": "Java",
       "icon": "devicon-java-plain colored"
-    },
-    {
-      "name": "Python",
-      "icon": "devicon-python-plain colored"
     }
   ],
-  "Computer Science Fundamentals": [
+  "IoT & Embedded Hardware": [
     {
-      "name": "Data Structures & Algorithms",
-      "icon": "fa-solid fa-sitemap text-info"
+      "name": "ESP32-CAM",
+      "icon": "fa-solid fa-microchip text-danger"
     },
     {
-      "name": "Object-Oriented Programming",
-      "icon": "fa-solid fa-cubes text-danger"
+      "name": "Arduino",
+      "icon": "devicon-arduino-plain colored"
     },
     {
-      "name": "DBMS",
-      "icon": "fa-solid fa-server text-warning"
+      "name": "Embedded C++",
+      "icon": "devicon-cplusplus-plain colored"
     },
     {
-      "name": "Operating Systems",
-      "icon": "fa-solid fa-microchip text-primary"
+      "name": "IoT Architecture",
+      "icon": "fa-solid fa-wifi text-info"
     },
     {
-      "name": "Computer Networks",
-      "icon": "fa-solid fa-globe text-success"
+      "name": "Hardware Prototyping",
+      "icon": "fa-solid fa-screwdriver-wrench text-warning"
     },
     {
-      "name": "System Design",
-      "icon": "fa-solid fa-diagram-project text-info"
+      "name": "L298N Motor Control",
+      "icon": "fa-solid fa-robot text-primary"
     }
   ]
 };

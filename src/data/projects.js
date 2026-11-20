@@ -1,5 +1,33 @@
 export const projectsData = [
   {
+    "id": 13,
+    "slug": "rakshak-ai",
+    "title": "Enterprise Local Knowledge Assistant (Rakshak AI)",
+    "subtitle": "Offline RAG Knowledge Assistant · DRDO CFEES",
+    "description": "A fully offline, local Retrieval-Augmented Generation (RAG) assistant developed during research internship at DRDO-CFEES (Centre for Fire, Explosive and Environment Safety, Delhi). Enables defence scientists and engineers to query sensitive technical documents, safety manuals, and research PDFs securely with zero external network connectivity or cloud API dependencies.",
+    "date": "Jun 2026 - Aug 2026",
+    "image": "/assets/images/project-image/rakshak-ai.png",
+    "github": "https://github.com/sumitrathor1/Rakshak-AI-Ragbot",
+    "live": "https://sumitrathor.vercel.app/projects/rakshak-ai/",
+    "stack": [
+      "Python",
+      "Streamlit",
+      "LangChain",
+      "Ollama (Local LLM)",
+      "ChromaDB",
+      "PyPDF",
+      "RAG Architecture"
+    ],
+    "problem": "Classified defence research documentation, hazardous material safety manuals, and explosive testing protocols required rapid semantic querying and answer verification without transmitting sensitive data to public cloud LLM providers.",
+    "architecture": "Engineered an air-gapped RAG pipeline: PyPDF document ingestion, recursive text chunking with semantic overlap, Ollama-powered vector embeddings stored in a local ChromaDB vector store, and cosine similarity retrieval prompting a locally hosted Llama/Mistral model with citation attribution.",
+    "features": [
+      "100% Offline & Air-Gapped Operation ensuring sovereign data confidentiality",
+      "ChromaDB Vector Store semantic search with multi-document indexing",
+      "Accurate Source Citations linking answers directly to specific document pages",
+      "Interactive Streamlit Interface featuring conversational memory and dynamic session states"
+    ]
+  },
+  {
     "id": 11,
     "slug": "certificate-portal",
     "title": "Certificate Authentication & Verification Portal",

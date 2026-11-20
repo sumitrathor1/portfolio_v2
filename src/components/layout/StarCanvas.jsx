@@ -23,7 +23,7 @@ export default function StarCanvas() {
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 2000);
     camera.position.z = 500;
 
-    const starCount = 1800;
+    const starCount = 4500;
     const geometry = new THREE.BufferGeometry();
     const positions = new Float32Array(starCount * 3);
     const colors = new Float32Array(starCount * 3);
@@ -34,20 +34,20 @@ export default function StarCanvas() {
       positions[i3 + 1] = (Math.random() - 0.5) * 3200;
       positions[i3 + 2] = (Math.random() - 0.5) * 2500;
 
-      // Clean cosmic starfield: fine crystalline white with subtle celestial blue/violet accents
+      // 3D Color grading matching original site: mix of Cyan, Purple, and White
       const mix = Math.random();
-      if (mix < 0.15) {
-        colors[i3] = 0.55;
-        colors[i3 + 1] = 0.82;
-        colors[i3 + 2] = 1.0; // Soft celestial blue
-      } else if (mix < 0.3) {
-        colors[i3] = 0.78;
-        colors[i3 + 1] = 0.65;
-        colors[i3 + 2] = 1.0; // Soft lavender
+      if (mix < 0.35) {
+        colors[i3] = 0.22;
+        colors[i3 + 1] = 0.74;
+        colors[i3 + 2] = 0.97; // Cyan (#38bdf8)
+      } else if (mix < 0.7) {
+        colors[i3] = 0.66;
+        colors[i3 + 1] = 0.33;
+        colors[i3 + 2] = 0.97; // Purple (#a855f7)
       } else {
-        colors[i3] = 0.98;
-        colors[i3 + 1] = 0.98;
-        colors[i3 + 2] = 1.0; // Crystal white
+        colors[i3] = 0.95;
+        colors[i3 + 1] = 0.95;
+        colors[i3 + 2] = 1.0; // Crystal White
       }
     }
 
@@ -55,10 +55,10 @@ export default function StarCanvas() {
     geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
 
     const material = new THREE.PointsMaterial({
-      size: 1.4,
+      size: 3.2,
       vertexColors: true,
       transparent: true,
-      opacity: 0.75,
+      opacity: 0.85,
       blending: THREE.AdditiveBlending
     });
 
@@ -142,7 +142,7 @@ export default function StarCanvas() {
         left: 0,
         width: '100%',
         height: '100%',
-        zIndex: 0,
+        zIndex: 2,
         pointerEvents: 'none'
       }}
       aria-hidden="true"

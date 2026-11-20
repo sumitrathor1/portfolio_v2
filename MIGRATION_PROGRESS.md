@@ -312,9 +312,24 @@ Target: `portfolio_v2` (React + Vite static frontend)
   - `src/styles/root.css`: Aligned `body` background tiling with original `0 0` coordinate alignment (`background-position: 0 0; background-size: auto;`) and seamless vertical tiling with `bg-dark1.png`.
   - `src/styles/style.css`: Ensured `#content` maintains `position: relative; z-index: 1;` so content seamlessly overlays cosmic backgrounds, and confirmed `.hero-section` uses `bg-dark.png` with `cover` and `center` alignment.
   - `src/styles/loding.css`: Removed restrictive `height: 100vh` on `body` to restore fluid document flow and clean scrolling background continuity.
-  - `src/components/layout/StarCanvas.jsx`: Placed canvas on `z-index: 0` behind content, refined particle density to 1,800 crystalline stars with fine `1.4px` size, and replaced heavy cyan additive blending with clean crystal-white and celestial blue tones, eliminating washed-out margins and restoring the deep space aesthetic of `sumitrathor.rf.gd`.
   - `scripts/prerender.js`: Synchronized inline body prerender styles with `0 0` tiling and auto sizing.
 - **Testing Performed:** Production build and prerender verified cleanly (`npm run build`).
 - **Build Status:** SUCCESS
 - **Git Commit:** 972ad61
 - **Push Status:** SUCCESS (pushed to origin/main)
+
+### Module 19: Portfolio Enrichment Through Selective Project Discovery & Visual Particle Fidelity
+- **Date:** 2026-11-20
+- **Files Created/Modified:**
+  - `src/components/layout/StarCanvas.jsx`: Restored exact Three.js particle galaxy matching `portfolio/index.php` (4500 particles, 35% Cyan `#38bdf8` / 35% Purple `#a855f7` / 30% White, size 3.2, z-index 2 with `pointer-events: none`), bringing back the iconic floating cyan squares and depth from `sumitrathor.rf.gd`.
+  - `src/data/projects.js`: Added flagship **Enterprise Local Knowledge Assistant (Rakshak AI)** from DRDO-CFEES research internship (Python, Streamlit, LangChain, Ollama, ChromaDB, PyPDF) with air-gapped RAG architecture and case study slug `rakshak-ai`.
+  - `public/assets/images/project-image/rakshak-ai.png`: Copied authentic Rakshak AI architecture diagram from DRDO project directory.
+  - `src/data/skills.js`: Reorganized and expanded verified technologies into 6 balanced categories (Frontend, Backend, AI & Vector Systems, Databases & Cloud, Programming Languages, IoT & Hardware).
+  - `src/data/achievements.js`: Added verified Elite NPTEL certifications (Cloud Computing 76%, Human-Computer Interfaces 70%), PAYTM Fin-O Hack at DTU, GDG Devcation Delhi 2026, and HoD Letter of Recommendation.
+  - `public/assets/files/certificates/`: Copied verified PDF proof documents for NPTEL Cloud Computing, NPTEL HCI, and HoD LOR.
+  - `public/sitemap.xml`: Added priority URL for `/projects/rakshak-ai/`.
+  - `public/llms.txt`: Added Rakshak AI case study, vector database capabilities, and updated competencies.
+- **Testing Performed:** Executed `npm run build` with Vite compilation and static HTML prerendering.
+- **Build Status:** SUCCESS
+- **Git Commit:** Pending
+- **Push Status:** Pending

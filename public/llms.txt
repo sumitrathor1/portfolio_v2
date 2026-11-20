@@ -26,7 +26,13 @@ Sumit Rathor (also referenced as Sumit Rathore) is a Full Stack Software Enginee
 
 ## Flagship Projects & Case Studies
 
-1. **Hardware Inventory & Borrowing Portal**
+1. **Enterprise Local Knowledge Assistant (Rakshak AI) - DRDO CFEES**
+   - Fully air-gapped, offline Retrieval-Augmented Generation (RAG) assistant developed for defence scientists to query classified safety standards and documentation securely without external cloud dependencies.
+   - Stack: Python, Streamlit, LangChain, Ollama (Local LLMs), ChromaDB Vector Store, PyPDF.
+   - Project Page: https://sumitrathor.vercel.app/projects/rakshak-ai/
+   - Code Repository: https://github.com/sumitrathor1/Rakshak-AI-Ragbot
+
+2. **Hardware Inventory & Borrowing Portal**
    - Campus inventory and borrowing system featuring domain-restricted Gmail OTP authentication, Supabase Row-Level Security, and atomic stock transactions.
    - Stack: Next.js 16, React 19, Supabase PostgreSQL, Supabase Auth, Nodemailer, TypeScript, Tailwind CSS.
    - Project Page: https://sumitrathor.vercel.app/projects/hardware-inventory/
