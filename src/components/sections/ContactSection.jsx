@@ -233,7 +233,7 @@ export default function ContactSection() {
 
       <div className="contact-grid" data-aos="fade-up">
         {/* LEFT: COMPACT CONTACT INFO CARD */}
-        <div className="contact-info glass-panel hover-lift" style={{ marginInline: '0.75rem' }}>
+        <div className="contact-info glass-panel hover-lift">
           <div className="contact-info-items">
             {/* EMAIL + COPY BUTTON */}
             <div className="info-item">
@@ -321,7 +321,6 @@ export default function ContactSection() {
         <form
           onSubmit={handleSubmit}
           className="contact-form glass-panel hover-lift"
-          style={{ marginInline: '0.75rem' }}
           noValidate
         >
           {/* Honeypot field (hidden from real users, traps spam bots) */}

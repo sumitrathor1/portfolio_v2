@@ -88,7 +88,7 @@ export default function DeveloperActivity() {
       </div>
 
       {/* DEVELOPER PROFILE BADGES */}
-      <div className="row g-4 mb-4" data-aos="fade-up" style={{ marginInline: '0.75rem' }}>
+      <div className="row g-4 mb-4" data-aos="fade-up">
         {/* GITHUB CARD */}
         <div className="col-12 col-md-6">
           <div className="dev-profile-card glass-panel hover-lift h-100">
@@ -193,7 +193,7 @@ export default function DeveloperActivity() {
       </div>
 
       {/* FEATURED REPOSITORY HIGHLIGHTS */}
-      <div className="row g-3" data-aos="fade-up" style={{ marginInline: '0.75rem' }}>
+      <div className="row g-3" data-aos="fade-up">
         {repositories.map((repo) => (
           <div key={repo.name} className="col-12 col-md-6 col-lg-3">
             <a

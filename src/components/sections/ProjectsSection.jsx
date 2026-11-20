@@ -129,7 +129,6 @@ export default function ProjectsSection({ onOpenArchitecture }) {
               <article
                 key={project.id}
                 className="project-card glass-panel hover-lift"
-                style={{ marginInline: '0.75rem' }}
               >
                 {/* 16:9 COMPACT IMAGE BANNER */}
                 <div className="project-card__visual">

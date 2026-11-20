@@ -14,12 +14,12 @@ export default function SuggestedQuestions({ onSelectQuestion }) {
       <div className="chat-suggestions-header">
         <span className="suggestions-title">
           <i className="fa-regular fa-lightbulb text-warning me-1" />
-          Suggested Questions:
+          Quick Questions:
         </span>
       </div>
 
-      {/* CATEGORY FILTER PILLS */}
-      <div className="chat-category-tabs">
+      {/* CATEGORY FILTER PILLS (Smooth horizontal scroll) */}
+      <div className="chat-category-tabs" role="tablist" aria-label="Question Categories">
         <button
           type="button"
           className={`chat-cat-tab ${activeCategory === 'all' ? 'active' : ''}`}
@@ -39,8 +39,8 @@ export default function SuggestedQuestions({ onSelectQuestion }) {
         ))}
       </div>
 
-      {/* QUESTION PILLS */}
-      <div className="chat-question-chips">
+      {/* QUESTION PILLS (Mobile horizontal swipeable chips) */}
+      <div className="chat-question-chips" role="list">
         {filteredQuestions.map((q) => (
           <button
             key={q.id}
@@ -49,7 +49,7 @@ export default function SuggestedQuestions({ onSelectQuestion }) {
             onClick={() => onSelectQuestion(q.question, q.id)}
           >
             <span>{q.question}</span>
-            <i className="fa-solid fa-arrow-turn-down fa-rotate-270 ms-1" style={{ fontSize: '0.65rem' }} />
+            <i className="fa-solid fa-arrow-turn-down fa-rotate-270 ms-1 chip-arrow" />
           </button>
         ))}
       </div>

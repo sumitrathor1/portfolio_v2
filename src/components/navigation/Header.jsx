@@ -10,6 +10,7 @@ export default function Header({
   const [activeSection, setActiveSection] = useState('hero');
   const togglerIconRef = useRef(null);
 
+  // Active section spy
   useEffect(() => {
     const sections = ['hero', 'about-me', 'experience', 'projects', 'skills', 'contact-us'];
 
@@ -28,6 +29,48 @@ export default function Header({
     handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Lock body scroll when mobile navigation is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add('mobile-nav-open');
+    } else {
+      document.body.classList.remove('mobile-nav-open');
+    }
+    return () => {
+      document.body.classList.remove('mobile-nav-open');
+    };
+  }, [isOpen]);
+
+  // Click outside and Escape key listener
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        setIsOpen(false);
+      }
+    };
+
+    const handleClickOutside = (e) => {
+      const navEl = document.getElementById('mainNavbar');
+      if (navEl && !navEl.contains(e.target)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    // Delay adding click listener to prevent immediate close on toggle click
+    const timer = setTimeout(() => {
+      document.addEventListener('click', handleClickOutside);
+    }, 50);
+
+    return () => {
+      clearTimeout(timer);
+      document.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, [isOpen]);
 
   const handleToggle = () => {
     setIsRotating(true);
@@ -105,54 +148,56 @@ export default function Header({
               })}
             </ul>
 
-            {onOpenCommandPalette && (
-              <button
-                type="button"
-                className="nav-search-pill hover-lift ms-lg-2 my-2 my-lg-0"
-                onClick={() => {
-                  closeNavbar();
-                  onOpenCommandPalette();
-                }}
-                title="Quick Search & Navigation (Ctrl+K)"
-                aria-label="Search and Navigation (Ctrl+K)"
-              >
-                <i className="fa-solid fa-magnifying-glass me-1.5 text-info" />
-                <span className="d-none d-xl-inline">Search</span>
-                <kbd className="nav-kbd ms-1">⌘K</kbd>
-              </button>
-            )}
+            <div className="nav-actions-group">
+              {onOpenCommandPalette && (
+                <button
+                  type="button"
+                  className="nav-search-pill hover-lift"
+                  onClick={() => {
+                    closeNavbar();
+                    onOpenCommandPalette();
+                  }}
+                  title="Quick Search & Navigation (Ctrl+K)"
+                  aria-label="Search and Navigation (Ctrl+K)"
+                >
+                  <i className="fa-solid fa-magnifying-glass me-1.5 text-info" />
+                  <span>Search</span>
+                  <kbd className="nav-kbd ms-1">⌘K</kbd>
+                </button>
+              )}
 
-            {onOpenTerminal && (
-              <button
-                type="button"
-                className="nav-terminal-pill hover-lift ms-lg-2 my-2 my-lg-0"
-                onClick={() => {
-                  closeNavbar();
-                  onOpenTerminal();
-                }}
-                title="Open Developer Terminal (Ctrl+~)"
-                aria-label="Open Developer Terminal"
-              >
-                <i className="fa-solid fa-terminal me-1 text-success" />
-                <span>CLI</span>
-              </button>
-            )}
+              {onOpenTerminal && (
+                <button
+                  type="button"
+                  className="nav-terminal-pill hover-lift"
+                  onClick={() => {
+                    closeNavbar();
+                    onOpenTerminal();
+                  }}
+                  title="Open Developer Terminal (Ctrl+~)"
+                  aria-label="Open Developer Terminal"
+                >
+                  <i className="fa-solid fa-terminal me-1 text-success" />
+                  <span>CLI</span>
+                </button>
+              )}
 
-            {onOpenRecruiter && (
-              <button
-                type="button"
-                className="nav-recruiter-pill hover-lift ms-lg-2 my-2 my-lg-0"
-                onClick={() => {
-                  closeNavbar();
-                  onOpenRecruiter();
-                }}
-                title="Open 60-Second Recruiter Brief"
-                aria-label="Open 60-Second Recruiter Brief"
-              >
-                <i className="fa-solid fa-bolt text-warning me-1.5" />
-                <span>Recruiter Brief</span>
-              </button>
-            )}
+              {onOpenRecruiter && (
+                <button
+                  type="button"
+                  className="nav-recruiter-pill hover-lift"
+                  onClick={() => {
+                    closeNavbar();
+                    onOpenRecruiter();
+                  }}
+                  title="Open 60-Second Recruiter Brief"
+                  aria-label="Open 60-Second Recruiter Brief"
+                >
+                  <i className="fa-solid fa-bolt text-warning me-1.5" />
+                  <span>Recruiter Brief</span>
+                </button>
+              )}
+            </div>
 
             <span id="themeModebtn" className="d-none">
               <span id="themeIcon" />

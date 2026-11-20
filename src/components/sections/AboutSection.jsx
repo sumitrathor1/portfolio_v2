@@ -10,7 +10,7 @@ export default function AboutSection() {
 
       <div className="about-grid" data-aos="fade-up">
         {/* LEFT SHORT INTRO CARD */}
-        <article className="about-card glass-panel hover-lift" style={{ marginInline: '0.75rem' }}>
+        <article className="about-card glass-panel hover-lift">
           <div className="d-flex flex-column justify-content-between h-100 gap-3">
             <div>
               <div
@@ -64,7 +64,7 @@ export default function AboutSection() {
         </article>
 
         {/* RIGHT VISUAL STATS CARD */}
-        <article className="about-profile glass-panel hover-lift" style={{ marginInline: '0.75rem' }}>
+        <article className="about-profile glass-panel hover-lift">
           <div className="profile-header pb-2.5 border-bottom border-secondary border-opacity-10">
             <img
               src={personalInfo.profileImage}

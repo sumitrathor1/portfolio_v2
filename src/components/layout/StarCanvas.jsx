@@ -10,20 +10,24 @@ export default function StarCanvas() {
 
     let animationFrameId;
 
+    const isMobile = window.innerWidth < 768;
+
     const renderer = new THREE.WebGLRenderer({
       canvas,
-      antialias: true,
-      alpha: true
+      antialias: !isMobile, // Disable antialiasing on mobile for high frame rate
+      alpha: true,
+      powerPreference: 'high-performance'
     });
     renderer.setClearColor(0x000000, 0);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setPixelRatio(isMobile ? Math.min(window.devicePixelRatio, 1.25) : Math.min(window.devicePixelRatio, 2));
     renderer.setSize(window.innerWidth, window.innerHeight);
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 2000);
     camera.position.z = 500;
 
-    const starCount = 4500;
+    // Optimized star density: 1,800 stars on mobile, 4,500 on desktop
+    const starCount = isMobile ? 1800 : 4500;
     const geometry = new THREE.BufferGeometry();
     const positions = new Float32Array(starCount * 3);
     const colors = new Float32Array(starCount * 3);

@@ -27,6 +27,18 @@ export default function Chatbot() {
   const [isTyping, setIsTyping] = useState(false);
   const [inputValue, setInputValue] = useState('');
 
+  // Lock body scroll on mobile when chat is active
+  React.useEffect(() => {
+    if (isOpen && !isMinimized && window.innerWidth < 768) {
+      document.body.classList.add('chatbot-open');
+    } else {
+      document.body.classList.remove('chatbot-open');
+    }
+    return () => {
+      document.body.classList.remove('chatbot-open');
+    };
+  }, [isOpen, isMinimized]);
+
   const toggleOpen = () => {
     if (!isOpen) {
       setIsOpen(true);

@@ -17,7 +17,7 @@ export default function SkillsSection({ onSelectSkill }) {
         </p>
       </div>
 
-      <div className="row g-4" data-aos="fade-up" style={{ marginInline: '0.75rem' }}>
+      <div className="row g-4" data-aos="fade-up">
         {groups.map(([groupName, skills]) => (
           <div
             key={groupName}

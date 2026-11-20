@@ -22,7 +22,6 @@ export default function ExperienceSection() {
             <article
               key={exp.id}
               className="experience-card glass-panel hover-lift"
-              style={{ marginInline: '0.75rem' }}
             >
               <div className="d-flex flex-column justify-content-between h-100 gap-3">
                 <div>

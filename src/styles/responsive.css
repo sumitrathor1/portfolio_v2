@@ -1,234 +1,924 @@
-@media (max-width: 1200px) {
-    .nav-shell {
-        border-radius: 28px;
-        flex-wrap: wrap;
-    }
-}
+/* ==========================================================================
+   COMPLETE MOBILE-FIRST RESPONSIVE OPTIMIZATION SYSTEM (portfolio_v2)
+   Supports all screen sizes:
+   - Small Mobile: 320px, 360px
+   - Standard Mobile: 375px, 390px, 430px
+   - Tablets: 768px
+   - Laptops & Desktops: 1024px, 1366px, 1440px+
+   ========================================================================== */
 
-@media (max-width: 992px) {
-    .nav-shell {
-        padding: 0.75rem 1rem;
-    }
-
-    .navbar-nav {
-        margin-top: 1rem;
-        gap: 0.4rem;
-    }
-
-    .navbar-collapse {
-        flex-basis: 100%;
-    }
-
-    .theme-toggle {
-        margin-left: 0;
-        margin-top: 0.75rem;
+/* --------------------------------------------------------------------------
+   1. GLOBAL MOBILE RESETS & TOUCH UTILITIES (< 768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 767.98px) {
+    html, body {
+        overflow-x: hidden !important;
+        width: 100% !important;
+        max-width: 100vw !important;
+        position: relative;
     }
 
-    .hero-section {
-        text-align: center;
+    body {
+        padding-top: clamp(60px, 16vw, 72px);
     }
 
-    .hero-actions,
-    .hero-social {
-        justify-content: center;
+    /* Lock body scrolling when mobile navigation or chatbot modal is open */
+    body.mobile-nav-open,
+    body.chatbot-open {
+        overflow: hidden !important;
+        touch-action: none !important;
+        height: 100% !important;
     }
 
-    .hero-stats {
-        grid-template-columns: repeat(2, minmax(160px, 1fr));
+    /* Prevent iOS auto-zoom on form inputs by ensuring minimum 16px font-size */
+    input,
+    textarea,
+    select,
+    .project-search-input,
+    .chatbot-input,
+    .term-input,
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 16px !important;
     }
 
-    .profile-stats {
-        grid-template-columns: repeat(2, 1fr);
+    /* Hide desktop vertical drag scrollbar on touch devices to avoid thumb interference */
+    .scroll-progress {
+        display: none !important;
     }
 
-    .timeline-card {
-        grid-template-columns: 1fr;
+    /* Sections vertical rhythm */
+    .section {
+        padding: clamp(2rem, 6vw, 3.25rem) 0;
     }
 
-    .timeline-marker {
-        flex-direction: row;
-        gap: 0.5rem;
+    .section-heading {
+        margin-bottom: 1.5rem;
+        padding-inline: 0.5rem;
     }
 
-    .timeline-marker .line {
-        height: 2px;
-        width: 100%;
+    .section-heading h2 {
+        font-size: clamp(1.65rem, 6vw, 2.25rem);
     }
 
-    .live-projects__header {
-        flex-direction: column;
-        align-items: flex-start;
+    .section-heading .subtitle {
+        font-size: 0.88rem;
+        line-height: 1.55;
+    }
+
+    /* Glass panel mobile padding */
+    .glass-panel {
+        padding: clamp(1.15rem, 3.5vw, 1.5rem);
+        border-radius: 18px;
     }
 
     .content-shell {
-        padding-inline: clamp(0.75rem, 6vw, 3rem);
+        padding-inline: clamp(0.5rem, 3vw, 1rem);
+    }
+}
+
+/* --------------------------------------------------------------------------
+   2. FLOATING CONTROLS: ERGONOMIC NON-COLLIDING THUMB PLACEMENT (< 768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 767.98px) {
+    /* Right Thumb: AI Assistant Chatbot Button */
+    .chatbot-launcher-wrapper {
+        position: fixed;
+        bottom: max(1.25rem, env(safe-area-inset-bottom));
+        right: 1.25rem;
+        z-index: 1030;
+        margin: 0;
+        padding: 0;
+    }
+
+    .chatbot-launcher-pill {
+        display: none !important; /* Hide wide text pill on phones for clean look */
+    }
+
+    .chatbot-floating-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.25rem;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6), 0 0 20px rgba(56, 189, 248, 0.4);
+    }
+
+    /* Right Thumb: Back-to-Top Button (Stacked safely ABOVE Chatbot) */
+    .back-to-top-btn {
+        position: fixed;
+        bottom: calc(max(1.25rem, env(safe-area-inset-bottom)) + 58px);
+        right: 1.25rem;
+        width: 44px;
+        height: 44px;
+        font-size: 0.95rem;
+        z-index: 1020;
+    }
+
+    /* Left Thumb: Developer Terminal CLI Button */
+    .terminal-floating-btn {
+        position: fixed;
+        bottom: max(1.25rem, env(safe-area-inset-bottom));
+        left: 1.25rem;
+        z-index: 1020;
+        min-height: 44px;
+        padding: 0.55rem 0.95rem;
+        font-size: 0.82rem;
+    }
+
+    /* When Chatbot is open on mobile: hide other floating buttons to avoid overlay collisions */
+    body.chatbot-open .terminal-floating-btn,
+    body.chatbot-open .back-to-top-btn,
+    body.chatbot-open .chatbot-launcher-wrapper {
+        display: none !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   3. CHATBOT: FULL-SCREEN NATIVE MOBILE EXPERIENCE (HIGHEST PRIORITY)
+   -------------------------------------------------------------------------- */
+@media (max-width: 767.98px) {
+    .chatbot-window {
+        position: fixed !important;
+        inset: 0 !important;
+        width: 100vw !important;
+        max-width: 100vw !important;
+        height: 100dvh !important;
+        height: 100vh !important; /* fallback */
+        max-height: 100dvh !important;
+        border-radius: 0 !important;
+        border: none !important;
+        z-index: 2500 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        background: #080d24 !important;
+    }
+
+    .chatbot-window.minimized {
+        height: calc(56px + env(safe-area-inset-bottom)) !important;
+        max-height: calc(56px + env(safe-area-inset-bottom)) !important;
+        top: auto !important;
+        bottom: 0 !important;
+        border-radius: 18px 18px 0 0 !important;
+        border-top: 1px solid rgba(56, 189, 248, 0.4) !important;
+        box-shadow: 0 -8px 25px rgba(0, 0, 0, 0.7) !important;
+    }
+
+    .chatbot-header {
+        padding: max(0.75rem, env(safe-area-inset-top)) 1rem 0.75rem !important;
+        background: #0d1334 !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+        flex-shrink: 0;
+    }
+
+    .chatbot-header-title {
+        font-size: 0.88rem !important;
+    }
+
+    .chatbot-status-text {
+        font-size: 0.68rem !important;
+    }
+
+    .chat-ctrl-btn {
+        width: 36px !important;
+        height: 36px !important;
+        font-size: 0.95rem !important;
+        border-radius: 8px !important;
+    }
+
+    .chatbot-messages-area {
+        flex: 1 1 auto !important;
+        min-height: 0 !important;
+        padding: 0.85rem 0.75rem !important;
+        gap: 0.75rem !important;
+        -webkit-overflow-scrolling: touch !important;
+        overflow-y: auto !important;
+    }
+
+    .chat-bubble {
+        max-width: 88% !important;
+        padding: 0.7rem 0.85rem !important;
+        font-size: 0.84rem !important;
+        line-height: 1.45 !important;
+        border-radius: 14px !important;
+    }
+
+    .chat-avatar {
+        width: 32px !important;
+        height: 32px !important;
+        font-size: 0.85rem !important;
+    }
+
+    /* Mobile Horizontal Swipe Suggestions Bar */
+    .chat-suggestions-container {
+        flex-shrink: 0 !important;
+        max-height: none !important;
+        padding: 0.5rem 0.75rem !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+        background: rgba(10, 15, 38, 0.98) !important;
+    }
+
+    .chat-suggestions-header {
+        margin-bottom: 0.3rem !important;
+    }
+
+    .chat-category-tabs {
+        display: flex !important;
+        overflow-x: auto !important;
+        white-space: nowrap !important;
+        gap: 0.35rem !important;
+        padding-bottom: 0.35rem !important;
+        margin-bottom: 0.35rem !important;
+        -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: none !important;
+    }
+
+    .chat-cat-tab {
+        padding: 0.25rem 0.65rem !important;
+        font-size: 0.72rem !important;
+        min-height: 32px !important;
+        display: inline-flex !important;
+        align-items: center !important;
+    }
+
+    .chat-question-chips {
+        display: flex !important;
+        flex-direction: row !important;
+        overflow-x: auto !important;
+        white-space: nowrap !important;
+        gap: 0.45rem !important;
+        padding-bottom: 0.25rem !important;
+        -webkit-overflow-scrolling: touch !important;
+        scroll-snap-type: x mandatory !important;
+        scrollbar-width: none !important;
+    }
+
+    .chat-question-chip {
+        scroll-snap-align: start !important;
+        flex-shrink: 0 !important;
+        padding: 0.45rem 0.75rem !important;
+        font-size: 0.76rem !important;
+        min-height: 38px !important;
+        border-radius: 999px !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 0.35rem !important;
+    }
+
+    .chat-question-chip span {
+        max-width: 240px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    /* Sticky Input Bar at Bottom with Safe Area */
+    .chatbot-input-bar {
+        flex-shrink: 0 !important;
+        padding: 0.65rem 0.75rem max(0.65rem, env(safe-area-inset-bottom)) !important;
+        background: #0d1334 !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+        gap: 0.45rem !important;
+    }
+
+    .chatbot-input {
+        min-height: 44px !important;
+        padding: 0.5rem 0.95rem !important;
+        border-radius: 999px !important;
+    }
+
+    .chatbot-send-btn {
+        width: 44px !important;
+        height: 44px !important;
+        min-width: 44px !important;
+        font-size: 1rem !important;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   4. NAVIGATION BAR (< 992px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 991.98px) {
+    .nav-shell {
+        padding: 0.65rem 1rem;
+        border-radius: 20px;
+    }
+
+    .navbar-brand {
+        font-size: 1.15rem;
+        letter-spacing: 0.12rem;
+    }
+
+    .navbar-toggler {
+        width: 44px;
+        height: 44px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+    }
+
+    .navbar-collapse {
+        margin-top: 0.85rem;
+        padding-top: 0.85rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        max-height: calc(85dvh - 70px);
+        overflow-y: auto;
+    }
+
+    .navbar-nav {
+        gap: 0.25rem;
+    }
+
+    .nav-link {
+        padding: 0.65rem 1rem !important;
+        border-radius: 10px;
+        font-size: 1rem;
+        font-weight: 600;
+        display: block;
+        text-align: center;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+        background: rgba(168, 85, 247, 0.15);
+    }
+
+    /* Mobile Quick-Action Row for Search, CLI, Recruiter Brief */
+    .nav-actions-group {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.45rem;
+        margin-top: 0.85rem;
+        padding-top: 0.85rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        width: 100%;
+    }
+
+    .nav-actions-group .nav-search-pill,
+    .nav-actions-group .nav-terminal-pill,
+    .nav-actions-group .nav-recruiter-pill {
+        width: 100%;
+        min-height: 44px;
+        margin: 0 !important;
+        justify-content: center;
+        font-size: 0.78rem;
+        padding: 0.5rem 0.35rem;
+        border-radius: 10px;
+        text-align: center;
+    }
+}
+
+@media (min-width: 992px) {
+    .nav-actions-group {
+        display: flex;
+        align-items: center;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   5. HERO SECTION (< 768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 767.98px) {
+    .hero-section {
+        text-align: center;
+        padding-top: 1rem;
     }
 
     .hero-copy {
         margin-inline: auto;
     }
 
-    .hero-visual {
-        justify-content: center !important;
-        margin-top: 1.5rem;
-    }
-
-    .hero-portrait {
-        max-width: clamp(240px, 65vw, 360px);
-    }
-}
-
-@media (max-width: 768px) {
-    body {
-        padding-top: 64px;
-    }
-
-    .nav-shell {
-        border-radius: 24px;
+    .eyebrow-chip {
+        margin-inline: auto;
     }
 
     .hero-title {
-        font-size: clamp(2.2rem, 8vw, 3rem);
+        font-size: clamp(2rem, 8vw, 2.75rem);
+        line-height: 1.22;
     }
 
-    .hero-stats {
-        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    .hero-lead {
+        font-size: clamp(0.92rem, 3.2vw, 1.05rem);
+        line-height: 1.6;
+        margin-bottom: 1.25rem;
     }
 
-    .about-grid,
-    .contact-grid {
-        grid-template-columns: 1fr;
+    .hero-tags {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.4rem;
+        margin-bottom: 1.5rem;
     }
 
-    .project-card {
-        min-height: auto;
-    }
-
-    .live-projects__grid {
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    }
-
-    .footer-shell {
-        padding: 2rem;
-    }
-
-    .content-shell {
-        padding-inline: clamp(0.75rem, 7vw, 2.25rem);
-    }
-}
-
-@media (max-width: 576px) {
-    .nav-shell {
-        border-radius: 18px;
-        padding: 0.75rem;
-        gap: 0.75rem;
-    }
-
-    .nav-floating {
-        padding-inline: 0.75rem;
-    }
-
-    .navbar-brand {
-        font-size: 1.1rem;
-        letter-spacing: 0.14rem;
-    }
-
-    .navbar-nav {
-        text-align: center;
+    .hero-tag {
+        font-size: 0.76rem;
+        padding: 0.3rem 0.65rem;
     }
 
     .hero-actions {
+        display: flex;
         flex-direction: column;
+        width: 100%;
+        gap: 0.65rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+        min-height: 48px;
+        font-size: 0.95rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 12px;
+    }
+
+    .hero-social {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 0.65rem;
     }
 
     .hero-social a {
         width: 44px;
         height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        font-size: 1.1rem;
     }
 
-    .stat-card {
-        padding: 1rem;
+    .hero-copy-btn {
+        min-height: 44px;
+        padding: 0.5rem 1rem;
+        font-size: 0.82rem;
+        border-radius: 999px;
     }
 
-    .education-card,
-    .skill-card,
-    .achievement-card,
-    .contact-info,
-    .contact-form {
-        padding: 1.5rem;
-    }
-
-    .live-card {
-        min-height: auto;
-    }
-
-    .footer-brand {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .footer-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .footer-chip-row {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .footer-project-list li {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
-    }
-
-    .footer-bottom {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .content-shell {
-        padding-inline: 0.75rem;
+    .hero-visual {
+        justify-content: center !important;
+        margin-top: 1rem;
     }
 
     .hero-portrait {
-        max-width: 280px;
-    }
-
-    .stat-card {
-        text-align: center;
-    }
-
-    .hero-glow-left {
-        left: -40px;
-        top: -60px;
-    }
-
-    .hero-glow-right {
-        right: -55px;
-        bottom: -70px;
+        max-width: clamp(220px, 62vw, 290px);
+        margin-inline: auto;
     }
 }
 
-@media (max-width: 420px) {
-    .hero-title {
-        font-size: 2.25rem;
+/* --------------------------------------------------------------------------
+   6. ABOUT SECTION (< 768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 767.98px) {
+    .about-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.25rem;
     }
 
-    .hero-tags,
-    .stack-chips,
-    .chip-wrap,
-    .skill-wall__grid {
+    .profile-stats {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 0.65rem;
+    }
+
+    .stat-card {
+        padding: 0.85rem 0.65rem;
+        text-align: center;
+        border-radius: 14px;
+    }
+
+    .stat-number {
+        font-size: clamp(1.4rem, 5vw, 1.85rem);
+    }
+
+    .stat-label {
+        font-size: 0.74rem;
+    }
+
+    .about-card,
+    .about-profile {
+        padding: 1.25rem;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   7. PROJECTS SECTION (< 768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 767.98px) {
+    .projects-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.25rem;
+    }
+
+    .project-controls {
+        gap: 0.85rem;
+        margin-bottom: 1.75rem;
+    }
+
+    .project-filter-tabs {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.4rem;
+    }
+
+    .project-filter-btn {
+        min-height: 44px;
+        padding: 0.45rem 0.85rem;
+        font-size: 0.82rem;
+        border-radius: 999px;
+    }
+
+    .project-arch-toggle-btn {
+        min-height: 44px;
+        width: 100%;
+        max-width: 320px;
+        align-self: center;
+        justify-content: center;
+        font-size: 0.84rem;
+        padding: 0.55rem 1.15rem;
+    }
+
+    .project-search-wrapper {
+        max-width: 100%;
+    }
+
+    .project-search-input {
+        min-height: 48px;
+        font-size: 16px !important;
+        padding-left: 2.75rem;
+    }
+
+    .project-card__visual {
+        aspect-ratio: 16 / 9;
+    }
+
+    .project-card__body {
+        padding: 1.15rem;
+    }
+
+    .project-card__title {
+        font-size: 1.05rem;
+    }
+
+    .project-card__description {
+        font-size: 0.84rem;
+        line-height: 1.5;
+    }
+
+    /* 2-Column Touch Grid for Project Card Actions */
+    .project-card__actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+        width: 100%;
+    }
+
+    .project-btn {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.8rem;
+        padding: 0.45rem 0.5rem;
+        border-radius: 10px;
+        text-align: center;
+        width: 100%;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   8. SKILLS SECTION (< 768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 767.98px) {
+    .skill-card {
+        padding: 1.25rem;
+    }
+
+    .skill-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.45rem;
+    }
+
+    .skill-chip {
+        min-height: 42px;
+        padding: 0.45rem 0.75rem;
+        font-size: 0.82rem;
+        border-radius: 999px;
+        display: inline-flex;
+        align-items: center;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   9. EXPERIENCE & EDUCATION SECTIONS (< 768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 767.98px) {
+    .experience-grid,
+    .education-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.25rem;
+    }
+
+    .experience-card,
+    .education-card {
+        padding: 1.25rem;
+    }
+
+    .experience-card__header {
+        gap: 0.75rem;
+    }
+
+    .company-logo-wrap {
+        width: 46px;
+        height: 46px;
+        min-width: 46px;
+        border-radius: 12px;
+    }
+
+    .experience-role {
+        font-size: 1.05rem;
+    }
+
+    .experience-company {
+        font-size: 0.84rem;
+    }
+
+    .experience-meta {
+        flex-wrap: wrap;
         gap: 0.35rem;
     }
 
-    .nav-link {
-        width: 100%;
-        display: block;
+    .education-card__top {
+        flex-wrap: wrap;
+        gap: 0.45rem;
     }
 
-    .btn {
+    .education-program {
+        font-size: 1.05rem;
+    }
+
+    .education-institution {
+        font-size: 0.84rem;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   10. ACHIEVEMENTS & DEVELOPER PROFILES (< 768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 767.98px) {
+    .achievements-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.25rem;
+    }
+
+    .achievement-card {
+        padding: 1.25rem;
+    }
+
+    .dev-profile-card {
+        padding: 1.25rem;
+    }
+
+    .dev-meta-pill {
+        font-size: 0.7rem;
+    }
+
+    .repo-highlight-card {
+        padding: 1rem;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   11. CONTACT SECTION & FOOTER (< 768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 767.98px) {
+    .contact-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem;
+    }
+
+    .contact-info,
+    .contact-form {
+        padding: 1.25rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        min-height: 48px;
+        font-size: 16px !important;
+        border-radius: 12px;
+        padding: 0.65rem 0.95rem;
+    }
+
+    .contact-form textarea {
+        min-height: 110px;
+    }
+
+    .contact-form button[type="submit"] {
         width: 100%;
+        min-height: 50px;
+        font-size: 1rem;
+        font-weight: 700;
+        border-radius: 12px;
+    }
+
+    .contact-social-row {
+        justify-content: center;
+        gap: 0.65rem;
+    }
+
+    .contact-social-btn {
+        width: 44px;
+        height: 44px;
+        font-size: 1.1rem;
+    }
+
+    .footer-minimal__inner {
+        flex-direction: column;
+        align-items: center;
         text-align: center;
+        gap: 1.25rem;
+        padding-block: 1.75rem;
+    }
+
+    .footer-minimal__left,
+    .footer-minimal__center,
+    .footer-minimal__right {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .footer-minimal__center {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+    }
+
+    .footer-minimal__link {
+        min-height: 40px;
+        display: inline-flex;
+        align-items: center;
+        padding: 0.35rem 0.65rem;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   12. INTERACTIVE MODALS ON MOBILE (< 768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 767.98px) {
+    /* Backdrop */
+    .project-modal-backdrop,
+    .recruiter-modal-backdrop,
+    .terminal-modal-backdrop,
+    .palette-backdrop,
+    .skills-explorer-backdrop,
+    .architecture-modal-backdrop {
+        padding: 0.5rem !important;
+        align-items: flex-end !important;
+    }
+
+    /* Modal Windows as Responsive Bottom Sheets */
+    .project-modal-dialog,
+    .recruiter-modal-dialog,
+    .terminal-modal-window,
+    .palette-modal,
+    .skills-explorer-modal,
+    .architecture-modal {
+        width: 100% !important;
+        max-width: 100% !important;
+        max-height: 94dvh !important;
+        border-radius: 20px 20px 0 0 !important;
+        border-bottom: none !important;
+        -webkit-overflow-scrolling: touch !important;
+    }
+
+    /* Project Quick View Modal Visual */
+    .project-modal-visual {
+        height: 190px !important;
+    }
+
+    .project-modal-content {
+        padding: 1.25rem !important;
+    }
+
+    .project-modal-title {
+        font-size: 1.35rem !important;
+    }
+
+    .project-modal-close,
+    .recruiter-modal-close,
+    .skills-explorer-close-btn,
+    .architecture-close-btn {
+        width: 44px !important;
+        height: 44px !important;
+        top: 0.65rem !important;
+        right: 0.65rem !important;
+        font-size: 1.2rem !important;
+    }
+
+    /* Architecture Modal Pipeline Track */
+    .arch-pipeline-track {
+        min-width: 580px;
+        gap: 0.5rem;
+    }
+
+    .arch-stage-node {
+        padding: 0.65rem;
+    }
+
+    /* Terminal CLI on Mobile */
+    .terminal-modal-window {
+        height: 92dvh !important;
+        border-radius: 16px 16px 0 0 !important;
+    }
+
+    .terminal-body {
+        font-size: 0.8rem !important;
+        padding: 0.85rem !important;
+    }
+
+    .term-quick-chip {
+        min-height: 38px !important;
+        padding: 0.35rem 0.65rem !important;
+        display: inline-flex !important;
+        align-items: center !important;
+    }
+
+    /* Command Palette on Mobile */
+    .palette-backdrop {
+        padding-top: 0.5rem !important;
+        align-items: flex-start !important;
+    }
+
+    .palette-modal {
+        max-height: 88dvh !important;
+        border-radius: 16px !important;
+    }
+
+    .palette-item {
+        padding: 0.75rem 0.65rem !important;
+        min-height: 44px !important;
+    }
+
+    /* Easter Egg Toast */
+    .easter-egg-toast {
+        top: 1rem !important;
+        right: 1rem !important;
+        left: 1rem !important;
+        width: auto !important;
+        padding: 0.85rem 1rem !important;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   13. EXTRA NARROW SCREENS (320px - 360px Small Mobile Tuning)
+   -------------------------------------------------------------------------- */
+@media (max-width: 360px) {
+    .hero-title {
+        font-size: 1.85rem !important;
+    }
+
+    .hero-portrait {
+        max-width: 210px !important;
+    }
+
+    .nav-actions-group {
+        grid-template-columns: 1fr !important;
+    }
+
+    .project-card__actions {
+        grid-template-columns: 1fr !important;
+    }
+
+    .profile-stats {
+        grid-template-columns: 1fr !important;
+    }
+
+    .terminal-floating-btn span {
+        display: none !important;
+    }
+
+    .terminal-floating-btn {
+        width: 44px;
+        height: 44px;
+        padding: 0;
+        justify-content: center;
+        border-radius: 50%;
     }
 }

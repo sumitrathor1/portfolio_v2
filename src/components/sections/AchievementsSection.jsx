@@ -13,7 +13,6 @@ export default function AchievementsSection() {
           <article
             key={item.id}
             className="achievement-card glass-panel hover-lift"
-            style={{ marginInline: '0.75rem' }}
           >
             <div>
               {/* TOP: ICON & CATEGORY PILL */}

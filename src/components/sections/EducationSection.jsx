@@ -13,7 +13,6 @@ export default function EducationSection() {
           <article
             key={item.id}
             className="education-card glass-panel hover-lift"
-            style={{ marginInline: '0.75rem' }}
           >
             <div className="d-flex flex-column justify-content-between h-100 gap-2">
               <div>
