@@ -1,5 +1,11 @@
 {
+  "cleanUrls": true,
+  "trailingSlash": true,
   "rewrites": [
+    {
+      "source": "/projects/:slug*/",
+      "destination": "/projects/:slug*/index.html"
+    },
     {
       "source": "/(.*)",
       "destination": "/index.html"
