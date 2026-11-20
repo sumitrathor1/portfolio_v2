@@ -216,3 +216,43 @@ Target: `portfolio_v2` (React + Vite static frontend)
 - **Build Status:** SUCCESS
 - **Git Commit:** b597402
 - **Push Status:** SUCCESS (pushed to origin/main)
+
+### Module 11: Technical SEO, Schema.org Graph, Sitemap & AI Search (`llms.txt`)
+- **Date:** 2026-11-20
+- **Files Created/Modified:**
+  - `index.html`: Canonical tag pointing to `https://sumitrathor.rf.gd/`, OpenGraph profile tags, updated meta descriptions, and rich `@graph` Schema.org JSON-LD (Person, WebSite, ProfilePage) with verified `sameAs` entity links (LinkedIn, GitHub `sumitrathor1`, LeetCode).
+  - `public/sitemap.xml`: Modern XML sitemap with accurate priorities, change frequencies, and verified live project subpaths.
+  - `public/robots.txt`: Modern crawler rules linking directly to `sitemap.xml` and `llms.txt`.
+  - `public/llms.txt`: Structured factual dossier designed for LLM and AI answer engine crawlers (Perplexity, ChatGPT Search, Google AI Overviews, Copilot).
+- **Testing Performed:** `npm run build` executed successfully (built in 7.09s).
+- **Build Status:** SUCCESS
+- **Git Commit:** 2532b84
+- **Push Status:** SUCCESS (pushed to origin/main)
+
+### Module 12: Accessibility (a11y), Navigation Scrollspy & Reduced Motion
+- **Date:** 2026-11-20
+- **Files Created/Modified:**
+  - `src/App.jsx`: Added accessible `.skip-to-content` link at top of page and `id="main-content"` on `<main>`.
+  - `src/components/navigation/Header.jsx`: Implemented active section scrollspy with `IntersectionObserver` / scroll tracking, added `aria-current="page"`, primary nav label, and dynamic mobile toggle ARIA states.
+  - `src/styles/root.css`: Added styles for `.skip-to-content`, visible `:focus-visible` outline rings for keyboard navigation, and full `@media (prefers-reduced-motion: reduce)` block.
+  - `src/components/common/FuturisticCursor.jsx`: Guarded against `prefers-reduced-motion: reduce`.
+  - `src/components/layout/StarCanvas.jsx`: Static single-frame render when reduced motion is preferred.
+  - `src/hooks/useTiltEffect.js`: Disabled 3D card perspective tilt when reduced motion is requested.
+- **Testing Performed:** `npm run build` executed successfully (built in 5.58s).
+- **Build Status:** SUCCESS
+- **Git Commit:** 2f458e8
+- **Push Status:** SUCCESS (pushed to origin/main)
+
+### Module 13: Recruiter-Friendly Information Flow & Project Presentation
+- **Date:** 2026-11-20
+- **Files Created/Modified:**
+  - `src/App.jsx`: Optimized recruiter sequence: Hero -> About -> Experience -> Projects -> Skills -> Education -> Achievements -> Contact.
+  - `src/components/sections/ProjectsSection.jsx`: Replaced CSS background image with semantic `<img>` featuring `alt`, `loading="lazy"`, `decoding="async"`, aspect ratio dimensions (`width="600"`, `height="356"`), and fallback error handling.
+  - `src/styles/root.css`: Added `.project-card__img` with smooth hover zoom interaction (`transform: scale(1.05)`).
+  - `src/components/sections/HeroSection.jsx`: Optimized LCP hero portrait with `fetchpriority="high"`, `width="540"`, `height="540"`, and enriched social button ARIA labels.
+  - `src/components/sections/AboutSection.jsx`: Added explicit dimensions and descriptive alt to profile avatar.
+  - `src/components/sections/ContactSection.jsx`: Synchronized `id="user_email"` and `htmlFor="user_email"`.
+- **Testing Performed:** `npm run build` executed successfully (built in 11.14s).
+- **Build Status:** SUCCESS
+- **Git Commit:** 0d6de45
+- **Push Status:** SUCCESS (pushed to origin/main)
