@@ -1,13 +1,10 @@
-import React, { useState, useEffect, useRef } from 'react';
-import Swal from 'sweetalert2';
+import React, { useState, useEffect } from 'react';
 import { personalInfo } from '../../data/personalInfo';
 import { trackResumeDownload, trackSocialClick } from '../../utils/analytics';
 
 export default function HeroSection() {
   const [typedText, setTypedText] = useState('');
   const [isTypingComplete, setIsTypingComplete] = useState(false);
-  const clickCountRef = useRef(0);
-  const clickTimerRef = useRef(null);
 
   useEffect(() => {
     const fullText = personalInfo.name;
@@ -44,31 +41,6 @@ export default function HeroSection() {
     }
   };
 
-  const handleSecretClick = () => {
-    clickCountRef.current += 1;
-    if (clickTimerRef.current) {
-      clearTimeout(clickTimerRef.current);
-    }
-
-    if (clickCountRef.current >= 10) {
-      clickCountRef.current = 0;
-      Swal.fire({
-        title: "Portfolio Management",
-        text: "You unlocked the secret developer console! This portfolio is now fully static, React + Vite powered, and deployed without PHP or MySQL.",
-        icon: "info",
-        confirmButtonText: "Awesome!",
-        customClass: {
-          popup: "swal2-admin-login"
-        }
-      });
-      return;
-    }
-
-    clickTimerRef.current = setTimeout(() => {
-      clickCountRef.current = 0;
-    }, 4000);
-  };
-
   return (
     <section
       className="section hero-section container-xxl"
@@ -92,9 +64,6 @@ export default function HeroSection() {
               <span
                 id="typing-text"
                 className={`gradient-text ${isTypingComplete ? 'stop-cursor' : ''}`}
-                onClick={handleSecretClick}
-                title="Click me"
-                style={{ cursor: 'pointer' }}
               >
                 {typedText}
               </span>
