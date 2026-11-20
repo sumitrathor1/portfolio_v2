@@ -6,7 +6,7 @@ export const experienceData = [
     "initials": "DR",
     "work_mode": "On-Site",
     "period": "Jun 2026 → Aug 2026",
-    "logo_path": "/assets/images/company-logos/logo_b1472f0106240efd6a451afa.png",
+    "logo_path": "/assets/images/company-logos/drdo-cfees.jpg",
     "certificate_path": "/assets/files/experience-certificates/certificate_0f1b22906295e245e8d60208.jpg",
     "company_website": "https://drdo.gov.in/drdo/en/",
     "stack": [
@@ -31,7 +31,7 @@ export const experienceData = [
     "initials": "CO",
     "work_mode": "On-Site",
     "period": "Mar 2024 → Aug 2024",
-    "logo_path": "/assets/images/company-logos/logo_e9e0c20b0f7b23c88c0ad55e.png",
+    "logo_path": "/assets/images/company-logos/coders-cafe.png",
     "certificate_path": "/assets/files/experience-certificates/certificate_6612d39413f24d508c57bb70.jpg",
     "company_website": "https://sumitrathor.rf.gd/Coders-cafe/home/",
     "stack": [
@@ -56,7 +56,7 @@ export const experienceData = [
     "initials": "GU",
     "work_mode": "Work From Home",
     "period": "Feb 2024 → Mar 2024",
-    "logo_path": "/assets/images/company-logos/logo_d6f241e3f67a12c43daee2bd.png",
+    "logo_path": "/assets/images/company-logos/gurukul-dream-foundation.png",
     "certificate_path": "/assets/files/experience-certificates/certificate_1e2ab7f1bddeb25ade5c1a7b.jpg",
     "company_website": "https://www.gurukuldreamfoundation.org/",
     "stack": [
@@ -78,7 +78,7 @@ export const experienceData = [
     "initials": "IN",
     "work_mode": "Work From Home",
     "period": "Jun 2023 → Jul 2023",
-    "logo_path": "/assets/images/company-logos/logo_c2e88e38ab73b0647307cd6e.png",
+    "logo_path": "/assets/images/company-logos/indo-american.png",
     "certificate_path": "/assets/files/experience-certificates/certificate_1c0be629d5a138db193280d7.jpg",
     "company_website": "https://iacaacademy.org/",
     "stack": [

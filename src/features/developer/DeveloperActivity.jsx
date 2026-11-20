@@ -203,7 +203,7 @@ export default function DeveloperActivity() {
               className="repo-highlight-card glass-panel hover-lift text-decoration-none d-block h-100"
             >
               <div className="d-flex align-items-center justify-content-between mb-2">
-                <div className="d-flex align-items-center gap-1.5 text-primary">
+                <div className="d-flex align-items-center gap-2 text-primary">
                   <i className="fa-regular fa-folder" />
                   <span className="repo-name">{repo.name}</span>
                 </div>
