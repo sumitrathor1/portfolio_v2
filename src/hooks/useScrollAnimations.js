@@ -2,29 +2,41 @@ import { useEffect } from 'react';
 
 export function useScrollAnimations() {
   useEffect(() => {
-    const handleScroll = () => {
-      const elements = document.querySelectorAll('[data-aos], .reveal');
-      const windowHeight = window.innerHeight;
+    const targets = Array.from(document.querySelectorAll('[data-aos], .reveal'));
+    if (targets.length === 0) return;
 
-      elements.forEach((el) => {
-        const rect = el.getBoundingClientRect();
-        if (rect.top <= windowHeight - 60) {
-          el.classList.add('aos-animate');
-          el.classList.add('visible');
-        }
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced || !('IntersectionObserver' in window)) {
+      targets.forEach((el) => {
+        el.classList.add('aos-animate', 'visible');
       });
-    };
+      return;
+    }
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    // Run initially
-    handleScroll();
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('aos-animate', 'visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.05,
+        rootMargin: '0px 0px -30px 0px'
+      }
+    );
 
-    // In case content renders after mount
-    const timer = setTimeout(handleScroll, 200);
+    targets.forEach((el) => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top <= window.innerHeight) {
+        el.classList.add('aos-animate', 'visible');
+      } else {
+        observer.observe(el);
+      }
+    });
 
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      clearTimeout(timer);
-    };
+    return () => observer.disconnect();
   }, []);
 }

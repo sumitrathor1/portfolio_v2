@@ -14,20 +14,20 @@ export default function StarCanvas() {
 
     const renderer = new THREE.WebGLRenderer({
       canvas,
-      antialias: !isMobile, // Disable antialiasing on mobile for high frame rate
+      antialias: false, // PointsMaterial does not need MSAA; saves significant GPU fill-rate
       alpha: true,
       powerPreference: 'high-performance'
     });
     renderer.setClearColor(0x000000, 0);
-    renderer.setPixelRatio(isMobile ? Math.min(window.devicePixelRatio, 1.25) : Math.min(window.devicePixelRatio, 2));
+    renderer.setPixelRatio(isMobile ? 1 : Math.min(window.devicePixelRatio, 1.5));
     renderer.setSize(window.innerWidth, window.innerHeight);
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 2000);
     camera.position.z = 500;
 
-    // Optimized star density: 1,800 stars on mobile, 4,500 on desktop
-    const starCount = isMobile ? 1800 : 4500;
+    // Balanced star density for locked 60fps: 1,200 on mobile, 2,400 on desktop
+    const starCount = isMobile ? 1200 : 2400;
     const geometry = new THREE.BufferGeometry();
     const positions = new Float32Array(starCount * 3);
     const colors = new Float32Array(starCount * 3);
@@ -106,14 +106,16 @@ export default function StarCanvas() {
     window.addEventListener('resize', handleResize);
 
     const animate = () => {
-      stars.rotation.y += 0.0004;
-      stars.rotation.x += 0.0002;
+      if (!document.hidden) {
+        stars.rotation.y += 0.0004;
+        stars.rotation.x += 0.0002;
 
-      camera.position.x += (mouse.x * 90 - camera.position.x) * 0.03;
-      camera.position.y += (mouse.y * 60 - camera.position.y) * 0.03;
-      camera.lookAt(scene.position);
+        camera.position.x += (mouse.x * 90 - camera.position.x) * 0.03;
+        camera.position.y += (mouse.y * 60 - camera.position.y) * 0.03;
+        camera.lookAt(scene.position);
 
-      renderer.render(scene, camera);
+        renderer.render(scene, camera);
+      }
       if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         animationFrameId = requestAnimationFrame(animate);
       }

@@ -6,49 +6,61 @@ export function useTiltEffect() {
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (isTouch || prefersReduced) return;
 
-    const maxTilt = 6;
+    const maxTilt = 5;
+    const selector = '.project-card, .experience-card, .education-card, .achievement-card, .stat-card';
 
     const bindTilt = (card) => {
       if (card.dataset.tiltBound) return;
       card.dataset.tiltBound = 'true';
 
+      let rect = null;
+      let rafId = null;
+
+      const onMouseEnter = () => {
+        rect = card.getBoundingClientRect();
+        card.style.transition = 'transform 0.12s ease-out, box-shadow 0.22s ease, border-color 0.22s ease';
+      };
+
       const onMouseMove = (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
+        if (!rect) rect = card.getBoundingClientRect();
+        const clientX = e.clientX;
+        const clientY = e.clientY;
 
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
+        if (rafId) cancelAnimationFrame(rafId);
+        rafId = requestAnimationFrame(() => {
+          const x = clientX - rect.left;
+          const y = clientY - rect.top;
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
 
-        const rotateX = ((y - centerY) / centerY) * -maxTilt;
-        const rotateY = ((x - centerX) / centerX) * maxTilt;
+          const rotateX = ((y - centerY) / centerY) * -maxTilt;
+          const rotateY = ((x - centerX) / centerX) * maxTilt;
 
-        card.style.setProperty('--mouse-x', `${(x / rect.width) * 100}%`);
-        card.style.setProperty('--mouse-y', `${(y / rect.height) * 100}%`);
-        card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-4px) scale3d(1.01, 1.01, 1.01)`;
+          card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-4px)`;
+        });
       };
 
       const onMouseLeave = () => {
-        card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px) scale3d(1, 1, 1)';
-        card.style.removeProperty('--mouse-x');
-        card.style.removeProperty('--mouse-y');
+        if (rafId) cancelAnimationFrame(rafId);
+        rect = null;
+        card.style.transition = 'transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s ease, border-color 0.25s ease';
+        card.style.transform = '';
       };
 
-      card.addEventListener('mousemove', onMouseMove);
-      card.addEventListener('mouseleave', onMouseLeave);
+      card.addEventListener('mouseenter', onMouseEnter, { passive: true });
+      card.addEventListener('mousemove', onMouseMove, { passive: true });
+      card.addEventListener('mouseleave', onMouseLeave, { passive: true });
     };
 
     const initTilt = () => {
-      const targets = document.querySelectorAll('.glass-panel, .project-card, .experience-card, .education-card, .achievement-card, .stat-card');
-      targets.forEach(bindTilt);
+      document.querySelectorAll(selector).forEach(bindTilt);
     };
 
     initTilt();
-    const obs = new MutationObserver(initTilt);
-    obs.observe(document.body, { childList: true, subtree: true });
+    const timer = setTimeout(initTilt, 400);
 
     return () => {
-      obs.disconnect();
+      clearTimeout(timer);
     };
   }, []);
 }
