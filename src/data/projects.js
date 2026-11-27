@@ -274,7 +274,7 @@ export const projectsData = [
     "subtitle": "Competitive Exam Analytics & Progress Tracking Engine",
     "description": "A comprehensive assessment and analytics platform for students preparing for JEE Main, JEE Advanced, and NEET. Features automated mock test evaluation, syllabus progress tracker, monthly test diagnostics, and Firebase JWT authentication.",
     "date": "Nov 2025",
-    "image": "/assets/images/project-image/project_1bcc15a81e736d25246b2246.png",
+    "image": "/assets/images/project-image/jeeneet-tracker.png",
     "github": null,
     "live": "https://sumitrathor.vercel.app/projects/jeeneet-tracker/",
     "stack": [
