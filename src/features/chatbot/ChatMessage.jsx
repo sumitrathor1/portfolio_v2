@@ -20,7 +20,11 @@ export default function ChatMessage({ message, onActionClick }) {
     <div className={`chat-message-row ${isBot ? 'bot-row' : 'user-row'}`}>
       {isBot && (
         <div className="chat-avatar bot-avatar">
-          <i className="fa-solid fa-robot" />
+          <img
+            src="/assets/images/sumit.jpg"
+            alt="Sumit Rathor"
+            style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%' }}
+          />
         </div>
       )}
 

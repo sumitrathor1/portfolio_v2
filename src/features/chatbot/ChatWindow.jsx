@@ -59,15 +59,19 @@ export default function ChatWindow({
       <div className="chatbot-header">
         <div className="d-flex align-items-center gap-2">
           <div className="chat-avatar bot-header-avatar">
-            <i className="fa-solid fa-robot" />
+            <img
+              src="/assets/images/sumit.jpg"
+              alt="Sumit Rathor"
+              style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%' }}
+            />
             <span className="online-indicator-dot" />
           </div>
           <div>
             <h3 id="chatbot-title" className="chatbot-header-title">
-              Sumit's Portfolio Assistant
+              Sumit Rathor
             </h3>
             <span className="chatbot-status-text">
-              <span className="pulse-mini-dot" /> Verified Portfolio Intelligence
+              <span className="pulse-mini-dot" /> Full Stack Developer · Online
             </span>
           </div>
         </div>
@@ -125,7 +129,11 @@ export default function ChatWindow({
             {isTyping && (
               <div className="chat-message-row bot-row">
                 <div className="chat-avatar bot-avatar">
-                  <i className="fa-solid fa-robot" />
+                  <img
+                    src="/assets/images/sumit.jpg"
+                    alt="Sumit Rathor"
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%' }}
+                  />
                 </div>
                 <div className="chat-bubble bot-bubble typing-bubble">
                   <span className="typing-dot" />
@@ -149,10 +157,10 @@ export default function ChatWindow({
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
               onKeyDown={handleKeyDown}
-              placeholder="Ask about Rakshak AI, skills, experience..."
+              placeholder="Ask me about Rakshak AI, skills, experience..."
               className="chatbot-input"
               maxLength={200}
-              aria-label="Ask a question about Sumit Rathor"
+              aria-label="Ask Sumit Rathor a question"
             />
             <button
               type="submit"

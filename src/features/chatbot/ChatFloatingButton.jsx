@@ -6,7 +6,7 @@ export default function ChatFloatingButton({ onClick, isOpen, unreadCount }) {
       {!isOpen && (
         <div className="chatbot-launcher-pill hover-lift" onClick={onClick}>
           <span className="pulse-mini-dot" />
-          <span>Ask My AI Assistant</span>
+          <span>Chat with Sumit</span>
         </div>
       )}
 
@@ -14,8 +14,8 @@ export default function ChatFloatingButton({ onClick, isOpen, unreadCount }) {
         type="button"
         className={`chatbot-floating-btn hover-lift ${isOpen ? 'active' : ''}`}
         onClick={onClick}
-        aria-label={isOpen ? 'Close portfolio assistant' : 'Open portfolio assistant'}
-        title={isOpen ? 'Close portfolio assistant' : 'Open portfolio assistant'}
+        aria-label={isOpen ? 'Close chat with Sumit' : 'Chat with Sumit'}
+        title={isOpen ? 'Close chat with Sumit' : 'Chat with Sumit'}
       >
         {isOpen ? (
           <i className="fa-solid fa-chevron-down" />

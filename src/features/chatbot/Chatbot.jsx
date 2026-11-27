@@ -16,7 +16,7 @@ export default function Chatbot() {
   const initialGreeting = {
     id: 'initial-greeting',
     sender: 'bot',
-    text: "Hi there! 👋 I'm Sumit's Portfolio Assistant. I can tell you about his engineering background, DRDO research internship, key projects like Rakshak AI or Mandola, skills, or help you connect with him directly.\n\nClick any suggested question below or type your own question!",
+    text: "Hey there! 👋 I'm Sumit Rathor. Feel free to ask me directly about my DRDO research internship, projects like Rakshak AI or Mandola, my tech stack, or how we can collaborate.\n\nPick a question below or type anything you'd like to ask!",
     timestamp: getCurrentTimeString(),
     action: null
   };
@@ -111,7 +111,7 @@ export default function Chatbot() {
       {
         id: `greeting-${Date.now()}`,
         sender: 'bot',
-        text: "Conversation refreshed! How can I assist you in exploring Sumit's portfolio today?",
+        text: "Chat refreshed! What else would you like to ask me about my work, projects, or experience?",
         timestamp: getCurrentTimeString(),
         action: null
       }
