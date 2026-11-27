@@ -14,7 +14,7 @@ export default function AboutSection() {
           <div className="d-flex flex-column justify-content-between h-100 gap-3">
             <div>
               <div
-                className="d-inline-flex align-items-center gap-2 px-3 py-1 mb-2.5 rounded-pill"
+                className="d-inline-flex align-items-center gap-2 px-3 py-1 mb-3 rounded-pill"
                 style={{
                   background: 'rgba(56, 189, 248, 0.12)',
                   border: '1px solid rgba(56, 189, 248, 0.3)'
@@ -39,7 +39,7 @@ export default function AboutSection() {
                 {personalInfo.aboutBadges.map((badge, idx) => (
                   <span
                     key={idx}
-                    className="badge px-3 py-1.5 rounded-pill"
+                    className="badge px-3 py-2 rounded-pill"
                     style={{
                       background: badge.bg,
                       color: badge.color,
@@ -65,7 +65,7 @@ export default function AboutSection() {
 
         {/* RIGHT VISUAL STATS CARD */}
         <article className="about-profile glass-panel hover-lift">
-          <div className="profile-header pb-2.5 border-bottom border-secondary border-opacity-10">
+          <div className="profile-header pb-3 border-bottom border-secondary border-opacity-10">
             <img
               src={personalInfo.profileImage}
               alt="Sumit Rathor - Profile Avatar"
@@ -77,11 +77,11 @@ export default function AboutSection() {
             />
             <div>
               <span
-                className="badge rounded-pill bg-success bg-opacity-25 text-success border border-success border-opacity-25 mb-1 px-2.5 py-0.5"
+                className="badge rounded-pill bg-success bg-opacity-25 text-success border border-success border-opacity-25 mb-2 px-3 py-1 d-inline-flex align-items-center gap-1"
                 style={{ fontSize: '0.72rem' }}
               >
-                <i className="fa-solid fa-circle text-success me-1" style={{ fontSize: '0.55rem' }} />{' '}
-                {personalInfo.status}
+                <i className="fa-solid fa-circle text-success" style={{ fontSize: '0.55rem' }} />
+                <span>{personalInfo.status}</span>
               </span>
               <h3 className="mb-0" style={{ fontSize: '1.25rem' }}>{personalInfo.name}</h3>
               <p className="subtitle mb-0" style={{ fontSize: '0.85rem' }}>Software Engineer & Builder</p>
@@ -89,14 +89,15 @@ export default function AboutSection() {
           </div>
 
           {/* VISUAL STATS GRID */}
-          <div className="profile-stats pt-1">
+          <div className="profile-stats pt-2">
             {personalInfo.stats.map((stat, idx) => (
               <div
                 key={idx}
-                className="stat-box p-2.5 rounded-4 text-center d-flex flex-column align-items-center justify-content-center gap-2"
+                className="stat-box p-3 rounded-4 text-center d-flex flex-column align-items-center justify-content-center gap-2"
                 style={{
                   background: 'rgba(255, 255, 255, 0.03)',
-                  border: '1px solid rgba(255, 255, 255, 0.08)'
+                  border: '1px solid rgba(255, 255, 255, 0.08)',
+                  padding: '1.1rem 0.9rem'
                 }}
               >
                 <i className={`${stat.icon} ${stat.colorClass}`} style={{ fontSize: '1.35rem' }} />
