@@ -114,7 +114,7 @@ export default function RecruiterSnapshotModal({ isOpen, onClose }) {
                 <strong>DRDO-CFEES Research Intern</strong> (Delhi)
               </p>
               <p className="snapshot-card-subtext mb-0">
-                Architected <strong>Rakshak AI</strong> — fully offline, air-gapped RAG assistant querying classified defence documentation using Python, LangChain, Ollama & ChromaDB.
+                Architected <strong>Rakshak AI</strong> — fully offline, air-gapped RAG assistant querying local technical PDF documentation using Python, LangChain, Ollama & ChromaDB.
               </p>
             </div>
           </div>

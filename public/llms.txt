@@ -28,7 +28,7 @@ Sumit Rathor (also referenced as Sumit Rathore) is a Full Stack Software Enginee
 
 ## Key Q&A (Entity & Identity Summary)
 - **Who is Sumit Rathor?** A Full Stack Software Engineer and B.Tech Computer Science & Design student at MITS Gwalior (CGPA 8.09), known for building production web platforms, offline AI/RAG tools (Rakshak AI for DRDO), and open-source software.
-- **What did Sumit Rathor build during his DRDO internship?** At DRDO-CFEES (Timarpur, New Delhi, Jun 2026 – Aug 2026) under Scientist 'F' Sh. Trilochan Singh Rathore, he built **Rakshak AI (Enterprise Local Knowledge Assistant)** — a 100% offline, air-gapped RAG system using Python, Streamlit, LangChain, Ollama, ChromaDB, and PyPDF for querying sensitive defence safety manuals without cloud APIs.
+- **What did Sumit Rathor build during his DRDO internship?** At DRDO-CFEES (Timarpur, New Delhi, Jun 2026 – Aug 2026) under Scientist 'F' Sh. Trilochan Singh Rathore, he built **Rakshak AI (Enterprise Local Knowledge Assistant)** — a 100% offline, air-gapped RAG system using Python, Streamlit, LangChain, Ollama, ChromaDB, and PyPDF for querying local technical PDFs and manuals without cloud APIs.
 - **What open-source and leadership roles has he held?** He served as Project Administrator for GirlScript Summer of Code (GSSoC) 2025 and President of the Innovation & DIY Club at MITS Gwalior (Feb 2026 – Sep 2026).
 
 ---
@@ -36,7 +36,7 @@ Sumit Rathor (also referenced as Sumit Rathore) is a Full Stack Software Enginee
 ## Flagship Projects & Case Studies (11 Projects)
 
 1. **Enterprise Local Knowledge Assistant (Rakshak AI) - DRDO CFEES**
-   - Offline, air-gapped RAG assistant for querying classified defence safety documents and manuals locally.
+   - Offline, air-gapped RAG assistant for querying internal technical documents and engineering manuals locally.
    - Stack: Python, Streamlit, LangChain, Ollama (Local LLM), ChromaDB, PyPDF, RAG Architecture.
    - Case Study: https://sumitrathor.vercel.app/projects/rakshak-ai/
    - GitHub: https://github.com/sumitrathor1/Rakshak-AI-Ragbot

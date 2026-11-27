@@ -355,13 +355,14 @@ function generateHomepageHtml() {
                 <p class="info-item-value">${personalInfo.location}</p>
               </div>
             </div>
+            ${personalInfo.responseTime ? `
             <div class="info-item">
-              <div class="info-item-icon"><i class="fa-solid fa-users"></i></div>
+              <div class="info-item-icon"><i class="fa-solid fa-bolt"></i></div>
               <div class="info-item-content">
-                <span class="info-item-label">Visitors</span>
-                <p class="info-item-value" style="color: #38bdf8; font-weight: 700">${personalInfo.visitorCount}</p>
+                <span class="info-item-label">Response Time</span>
+                <p class="info-item-value" style="color: #38bdf8; font-weight: 700">${personalInfo.responseTime}</p>
               </div>
-            </div>
+            </div>` : ''}
           </div>
           <div>
             <a href="${personalInfo.resumePath}" class="btn btn-secondary-ghost hover-lift w-100 mb-3 py-2" target="_blank" rel="noopener noreferrer" style="font-size: 0.85rem">
@@ -743,7 +744,7 @@ const aboutFaqItems = [
   },
   {
     q: 'What is Rakshak AI?',
-    a: 'Rakshak AI is an air-gapped, offline Retrieval-Augmented Generation (RAG) knowledge assistant built for DRDO-CFEES that enables defence scientists and engineers to semantically search sensitive technical manuals and safety PDFs locally with zero external internet or cloud API dependencies.'
+    a: 'Rakshak AI is an air-gapped, offline Retrieval-Augmented Generation (RAG) knowledge assistant built for DRDO-CFEES that enables engineers and researchers to semantically search internal technical manuals and PDFs locally with zero external internet or cloud API dependencies.'
   },
   {
     q: 'What are Sumit Rathor\'s key technical skills?',

@@ -144,7 +144,7 @@ export default function DeveloperTerminal({ isOpen, onClose, onToggle }) {
   Architecture: ${match.architecture || 'Detailed in case study page.'}
   Features:     ${(match.features || []).map((f) => '\n    • ' + f).join('')}
   Live Demo:    ${match.live || 'Internal/Offline build'}
-  GitHub:       ${match.github || 'Classified/Private repository'}`
+  GitHub:       ${match.github || 'Private repository'}`
           });
         } else {
           newEntries.push({

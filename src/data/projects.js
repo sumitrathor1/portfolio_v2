@@ -5,7 +5,7 @@ export const projectsData = [
     "category": "ai",
     "title": "Enterprise Local Knowledge Assistant (Rakshak AI)",
     "subtitle": "Offline RAG Knowledge Assistant · DRDO CFEES",
-    "description": "A fully offline, local Retrieval-Augmented Generation (RAG) assistant developed during research internship at DRDO-CFEES (Centre for Fire, Explosive and Environment Safety, Delhi). Enables defence scientists and engineers to query sensitive technical documents, safety manuals, and research PDFs securely with zero external network connectivity or cloud API dependencies.",
+    "description": "A fully offline, local Retrieval-Augmented Generation (RAG) assistant developed during research internship at DRDO-CFEES (Centre for Fire, Explosive and Environment Safety, Delhi). Enables engineers and researchers to query internal technical documents, reference manuals, and PDFs securely on-premise with zero external network connectivity or cloud API dependencies.",
     "date": "Jun 2026 - Aug 2026",
     "image": "/assets/images/project-image/rakshak-ai.png",
     "github": "https://github.com/sumitrathor1/Rakshak-AI-Ragbot",
@@ -19,7 +19,7 @@ export const projectsData = [
       "PyPDF",
       "RAG Architecture"
     ],
-    "problem": "Classified defence research documentation, hazardous material safety manuals, and explosive testing protocols required rapid semantic querying and answer verification without transmitting sensitive data to public cloud LLM providers.",
+    "problem": "Large collections of internal technical documentation, engineering reference manuals, and research PDFs required rapid semantic querying and citation verification in an offline environment without relying on external cloud LLM APIs.",
     "architecture": "Engineered an air-gapped RAG pipeline: PyPDF document ingestion, recursive text chunking with semantic overlap, Ollama-powered vector embeddings stored in a local ChromaDB vector store, and cosine similarity retrieval prompting a locally hosted Llama/Mistral model with citation attribution.",
     "features": [
       "100% Offline & Air-Gapped Operation ensuring sovereign data confidentiality",

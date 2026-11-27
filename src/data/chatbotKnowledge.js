@@ -197,7 +197,7 @@ export const chatbotKnowledge = [
     ],
     keywords: ['rakshak', 'ai', 'rag', 'drdo', 'cfees', 'langchain', 'ollama', 'chromadb', 'pypdf'],
     answer:
-      "Rakshak AI is an Enterprise Local Knowledge Assistant engineered during Sumit's research internship at DRDO CFEES (under Scientist 'F' Sh. Trilochan Singh Rathore). It is a 100% offline, air-gapped Retrieval-Augmented Generation (RAG) assistant using Python, Streamlit, LangChain, local Ollama LLMs, and ChromaDB to query classified technical safety documents without internet dependencies.",
+      "Rakshak AI is an Enterprise Local Knowledge Assistant engineered during Sumit's research internship at DRDO CFEES (under Scientist 'F' Sh. Trilochan Singh Rathore). It is a 100% offline, air-gapped Retrieval-Augmented Generation (RAG) assistant using Python, Streamlit, LangChain, local Ollama LLMs, and ChromaDB to query internal technical PDFs and manuals without internet dependencies.",
     suggestedFollowUps: ['drdo-internship', 'mandola-project'],
     action: { label: 'Read Rakshak AI Case Study', url: '/projects/rakshak-ai/' }
   },
@@ -299,7 +299,7 @@ export const chatbotKnowledge = [
     ],
     keywords: ['drdo', 'cfees', 'internship', 'delhi', 'scientist', 'rathore', 'defence', 'research'],
     answer:
-      "Sumit worked as a Research Intern at DRDO CFEES (Centre for Fire, Explosive and Environment Safety, Ministry of Defence, Delhi) from June to August 2026 under Sh. Trilochan Singh Rathore, Scientist 'F'. He engineered an offline AI knowledge assistant (Rakshak AI) using LangChain, Ollama, ChromaDB, and Streamlit to search classified technical safety documentation.",
+      "Sumit worked as a Research Intern at DRDO CFEES (Centre for Fire, Explosive and Environment Safety, Ministry of Defence, Delhi) from June to August 2026 under Sh. Trilochan Singh Rathore, Scientist 'F'. He engineered an offline AI knowledge assistant (Rakshak AI) using LangChain, Ollama, ChromaDB, and Streamlit to search local technical PDF documentation.",
     suggestedFollowUps: ['rakshak-ai-details', 'achievements-notable'],
     action: { label: 'View Experience Section', url: '#experience' }
   },

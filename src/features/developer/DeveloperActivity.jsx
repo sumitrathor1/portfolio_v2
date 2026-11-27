@@ -45,7 +45,7 @@ export default function DeveloperActivity() {
   const repositories = [
     {
       name: 'Rakshak-AI-Ragbot',
-      desc: '100% offline, air-gapped RAG system for querying classified defence documentation using Ollama, LangChain & ChromaDB.',
+      desc: '100% offline, air-gapped RAG system for querying local technical PDF documentation using Ollama, LangChain & ChromaDB.',
       lang: 'Python',
       langColor: '#3572A5',
       stars: 'DRDO',

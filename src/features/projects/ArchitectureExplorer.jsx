@@ -9,13 +9,13 @@ export default function ArchitectureExplorer({ isOpen, onClose }) {
       id: 'rakshak',
       title: 'DRDO Rakshak AI',
       subtitle: 'Air-Gapped Sovereign Local RAG Knowledge Assistant',
-      badge: 'Defence Research · DRDO CFEES',
+      badge: 'Research Internship · DRDO CFEES',
       badgeColor: 'border-warning text-warning',
       caseStudyUrl: '/projects/rakshak-ai/',
       githubUrl: 'https://github.com/sumitrathor1/Rakshak-AI-Ragbot',
       constraints: [
         '100% Offline & Air-Gapped (Zero public internet or cloud LLM API calls allowed)',
-        'Zero Data Exfiltration: Defense secrets & explosive safety manuals must remain on premise',
+        'On-Premise Data Privacy: Internal technical PDFs and manuals remain strictly local',
         'Sub-second semantic vector similarity search across multi-page technical PDFs',
         'Deterministic Source Citations linking every generated response back to exact document page'
       ],
@@ -26,7 +26,7 @@ export default function ArchitectureExplorer({ isOpen, onClose }) {
           icon: 'fa-solid fa-file-pdf',
           tech: ['PyPDF', 'RecursiveCharacterTextSplitter', 'Python'],
           details:
-            'Sensitive defense manuals, hazardous explosive handling guidelines, and research papers are ingested. Text is extracted and split recursively into 500-character chunks with a 50-character semantic overlap to preserve contextual continuity between sentences.'
+            'Internal technical manuals, engineering guidelines, and research PDFs are ingested. Text is extracted and split recursively into 500-character chunks with a 50-character semantic overlap to preserve contextual continuity between sentences.'
         },
         {
           name: '2. Local Embedding Generation',
@@ -58,7 +58,7 @@ export default function ArchitectureExplorer({ isOpen, onClose }) {
           icon: 'fa-solid fa-desktop',
           tech: ['Streamlit', 'Llama 3 / Mistral (Local)', 'Citation Engine'],
           details:
-            'The locally hosted LLM generates the final answer in real time. The Streamlit interface displays the answer along with exact document name and page number citations, allowing defense engineers to verify claims immediately.'
+            'The locally hosted LLM generates the final answer in real time. The Streamlit interface displays the answer along with exact document name and page number citations, allowing engineers to verify claims immediately.'
         }
       ]
     },

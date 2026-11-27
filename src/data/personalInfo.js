@@ -19,7 +19,7 @@ export const personalInfo = {
   aboutInstitution: "@ MITS Gwalior",
   aboutSummary: "I build fast, scalable web applications, AI tools & real-time systems.",
   aboutBadges: [
-    { icon: "fa-solid fa-briefcase", label: "3+ Internships", bg: "rgba(168, 85, 247, 0.15)", color: "#d8b4fe", border: "rgba(168, 85, 247, 0.3)" },
+    { icon: "fa-solid fa-briefcase", label: "4 Internships", bg: "rgba(168, 85, 247, 0.15)", color: "#d8b4fe", border: "rgba(168, 85, 247, 0.3)" },
     { icon: "fa-solid fa-code-branch", label: "10+ Projects", bg: "rgba(56, 189, 248, 0.15)", color: "#7dd3fc", border: "rgba(56, 189, 248, 0.3)" },
     { icon: "fa-solid fa-users", label: "5+ Communities", bg: "rgba(244, 114, 182, 0.15)", color: "#f9a8d4", border: "rgba(244, 114, 182, 0.3)" }
   ],
@@ -31,7 +31,7 @@ export const personalInfo = {
   ],
   stats: [
     { icon: "fa-solid fa-rocket", label: "Projects", value: "10+", colorClass: "text-gradient" },
-    { icon: "fa-solid fa-laptop-code", label: "Internships", value: "3", colorClass: "text-info" },
+    { icon: "fa-solid fa-laptop-code", label: "Internships", value: "4", colorClass: "text-info" },
     { icon: "fa-solid fa-people-group", label: "Communities", value: "5+", colorClass: "text-primary" },
     { icon: "fa-solid fa-code", label: "Learning", value: "DSA", colorClass: "text-warning" }
   ],
