@@ -3,6 +3,10 @@
   "trailingSlash": true,
   "rewrites": [
     {
+      "source": "/about/",
+      "destination": "/about/index.html"
+    },
+    {
       "source": "/projects/:slug*/",
       "destination": "/projects/:slug*/index.html"
     },

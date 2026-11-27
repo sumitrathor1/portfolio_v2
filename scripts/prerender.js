@@ -107,9 +107,9 @@ function generateHomepageHtml() {
         <h2 class="mb-2">✨About Me✨</h2>
       </div>
       <div class="about-grid">
-        <article class="about-card glass-panel hover-lift" style="margin-inline: 0.75rem">
+        <article class="about-card glass-panel hover-lift">
           <div>
-            <div class="d-inline-flex align-items-center gap-2 px-3 py-1 mb-2.5 rounded-pill" style="background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.3)">
+            <div class="d-inline-flex align-items-center gap-2 px-3 py-1 mb-3 rounded-pill" style="background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.3)">
               <span class="pulse-dot" style="width: 8px; height: 8px"></span>
               <span style="font-size: 0.8rem; font-weight: 600; color: #38bdf8">Full Stack Developer</span>
             </div>
@@ -118,32 +118,35 @@ function generateHomepageHtml() {
               <span class="text-gradient">${personalInfo.aboutInstitution}</span>
             </h3>
             <p class="mb-3" style="font-size: 1rem; color: var(--text-primary); line-height: 1.55">${personalInfo.aboutSummary}</p>
-            <div class="d-flex flex-wrap gap-2 pt-2 border-top border-secondary border-opacity-10">
+            <div class="d-flex flex-wrap gap-2 pt-2 border-top border-secondary border-opacity-10 mb-3">
               ${personalInfo.aboutBadges.map(b => `
-                <span class="badge px-3 py-1.5 rounded-pill" style="background: ${b.bg}; color: ${b.color}; font-size: 0.82rem; border: 1px solid ${b.border}">
+                <span class="badge px-3 py-2 rounded-pill" style="background: ${b.bg}; color: ${b.color}; font-size: 0.82rem; border: 1px solid ${b.border}">
                   <i class="${b.icon} me-1"></i> ${b.label}
                 </span>
               `).join('')}
             </div>
+            <a href="/about/" class="btn btn-sm btn-secondary-ghost hover-lift px-3 py-1">
+              <i class="fa-solid fa-user-check me-1 text-info"></i> Full Profile &amp; Developer FAQ
+            </a>
           </div>
         </article>
-        <article class="about-profile glass-panel hover-lift" style="margin-inline: 0.75rem">
-          <div class="profile-header pb-2.5 border-bottom border-secondary border-opacity-10">
+        <article class="about-profile glass-panel hover-lift">
+          <div class="profile-header pb-3 border-bottom border-secondary border-opacity-10">
             <img src="${personalInfo.profileImage}" alt="Sumit Rathor - Profile Avatar" width="72" height="72" loading="lazy" decoding="async" style="box-shadow: 0 0 20px rgba(56, 189, 248, 0.3)" />
             <div>
-              <span class="badge rounded-pill bg-success bg-opacity-25 text-success border border-success border-opacity-25 mb-1 px-2.5 py-0.5" style="font-size: 0.72rem">
+              <span class="badge rounded-pill bg-success bg-opacity-25 text-success border border-success border-opacity-25 mb-2 px-3 py-1" style="font-size: 0.72rem">
                 <i class="fa-solid fa-circle text-success me-1" style="font-size: 0.55rem"></i> ${personalInfo.status}
               </span>
               <h3 class="mb-0" style="font-size: 1.25rem">${personalInfo.name}</h3>
-              <p class="subtitle mb-0" style="font-size: 0.85rem">Software Engineer & Builder</p>
+              <p class="subtitle mb-0" style="font-size: 0.85rem">Software Engineer &amp; Builder</p>
             </div>
           </div>
-          <div class="profile-stats pt-1">
+          <div class="profile-stats pt-2">
             ${personalInfo.stats.map(s => `
-              <div class="stat-box p-2.5 rounded-4 text-center" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08)">
-                <i class="${s.icon} mb-1 ${s.colorClass}" style="font-size: 1.25rem"></i>
-                <p class="value mb-0 ${s.colorClass}" style="font-size: 1.15rem; font-weight: 700">${s.value}</p>
-                <p class="label mb-0" style="font-size: 0.72rem; color: #9facd8">${s.label}</p>
+              <div class="stat-box p-3 rounded-4 text-center d-flex flex-column align-items-center justify-content-center gap-2" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08)">
+                <i class="${s.icon} ${s.colorClass}" style="font-size: 1.35rem"></i>
+                <p class="value mb-0 ${s.colorClass}" style="font-size: 1.65rem; font-weight: 800; line-height: 1.1">${s.value}</p>
+                <p class="label mb-0" style="font-size: 0.74rem; color: #cbd5e1">${s.label}</p>
               </div>
             `).join('')}
           </div>
@@ -422,6 +425,39 @@ function generateHomepageHtml() {
     </footer>
   `;
 
+  // Developer Activity Section (for crawler visibility)
+  const developerActivityHtml = `
+    <section class="section developer-activity-section container-xxl" id="developer-activity">
+      <div class="section-heading text-center mb-4">
+        <p class="eyebrow">Engineering Profiles</p>
+        <h2 class="mb-2 dev-activity-heading">💻 Developer Activity &amp; Repositories 💻</h2>
+        <p class="subtitle mx-auto" style="max-width: 640px">
+          Explore open-source contributions, verified GitHub projects, and algorithmic problem-solving profiles.
+        </p>
+      </div>
+      <div class="row g-4 mb-4">
+        <div class="col-12 col-md-6">
+          <div class="dev-profile-card glass-panel h-100">
+            <h3 class="mb-1 fw-bold">GitHub Developer Profile (@sumitrathor1)</h3>
+            <p class="dev-profile-desc mb-3">
+              Building open-source developer utilities, RAG workflows, and full-stack systems. Project Admin for GirlScript Summer of Code 2025.
+            </p>
+            <a href="https://github.com/sumitrathor1" target="_blank" rel="noopener noreferrer" class="text-info">github.com/sumitrathor1</a>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="dev-profile-card glass-panel h-100">
+            <h3 class="mb-1 fw-bold">LeetCode Problem Solving (@SumitRathor)</h3>
+            <p class="dev-profile-desc mb-3">
+              Practicing Core Data Structures, Algorithms, Dynamic Programming, Graph Theory, and System Design patterns in C++ and Python.
+            </p>
+            <a href="https://leetcode.com/u/SumitRathor/" target="_blank" rel="noopener noreferrer" class="text-warning">leetcode.com/u/SumitRathor</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  `;
+
   return `
     <div id="content">
       ${navHtml}
@@ -429,6 +465,7 @@ function generateHomepageHtml() {
         ${heroHtml}
         ${aboutHtml}
         ${experienceHtml}
+        ${developerActivityHtml}
         ${projectsHtml}
         ${skillsHtml}
         ${educationHtml}
@@ -466,6 +503,16 @@ projectsData.forEach((project) => {
   const projectUrl = `https://sumitrathor.vercel.app/projects/${project.slug}/`;
   const projectTitle = `${project.title} | Sumit Rathor Project Case Study`;
   const projectDesc = project.description.replace(/"/g, '&quot;');
+  const projectKeywords = [
+    project.title,
+    'Sumit Rathor',
+    'Sumit Rathor Projects',
+    ...(project.stack || []),
+    'Case Study'
+  ].join(', ').replace(/"/g, '&quot;');
+  const relatedProjects = projectsData
+    .filter((p) => p.slug && p.slug !== project.slug)
+    .slice(0, 3);
 
   const projectHtml = `<!DOCTYPE html>
 <html lang="en">
@@ -476,11 +523,14 @@ projectsData.forEach((project) => {
     <meta name="theme-color" content="#0a58ca" />
     <title>${projectTitle}</title>
     <meta name="description" content="${projectDesc}" />
+    <meta name="keywords" content="${projectKeywords}" />
+    <meta name="author" content="Sumit Rathor" />
     <link rel="canonical" href="${projectUrl}" />
     <meta property="og:title" content="${projectTitle}" />
     <meta property="og:description" content="${projectDesc}" />
     <meta property="og:url" content="${projectUrl}" />
     <meta property="og:image" content="https://sumitrathor.vercel.app${project.image}" />
+    <meta property="og:site_name" content="Sumit Rathor Portfolio" />
     <meta property="og:type" content="article" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="${projectTitle}" />
@@ -496,17 +546,53 @@ projectsData.forEach((project) => {
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "${project.title.replace(/"/g, '\\"')}",
-      "description": "${project.description.replace(/"/g, '\\"')}",
-      "applicationCategory": "DeveloperApplication",
-      "operatingSystem": "Web, Cross-platform",
-      "author": {
-        "@type": "Person",
-        "name": "Sumit Rathor",
-        "url": "https://sumitrathor.vercel.app/"
-      },
-      "url": "${projectUrl}"
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "${project.title.replace(/"/g, '\\"')}",
+          "description": "${project.description.replace(/"/g, '\\"')}",
+          "applicationCategory": "DeveloperApplication",
+          "operatingSystem": "Web, Cross-platform",
+          "image": "https://sumitrathor.vercel.app${project.image}",
+          "keywords": "${(project.stack || []).join(', ').replace(/"/g, '\\"')}",
+          ${project.github ? `"codeRepository": "${project.github}",` : ''}
+          "author": {
+            "@type": "Person",
+            "@id": "https://sumitrathor.vercel.app/#person",
+            "name": "Sumit Rathor",
+            "url": "https://sumitrathor.vercel.app/",
+            "sameAs": [
+              "https://www.linkedin.com/in/sumitrathor/",
+              "https://github.com/sumitrathor1",
+              "https://leetcode.com/u/SumitRathor/"
+            ]
+          },
+          "url": "${projectUrl}"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://sumitrathor.vercel.app/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Projects",
+              "item": "https://sumitrathor.vercel.app/#projects"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "${project.title.replace(/"/g, '\\"')}",
+              "item": "${projectUrl}"
+            }
+          ]
+        }
+      ]
     }
     </script>
 </head>
@@ -517,6 +603,7 @@ projectsData.forEach((project) => {
         <div id="mainNavbar" class="container-fluid container-xxl nav-shell glass-panel border-primary" style="background-color: #0E122E">
           <a class="navbar-brand text-gradient" href="/">SUMIT RATHOR</a>
           <div class="ms-auto d-flex align-items-center gap-3">
+            <a href="/about/" class="btn btn-sm btn-secondary-ghost hover-lift py-1 px-3 d-none d-sm-inline-flex" style="font-size: 0.85rem">About</a>
             <a href="/#projects" class="btn btn-sm btn-secondary-ghost hover-lift py-1 px-3" style="font-size: 0.85rem">
               <i class="fa-solid fa-arrow-left me-1"></i> Back to Portfolio
             </a>
@@ -527,6 +614,13 @@ projectsData.forEach((project) => {
 
     <main class="container-xxl" style="padding-top: clamp(6rem, 10vw, 8rem); padding-bottom: 5rem; min-height: 85vh;">
       <article class="content-shell" style="max-width: 900px; margin-inline: auto;">
+        <nav aria-label="Breadcrumb" class="mb-3 text-center">
+          <ol class="breadcrumb justify-content-center mb-0 small" style="background: transparent;">
+            <li class="breadcrumb-item"><a href="/" class="text-info text-decoration-none">Home</a></li>
+            <li class="breadcrumb-item"><a href="/#projects" class="text-info text-decoration-none">Projects</a></li>
+            <li class="breadcrumb-item active text-light" aria-current="page">${project.title}</li>
+          </ol>
+        </nav>
         <!-- Header -->
         <div class="mb-4 text-center">
           <div class="d-inline-flex align-items-center gap-2 px-3 py-1 mb-3 rounded-pill" style="background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.3)">
@@ -583,21 +677,239 @@ projectsData.forEach((project) => {
         ` : ''}
 
         <!-- Actions -->
-        <div class="d-flex flex-wrap justify-content-center gap-3 pt-3">
+        <div class="d-flex flex-wrap justify-content-center gap-3 pt-3 mb-5">
           ${project.live ? `
-            <a href="${project.live}" class="btn btn-primary-gradient px-4 py-2.5 hover-lift" target="_blank" rel="noopener noreferrer" style="font-weight: 600;">
-              <i class="fa-solid fa-arrow-up-right-from-square me-1.5"></i> Open Live Platform
+            <a href="${project.live}" class="btn btn-primary-gradient px-4 py-2 hover-lift" target="_blank" rel="noopener noreferrer" style="font-weight: 600;">
+              <i class="fa-solid fa-arrow-up-right-from-square me-2"></i> Open Live Platform
             </a>
           ` : ''}
           ${project.github ? `
-            <a href="${project.github}" class="btn btn-secondary-ghost px-4 py-2.5 hover-lift" target="_blank" rel="noopener noreferrer" style="font-weight: 600;">
-              <i class="fa-brands fa-github me-1.5"></i> View Source on GitHub
+            <a href="${project.github}" class="btn btn-secondary-ghost px-4 py-2 hover-lift" target="_blank" rel="noopener noreferrer" style="font-weight: 600;">
+              <i class="fa-brands fa-github me-2"></i> View Source on GitHub
             </a>
           ` : ''}
-          <a href="/#contact-us" class="btn btn-secondary-ghost px-4 py-2.5 hover-lift" style="font-weight: 600;">
-            <i class="fa-solid fa-envelope me-1.5"></i> Discuss this Project
+          <a href="/#contact-us" class="btn btn-secondary-ghost px-4 py-2 hover-lift" style="font-weight: 600;">
+            <i class="fa-solid fa-envelope me-2"></i> Discuss this Project
           </a>
         </div>
+
+        <!-- Related Projects Internal Links -->
+        <section class="glass-panel p-4" aria-label="More Projects">
+          <h2 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 1rem; color: #f8f9ff;">More Engineering Projects by Sumit Rathor</h2>
+          <div class="row g-3">
+            ${relatedProjects.map(rp => `
+              <div class="col-12 col-md-4">
+                <a href="/projects/${rp.slug}/" class="d-block p-3 rounded-3 text-decoration-none h-100" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);">
+                  <div class="fw-bold text-info mb-1" style="font-size: 0.92rem;">${rp.title}</div>
+                  <div style="font-size: 0.8rem; color: #cbd5e1;">${rp.subtitle || ''}</div>
+                </a>
+              </div>
+            `).join('')}
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <footer class="footer-minimal">
+      <div class="container-xxl text-center py-3">
+        <p class="mb-0" style="font-size: 0.85rem; color: #9facd8;">
+          &copy; ${currentYear} Sumit Rathor · <a href="/" class="text-gradient" style="text-decoration: none;">Home</a> · <a href="/about/" class="text-info" style="text-decoration: none;">About &amp; FAQ</a>
+        </p>
+      </div>
+    </footer>
+</body>
+</html>`;
+
+  fs.writeFileSync(path.join(projectDir, 'index.html'), projectHtml, 'utf-8');
+  console.log(`[Prerender] Created static project page: dist/projects/${project.slug}/index.html`);
+});
+
+/**
+ * 3. Generate Dedicated Static /about/index.html Page for AEO / GEO / Entity Clarity
+ */
+const aboutOutputDir = path.join(distDir, 'about');
+if (!fs.existsSync(aboutOutputDir)) {
+  fs.mkdirSync(aboutOutputDir, { recursive: true });
+}
+
+const aboutFaqItems = [
+  {
+    q: 'Who is Sumit Rathor?',
+    a: 'Sumit Rathor (also known as Sumit Rathore) is a Full Stack Software Engineer pursuing a B.Tech in Computer Science & Design at Madhav Institute of Technology & Science (MITS), Gwalior (CGPA 8.09). He specializes in React.js, Next.js, TypeScript, Node.js, Python, PHP, MySQL, C++, and offline AI/RAG systems.'
+  },
+  {
+    q: 'What did Sumit Rathor build during his DRDO internship?',
+    a: 'During his research internship at DRDO-CFEES (Centre for Fire, Explosive and Environment Safety, Ministry of Defence, Delhi) from June to August 2026 under Scientist \'F\' Sh. Trilochan Singh Rathore, Sumit built Rakshak AI (Enterprise Local Knowledge Assistant) — a 100% offline, air-gapped Retrieval-Augmented Generation (RAG) system using Python, Streamlit, LangChain, Ollama, ChromaDB, and PyPDF.'
+  },
+  {
+    q: 'What is Rakshak AI?',
+    a: 'Rakshak AI is an air-gapped, offline Retrieval-Augmented Generation (RAG) knowledge assistant built for DRDO-CFEES that enables defence scientists and engineers to semantically search sensitive technical manuals and safety PDFs locally with zero external internet or cloud API dependencies.'
+  },
+  {
+    q: 'What are Sumit Rathor\'s key technical skills?',
+    a: 'Sumit works across Frontend (React.js, Next.js, TypeScript, JavaScript, HTML5, CSS3, Tailwind CSS, Bootstrap 5), Backend (Node.js, Express.js, PHP, CodeIgniter 4, REST APIs, WebSockets, Supabase), AI & RAG (LangChain, Ollama, ChromaDB, Streamlit, Vector Embeddings), Databases (MySQL, PostgreSQL), and Core CS (C++, Python, Data Structures and Algorithms, System Design).'
+  },
+  {
+    q: 'What are Sumit Rathor\'s major projects?',
+    a: 'His notable projects include Rakshak AI (DRDO offline RAG assistant), Hardware Inventory & Borrowing Portal (Next.js + Supabase RLS), Certificate Authentication & Verification Portal (React + PDF.js + QR scanning), 11acre.ai & 36 Broking Hub (PropTech platforms), FPV Surveillance Robot (ESP32-CAM IoT), Smart Resume (AI Resume Builder), Data Science Quiz Platform, VibeTune, and JEE & NEET Prep Tracker.'
+  },
+  {
+    q: 'What open-source and leadership roles has Sumit Rathor held?',
+    a: 'Sumit served as a Project Administrator for GirlScript Summer of Code (GSSoC) 2025, President of the Innovation & DIY Club at MITS Gwalior (Feb 2026 – Sep 2026), and achieved Google Cloud Arcade Legend Tier (Phase 1, 2025).'
+  },
+  {
+    q: 'What is Sumit Rathor\'s educational background?',
+    a: 'He is pursuing a B.Tech in Computer Science & Design at MITS Gwalior (2024–2027, CGPA 8.09), following a Diploma in Computer Science & Engineering from Dr. B.R. Ambedkar Polytechnic College, Gwalior (2021–2024, CGPA 8.42).'
+  },
+  {
+    q: 'Where can I find Sumit Rathor\'s GitHub, LinkedIn, and projects?',
+    a: 'His official GitHub is github.com/sumitrathor1, LinkedIn is linkedin.com/in/sumitrathor, LeetCode is leetcode.com/u/SumitRathor, and portfolio is sumitrathor.vercel.app.'
+  }
+];
+
+const aboutPageHtml = `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0a58ca" />
+    <title>About Sumit Rathor | Full Stack Developer, DRDO Intern &amp; MITS Gwalior</title>
+    <meta name="description" content="Complete developer profile, biography, education, DRDO CFEES internship, Rakshak AI, open-source leadership (GSSoC 2025), and FAQ about Sumit Rathor (Sumit Rathore), Full Stack Software Engineer at MITS Gwalior." />
+    <meta name="keywords" content="Who is Sumit Rathor, Sumit Rathor About, Sumit Rathor MITS Gwalior, Sumit Rathor DRDO Internship, Rakshak AI, GirlScript Summer of Code 2025 Project Admin, Innovation and DIY Club President, Google Cloud Arcade Legend" />
+    <meta name="author" content="Sumit Rathor" />
+    <link rel="canonical" href="https://sumitrathor.vercel.app/about/" />
+    <meta property="og:title" content="About Sumit Rathor | Full Stack Software Engineer &amp; AI Builder" />
+    <meta property="og:description" content="Learn about Sumit Rathor's education at MITS Gwalior, DRDO CFEES research internship, Rakshak AI, GSSoC 2025 leadership, technical skills, and verified projects." />
+    <meta property="og:url" content="https://sumitrathor.vercel.app/about/" />
+    <meta property="og:image" content="https://sumitrathor.vercel.app/assets/images/thumbnail.png" />
+    <meta property="og:site_name" content="Sumit Rathor Portfolio" />
+    <meta property="og:type" content="profile" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="About Sumit Rathor | Full Stack Software Engineer" />
+    <meta name="twitter:description" content="Verified profile, DRDO internship, Rakshak AI, skills, and FAQ for Sumit Rathor." />
+    <meta name="twitter:image" content="https://sumitrathor.vercel.app/assets/images/thumbnail.png" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    ${mainCssHref ? `<link rel="stylesheet" crossorigin href="${mainCssHref}">` : ''}
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "ProfilePage",
+          "@id": "https://sumitrathor.vercel.app/about/#profilepage",
+          "url": "https://sumitrathor.vercel.app/about/",
+          "name": "About Sumit Rathor | Full Stack Developer & DRDO Intern",
+          "mainEntity": {
+            "@type": "Person",
+            "@id": "https://sumitrathor.vercel.app/#person",
+            "name": "Sumit Rathor",
+            "alternateName": ["Sumit Rathore", "Sumit Kumar Rathor"],
+            "url": "https://sumitrathor.vercel.app/",
+            "image": "https://sumitrathor.vercel.app/assets/images/sumit.jpg",
+            "jobTitle": "Full Stack Software Engineer",
+            "alumniOf": {
+              "@type": "CollegeOrUniversity",
+              "name": "Madhav Institute of Technology & Science (MITS), Gwalior"
+            },
+            "sameAs": [
+              "https://www.linkedin.com/in/sumitrathor/",
+              "https://github.com/sumitrathor1",
+              "https://leetcode.com/u/SumitRathor/",
+              "https://sumitrathor.rf.gd/"
+            ]
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sumitrathor.vercel.app/" },
+            { "@type": "ListItem", "position": 2, "name": "About", "item": "https://sumitrathor.vercel.app/about/" }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": ${JSON.stringify(aboutFaqItems.map(item => ({
+            "@type": "Question",
+            "name": item.q,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": item.a
+            }
+          })))}
+        }
+      ]
+    }
+    </script>
+</head>
+<body class="portfolio-site" style="background-color: #010313; background-image: url('/assets/images/bg-dark1.png'); background-repeat: repeat; color: #f8f9ff;">
+    <header class="site-header">
+      <nav class="navbar navbar-expand-lg nav-floating position-fixed w-100">
+        <div id="mainNavbar" class="container-fluid container-xxl nav-shell glass-panel border-primary" style="background-color: #0E122E">
+          <a class="navbar-brand text-gradient" href="/">SUMIT RATHOR</a>
+          <div class="ms-auto d-flex align-items-center gap-3">
+            <a href="/#projects" class="btn btn-sm btn-secondary-ghost hover-lift py-1 px-3 d-none d-sm-inline-flex" style="font-size: 0.85rem">Projects</a>
+            <a href="/" class="btn btn-sm btn-secondary-ghost hover-lift py-1 px-3" style="font-size: 0.85rem">
+              <i class="fa-solid fa-arrow-left me-1"></i> Back to Portfolio
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl" style="padding-top: clamp(6rem, 10vw, 8rem); padding-bottom: 5rem;">
+      <article class="content-shell" style="max-width: 920px; margin-inline: auto;">
+        <nav aria-label="Breadcrumb" class="mb-3">
+          <ol class="breadcrumb mb-0 small">
+            <li class="breadcrumb-item"><a href="/" class="text-info text-decoration-none">Home</a></li>
+            <li class="breadcrumb-item active text-light" aria-current="page">About Sumit Rathor</li>
+          </ol>
+        </nav>
+
+        <header class="glass-panel p-4 mb-4">
+          <h1 class="hero-title mb-2" style="font-size: clamp(1.85rem, 4vw, 2.75rem); font-weight: 700;">
+            About <span class="text-gradient">Sumit Rathor</span>
+          </h1>
+          <p class="mb-3" style="font-size: 1.05rem; color: #e2e8f0; line-height: 1.65;">
+            Sumit Rathor is a Full Stack Software Engineer and B.Tech Computer Science &amp; Design student at Madhav Institute of Technology &amp; Science (MITS), Gwalior (CGPA 8.09). He builds scalable full-stack web applications, offline Retrieval-Augmented Generation (RAG) AI tools, real-time systems, and embedded IoT platforms.
+          </p>
+          <div class="d-flex flex-wrap gap-2">
+            <a href="https://github.com/sumitrathor1" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-secondary-ghost px-3 py-1">GitHub (@sumitrathor1)</a>
+            <a href="https://www.linkedin.com/in/sumitrathor/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-secondary-ghost px-3 py-1">LinkedIn</a>
+            <a href="https://leetcode.com/u/SumitRathor/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-secondary-ghost px-3 py-1">LeetCode</a>
+            <a href="/#contact-us" class="btn btn-sm btn-primary-gradient px-3 py-1">Contact Sumit</a>
+          </div>
+        </header>
+
+        <section class="glass-panel p-4 mb-4" aria-label="Frequently Asked Questions">
+          <h2 class="mb-3" style="font-size: 1.4rem; font-weight: 700; color: #38bdf8;">Developer Profile &amp; Frequently Asked Questions</h2>
+          <div class="d-flex flex-column gap-3">
+            ${aboutFaqItems.map(item => `
+              <div class="p-3 rounded-3" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);">
+                <h3 style="font-size: 1.02rem; font-weight: 700; color: #f8f9ff; margin-bottom: 0.4rem;">${item.q}</h3>
+                <p class="mb-0" style="font-size: 0.94rem; color: #cbd5e1; line-height: 1.6;">${item.a}</p>
+              </div>
+            `).join('')}
+          </div>
+        </section>
+
+        <section class="glass-panel p-4" aria-label="Project Case Studies">
+          <h2 class="mb-3" style="font-size: 1.35rem; font-weight: 700; color: #a855f7;">Verified Engineering Case Studies</h2>
+          <div class="row g-3">
+            ${projectsData.filter(p => p.slug).map(p => `
+              <div class="col-12 col-md-6">
+                <a href="/projects/${p.slug}/" class="d-block p-3 rounded-3 text-decoration-none h-100" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);">
+                  <div class="fw-bold text-info mb-1">${p.title}</div>
+                  <div class="small" style="color: #cbd5e1;">${p.subtitle || p.description.slice(0, 100)}</div>
+                </a>
+              </div>
+            `).join('')}
+          </div>
+        </section>
       </article>
     </main>
 
@@ -611,8 +923,7 @@ projectsData.forEach((project) => {
 </body>
 </html>`;
 
-  fs.writeFileSync(path.join(projectDir, 'index.html'), projectHtml, 'utf-8');
-  console.log(`[Prerender] Created static project page: dist/projects/${project.slug}/index.html`);
-});
+fs.writeFileSync(path.join(aboutOutputDir, 'index.html'), aboutPageHtml, 'utf-8');
+console.log('[Prerender] Created static about & FAQ page: dist/about/index.html');
 
 console.log('[Prerender] Static HTML generation complete!');

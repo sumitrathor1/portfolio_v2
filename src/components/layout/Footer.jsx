@@ -35,6 +35,13 @@ export default function Footer() {
               </a>
             ))}
             <a
+              href="/about/"
+              className="footer-minimal__link"
+              aria-label="About and Developer FAQ"
+            >
+              About &amp; FAQ
+            </a>
+            <a
               href={personalInfo.resumePath}
               target="_blank"
               rel="noopener noreferrer"

@@ -1,8 +1,11 @@
 # Sumit Rathor - Professional Developer Profile
 
 > Full Stack Software Engineer & Web Developer  
+> Education: B.Tech in Computer Science & Design, MITS Gwalior (2024 – 2027)  
 > Location: Gwalior, Madhya Pradesh, India  
 > Canonical Portfolio: https://sumitrathor.vercel.app/  
+> Dedicated About & FAQ Page: https://sumitrathor.vercel.app/about/  
+> Legacy Domain: https://sumitrathor.rf.gd/  
 > LinkedIn: https://www.linkedin.com/in/sumitrathor/  
 > GitHub: https://github.com/sumitrathor1  
 > LeetCode: https://leetcode.com/u/SumitRathor/  
@@ -11,92 +14,123 @@
 ---
 
 ## Professional Overview
-Sumit Rathor (also referenced as Sumit Rathore) is a Full Stack Software Engineer and B.Tech graduate in Computer Science & Design from Madhav Institute of Technology & Science (MITS), Gwalior. He specializes in designing, building, and deploying modern web applications, real-time communication systems, AI-powered developer utilities, and IoT hardware platforms.
+Sumit Rathor (also referenced as Sumit Rathore) is a Full Stack Software Engineer pursuing a B.Tech in Computer Science & Design at Madhav Institute of Technology & Science (MITS), Gwalior (CGPA 8.09). He completed a research internship at DRDO-CFEES (Centre for Fire, Explosive and Environment Safety, Ministry of Defence, Delhi), served as Project Admin for GirlScript Summer of Code 2025, and was President of the Innovation & DIY Club at MITS Gwalior. He specializes in React.js, Next.js, TypeScript, Node.js, Python, PHP, MySQL, PostgreSQL, C++, Data Structures & Algorithms, offline AI/RAG workflows (Ollama, LangChain, ChromaDB), and IoT systems.
 
 ## Core Technical Competencies
-- **Languages:** JavaScript (ES6+), TypeScript, PHP, Python, SQL, C++, HTML5, CSS3.
-- **Frontend Frameworks & Libraries:** React.js, Next.js, Vite, Bootstrap 5, Tailwind CSS, Three.js, SweetAlert2.
-- **Backend & APIs:** Node.js, Express, PHP, CodeIgniter 4, RESTful APIs, AJAX, WebSockets.
-- **Databases & Cloud:** MySQL, PostgreSQL, Supabase (Auth, RLS, Realtime), Hostinger, Vercel.
-- **IoT & Hardware:** ESP32-CAM, Arduino, Computer Vision, L298N motor drivers.
-- **AI & Automation:** OpenAI API, Google Gemini API, Automated ATS resume parsing, QR verification engines.
-- **Developer Tools:** Git, GitHub, Postman, Linux CLI, NPM, VS Code.
+- **Languages:** JavaScript (ES6+), TypeScript, Python, PHP, C / C++, SQL, HTML5, CSS3.
+- **Frontend Frameworks & Libraries:** React.js, Next.js, Vite, Bootstrap 5, Tailwind CSS, Three.js.
+- **Backend & APIs:** Node.js, Express.js, PHP, CodeIgniter 4, RESTful APIs, AJAX, WebSockets, Supabase (Auth, RLS, Realtime).
+- **AI, RAG & Vector Systems:** LangChain, Ollama (Local LLMs), ChromaDB, Retrieval-Augmented Generation (RAG), Streamlit, Vector Embeddings, PyPDF, Google Gemini API.
+- **Databases & Cloud:** MySQL, PostgreSQL, Google Cloud, Vercel, Git & GitHub, GitHub Actions.
+- **IoT & Embedded:** ESP32-CAM, L298N Motor Drivers, Computer Vision, Arduino.
 
 ---
 
-## Flagship Projects & Case Studies
+## Key Q&A (Entity & Identity Summary)
+- **Who is Sumit Rathor?** A Full Stack Software Engineer and B.Tech Computer Science & Design student at MITS Gwalior (CGPA 8.09), known for building production web platforms, offline AI/RAG tools (Rakshak AI for DRDO), and open-source software.
+- **What did Sumit Rathor build during his DRDO internship?** At DRDO-CFEES (Timarpur, New Delhi, Jun 2026 – Aug 2026) under Scientist 'F' Sh. Trilochan Singh Rathore, he built **Rakshak AI (Enterprise Local Knowledge Assistant)** — a 100% offline, air-gapped RAG system using Python, Streamlit, LangChain, Ollama, ChromaDB, and PyPDF for querying sensitive defence safety manuals without cloud APIs.
+- **What open-source and leadership roles has he held?** He served as Project Administrator for GirlScript Summer of Code (GSSoC) 2025 and President of the Innovation & DIY Club at MITS Gwalior (Feb 2026 – Sep 2026).
+
+---
+
+## Flagship Projects & Case Studies (11 Projects)
 
 1. **Enterprise Local Knowledge Assistant (Rakshak AI) - DRDO CFEES**
-   - Fully air-gapped, offline Retrieval-Augmented Generation (RAG) assistant developed for defence scientists to query classified safety standards and documentation securely without external cloud dependencies.
-   - Stack: Python, Streamlit, LangChain, Ollama (Local LLMs), ChromaDB Vector Store, PyPDF.
-   - Project Page: https://sumitrathor.vercel.app/projects/rakshak-ai/
-   - Code Repository: https://github.com/sumitrathor1/Rakshak-AI-Ragbot
-
-2. **Hardware Inventory & Borrowing Portal**
-   - Campus inventory and borrowing system featuring domain-restricted Gmail OTP authentication, Supabase Row-Level Security, and atomic stock transactions.
-   - Stack: Next.js 16, React 19, Supabase PostgreSQL, Supabase Auth, Nodemailer, TypeScript, Tailwind CSS.
-   - Project Page: https://sumitrathor.vercel.app/projects/hardware-inventory/
-   - Live URL: https://innovation-and-diy-inventory.vercel.app/
+   - Offline, air-gapped RAG assistant for querying classified defence safety documents and manuals locally.
+   - Stack: Python, Streamlit, LangChain, Ollama (Local LLM), ChromaDB, PyPDF, RAG Architecture.
+   - Case Study: https://sumitrathor.vercel.app/projects/rakshak-ai/
+   - GitHub: https://github.com/sumitrathor1/Rakshak-AI-Ragbot
 
 2. **Certificate Authentication & Verification Portal**
-   - High-performance React application for live camera QR code certificate authentication and bulk Excel-to-QR generation with automated ZIP export.
+   - React platform for instant live-camera QR certificate verification, multi-page PDF QR scanning, and bulk Excel-to-QR ZIP generation.
    - Stack: React, JavaScript, PDF.js, SheetJS, Google Apps Script API.
-   - Project Page: https://sumitrathor.vercel.app/projects/certificate-portal/
-   - Live URL: https://innovation-and-diy-certificate.vercel.app/
+   - Case Study: https://sumitrathor.vercel.app/projects/certificate-portal/
+   - Live Demo: https://innovation-and-diy-certificate.vercel.app/
 
-3. **11acre.ai - Real Estate & PropTech Platform**
-   - Commercial real estate portal with category filtering (buy/rent/plots), multi-attribute property search, and buyer-agent onboarding workflows.
+3. **Hardware Inventory & Borrowing Portal**
+   - Campus hardware borrowing and inventory system with Gmail OTP authentication, Supabase Row-Level Security (RLS), and atomic stock updates.
+   - Stack: Next.js 16, React 19, Supabase PostgreSQL, Supabase Auth, Nodemailer, TypeScript, Tailwind CSS.
+   - Case Study: https://sumitrathor.vercel.app/projects/hardware-inventory/
+   - Live Demo: https://innovation-and-diy-inventory.vercel.app/
+
+4. **Innovation & DIY Club Website**
+   - Official student innovation and technical community showcase platform for MITS Gwalior.
+   - Stack: React 19, Vite, JavaScript, CSS.
+   - Case Study: https://sumitrathor.vercel.app/projects/innovation-diy-club/
+   - Live Demo: https://innovation-and-diy.vercel.app/
+
+5. **11acre.ai - Real Estate & PropTech Platform**
+   - Commercial real estate discovery and property listing platform with AJAX search filtering and multi-role onboarding.
    - Stack: CodeIgniter 4, MySQL, AJAX, REST APIs, JavaScript.
-   - Project Page: https://sumitrathor.vercel.app/projects/11acre-ai/
-   - Live URL: https://11acreai.in/
+   - Case Study: https://sumitrathor.vercel.app/projects/11acre-ai/
+   - Live Demo: https://11acreai.in/
 
-4. **FPV Surveillance Robot**
-   - Wireless teleoperation robot with real-time first-person-view video streaming, sub-second movement controls, and ESP32-CAM firmware integration.
-   - Stack: ESP32-CAM, C++, L298N, Computer Vision, REST API.
-   - Project Page: https://sumitrathor.vercel.app/projects/fpv-surveillance-robot/
+6. **FPV Surveillance Robot**
+   - Real-time wireless surveillance rover with low-latency MJPEG streaming and teleoperation via ESP32-CAM and L298N.
+   - Stack: ESP32-CAM, L298N, Computer Vision, REST API, C++.
+   - Case Study: https://sumitrathor.vercel.app/projects/fpv-surveillance-robot/
    - GitHub: https://github.com/sumitrathor1/FPV_Car
 
-5. **Smart Resume - AI Resume Builder**
-   - Interactive resume platform with ATS-friendly templates, OpenAI/Gemini integration, section reordering, and PDF export.
-   - Stack: PHP, MySQL, JavaScript, Gemini API, Bootstrap.
-   - Project Page: https://sumitrathor.vercel.app/projects/smart-resume/
-   - GitHub: https://github.com/sumitrathor1/smartresume
+7. **36 Broking Hub - Real Estate Platform**
+   - Full-stack property listing and brokerage platform with OTP authentication and location/budget search.
+   - Stack: CodeIgniter 4, PHP, MySQL, REST APIs, Hostinger.
+   - Case Study: https://sumitrathor.vercel.app/projects/36-broking-hub/
+   - Live Demo: https://36brokinghub.com/
 
-6. **Data Science Quiz & Skill Assessment Platform**
-   - Timed technical evaluation engine covering Python, ML, and Statistics with instant score calculation, detailed solutions, and admin performance analytics.
+8. **Data Science Quiz & Skill Assessment Platform**
+   - Timed technical evaluation engine covering Python, Machine Learning, and Statistics with automated grading and admin analytics.
    - Stack: PHP, MySQL, JavaScript, Bootstrap.
-   - Project Page: https://sumitrathor.vercel.app/projects/data-science-quiz/
+   - Case Study: https://sumitrathor.vercel.app/projects/data-science-quiz/
    - GitHub: https://github.com/sumitrathor1/Data-Science-Quiz
 
-7. **VibeTune - Music Streaming Platform**
-   - Modern audio platform supporting AJAX-based continuous playback, track upload workflows, dynamic playlist curation, and responsive glassmorphism UI.
-   - Stack: PHP, MySQL, JavaScript, AJAX, Bootstrap.
-   - Project Page: https://sumitrathor.vercel.app/projects/vibetune/
-   - GitHub: https://github.com/sumitrathor1/VibeTune
+9. **Smart Resume - AI Resume Builder**
+   - ATS-friendly resume builder integrating Google Gemini AI suggestions, live template previews, and PDF export.
+   - Stack: HTML, CSS, JavaScript, Bootstrap, PHP, Gemini AI, MySQL.
+   - Case Study: https://sumitrathor.vercel.app/projects/smart-resume/
+   - GitHub: https://github.com/sumitrathor1/smartresume
 
-8. **JEE & NEET Tracker Platform**
-   - Full-stack preparation and performance benchmarking platform with Firebase authentication, JWT-secured endpoints, course scheduling, and monthly progress tracking.
-   - Stack: PHP, MySQL, Firebase, JWT, Bootstrap.
-   - Project Page: https://sumitrathor.vercel.app/projects/jeeneet-tracker/
+10. **VibeTune – Music Streaming Platform**
+    - Responsive audio streaming platform with continuous AJAX playback, playlist curation, and upload management.
+    - Stack: HTML, CSS, JavaScript, AJAX, Bootstrap, PHP, MySQL.
+    - Case Study: https://sumitrathor.vercel.app/projects/vibetune/
+    - GitHub: https://github.com/sumitrathor1/VibeTune
+
+11. **JEE & NEET Prep & Test Tracking Platform**
+    - Competitive exam diagnostic platform with mock test evaluation, syllabus progress tracking, and Firebase JWT auth.
+    - Stack: PHP, MySQL, Firebase JWT, PHPMailer, Bootstrap 5, JavaScript.
+    - Case Study: https://sumitrathor.vercel.app/projects/jeeneet-tracker/
 
 ---
 
 ## Practical Experience & Internships
-- **Full Stack Web Developer Intern | Bitzech Technologies** (Nov 2025 – Apr 2026): Engineered production REST APIs, designed responsive dashboard interfaces, and built database schemas for enterprise and PropTech platforms (11acre.ai, 36brokinghub.com).
-- **Web Developer & Coordinator | Innovation & DIY Club, MITS Gwalior** (Aug 2025 – Present): Developed student portal systems, digital certification engines, and equipment management portals.
-- **Web Development Intern | Coders-Café** (Apr 2025 – Jul 2025): Developed interactive modules, user authentication systems, and testing pipelines.
+- **Intern | DRDO-CFEES (Ministry of Defence, Delhi)** (Jun 2026 – Aug 2026, On-Site): Built an offline AI knowledge assistant (Rakshak AI) using Python, Streamlit, LangChain, Ollama, ChromaDB, and PyPDF for querying technical safety PDFs without cloud APIs.
+- **Product Engineering Intern | Coders Cafe Club** (Mar 2024 – Aug 2024, On-Site): Developed an admin dashboard for educational resources, automated email notifications, and responsive interfaces using HTML, CSS, JavaScript, Bootstrap, PHP, MySQL, and AWS.
+- **Full Stack Intern | Gurukul Dream Foundation** (Feb 2024 – Mar 2024, Work From Home): Contributed to the NGO's official website focusing on accessibility, responsive UI, and frontend/backend improvements.
+- **Web Developer Intern | Indo American Children's Academy** (Jun 2023 – Jul 2023, Work From Home): Built a responsive parent-teacher portal and reusable PHP/MySQL modules for attendance tracking and student progress.
 
 ---
 
 ## Education
-- **Bachelor of Technology (B.Tech) in Computer Science & Design**
-  - Institution: Madhav Institute of Technology & Science (MITS), Gwalior
-  - Timeline: 2022 – 2026
-  - Focus Areas: Data Structures & Algorithms, Object-Oriented Programming, Database Management Systems, Computer Networks, Operating Systems, Web Technologies.
+- **B.Tech in Computer Science & Design** — Madhav Institute of Technology & Science (MITS), Gwalior (2024 – 2027) · CGPA: 8.09
+- **Diploma in Computer Science & Engineering** — Dr. B.R. Ambedkar Polytechnic College, Gwalior (2021 – 2024) · CGPA: 8.42
+- **Higher Secondary School** — J.C. Mills H.S. School, Birla Nagar, Gwalior (2020 – 2021) · 80%
+
+---
+
+## Leadership, Open Source & Achievements
+- **Project Admin — GirlScript Summer of Code (GSSoC) 2025**: Mentored open-source contributors and reviewed pull requests.
+- **President — Innovation & DIY Club, MITS Gwalior** (Feb 2026 – Sep 2026): Led 50+ members, organized workshops, and architected club software portals.
+- **Arcade Legend Tier — Google Cloud Skills Boost** (Phase 1, 2025)
+- **NPTEL Elite Certifications (IIT Kharagpur, 2026)**: Cloud Computing (76%) & Design and Implementation of HCI (70%).
+- **Hackathons**: Fin-O Hack by PAYTM (DTU, 2026) & Devcation Delhi 2026 (GDG IGDTUW & IIT Delhi).
+- **Letter of Recommendation**: Commended by Dr. Manish Dixit (HOD, CSE, MITS Gwalior, May 2026).
 
 ---
 
 ## Verification & Public Links
 - Canonical Website: https://sumitrathor.vercel.app/
-- Official Resume: https://sumitrathor.vercel.app/assets/public/Sumit%20Rathor%20Resume.pdf
+- About & FAQ Page: https://sumitrathor.vercel.app/about/
 - Sitemap: https://sumitrathor.vercel.app/sitemap.xml
+- GitHub: https://github.com/sumitrathor1
+- LinkedIn: https://www.linkedin.com/in/sumitrathor/
+- LeetCode: https://leetcode.com/u/SumitRathor/
