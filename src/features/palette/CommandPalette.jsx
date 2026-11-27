@@ -70,9 +70,9 @@ export default function CommandPalette({
       },
       {
         id: 'recruiter',
-        category: 'Recruiter Quick Access',
-        title: 'Open 60-Second Recruiter Brief',
-        subtitle: 'Executive summary of skills, DRDO background, CGPA 8.09 & contact info',
+        category: 'Quick Access',
+        title: 'Open 60-Second Profile Summary',
+        subtitle: 'Quick overview of skills, DRDO background, CGPA 8.09 & contact info',
         icon: 'fa-solid fa-bolt text-warning',
         action: () => {
           onClose();
@@ -81,7 +81,7 @@ export default function CommandPalette({
       },
       {
         id: 'resume',
-        category: 'Recruiter Quick Access',
+        category: 'Quick Access',
         title: 'Download Verified Resume PDF',
         subtitle: 'Direct PDF download of Sumit Rathor’s verified resume',
         icon: 'fa-solid fa-file-pdf text-danger',

@@ -59,7 +59,7 @@ export default function RecruiterSnapshotModal({ isOpen, onClose }) {
           type="button"
           className="recruiter-modal-close"
           onClick={onClose}
-          aria-label="Close Recruiter Snapshot"
+          aria-label="Close Quick Summary"
         >
           <i className="fa-solid fa-xmark" />
         </button>
@@ -68,14 +68,14 @@ export default function RecruiterSnapshotModal({ isOpen, onClose }) {
         <div className="recruiter-modal-header mb-3">
           <div className="d-flex align-items-center gap-2 mb-1">
             <span className="badge-pill-cyan">
-              <i className="fa-solid fa-bolt text-warning me-1" /> 60-Second Brief
+              <i className="fa-solid fa-bolt text-warning me-1" /> 60-Second Overview
             </span>
             <span className="badge-pill-green">
               <span className="pulse-mini-dot me-1" /> Open to Opportunities
             </span>
           </div>
           <h2 id="recruiter-snapshot-title" className="recruiter-modal-title">
-            Recruiter & Hiring Manager Snapshot
+            Developer &amp; Engineering Snapshot
           </h2>
           <p className="text-muted mb-0" style={{ fontSize: '0.86rem' }}>
             A fast summary of Sumit Rathor's engineering background, core competencies, and verified achievements.

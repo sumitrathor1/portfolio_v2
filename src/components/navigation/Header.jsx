@@ -190,11 +190,11 @@ export default function Header({
                     closeNavbar();
                     onOpenRecruiter();
                   }}
-                  title="Open 60-Second Recruiter Brief"
-                  aria-label="Open 60-Second Recruiter Brief"
+                  title="Open 60-Second Profile Summary"
+                  aria-label="Open 60-Second Profile Summary"
                 >
-                  <i className="fa-solid fa-bolt text-warning me-1.5" />
-                  <span>Recruiter Brief</span>
+                  <i className="fa-solid fa-bolt text-warning me-2" />
+                  <span>Quick Summary</span>
                 </button>
               )}
             </div>
