@@ -3433,23 +3433,31 @@ textarea:focus-visible {
     align-items: flex-start;
     justify-content: space-between;
     margin-bottom: 1.25rem;
+    flex-shrink: 0;
 }
 
 .architecture-tabs {
     display: flex;
-    gap: 0.5rem;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6rem;
     margin-bottom: 1.25rem;
-    overflow-x: auto;
-    padding-bottom: 0.25rem;
+    flex-shrink: 0;
 }
 
 .arch-tab-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-shrink: 0;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     color: #cbd5e1;
     font-size: 0.85rem;
     font-weight: 600;
-    padding: 0.55rem 1rem;
+    line-height: 1.2;
+    padding: 0.6rem 1rem;
     border-radius: 10px;
     cursor: pointer;
     white-space: nowrap;
@@ -3467,6 +3475,7 @@ textarea:focus-visible {
     padding: 1rem 1.25rem;
     background: rgba(255, 255, 255, 0.02);
     border-radius: 14px;
+    flex-shrink: 0;
 }
 
 .constraint-item {
@@ -3474,30 +3483,39 @@ textarea:focus-visible {
     color: #cbd5e1;
     display: flex;
     align-items: flex-start;
+    gap: 0.5rem;
+    line-height: 1.45;
 }
 
 /* Architecture Pipeline Flow */
 .arch-pipeline-container {
     overflow-x: auto;
-    padding-block: 0.5rem;
+    overflow-y: visible;
+    padding: 0.5rem 0.25rem;
+    flex-shrink: 0;
 }
 
 .arch-pipeline-track {
     display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    min-width: 650px;
+    align-items: stretch;
+    gap: 1rem;
+    min-width: 680px;
 }
 
 .arch-stage-node {
     flex: 1;
-    padding: 0.85rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.9rem 0.75rem;
     border-radius: 12px;
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.08);
     cursor: pointer;
     position: relative;
     text-align: center;
+    overflow: visible !important;
     transition: all 0.25s ease;
 }
 
@@ -3541,6 +3559,11 @@ textarea:focus-visible {
     border-radius: 14px;
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.08);
+    flex-shrink: 0;
+}
+
+.architecture-footer {
+    flex-shrink: 0;
 }
 
 .inspector-number-badge {

@@ -221,7 +221,7 @@ export default function ArchitectureExplorer({ isOpen, onClose }) {
                 setActiveStageIndex(0);
               }}
             >
-              <i className="fa-solid fa-layer-group me-1.5" />
+              <i className="fa-solid fa-layer-group" />
               <span>{s.title}</span>
             </button>
           ))}
@@ -229,7 +229,7 @@ export default function ArchitectureExplorer({ isOpen, onClose }) {
 
         {/* CORE CONSTRAINTS & CHALLENGES BAR */}
         <div className="arch-constraints-box glass-panel mb-4">
-          <div className="constraints-title text-info fw-bold small mb-2 d-flex align-items-center gap-1.5">
+          <div className="constraints-title text-info fw-bold small mb-2 d-flex align-items-center gap-2">
             <i className="fa-solid fa-triangle-exclamation text-warning" />
             <span>Key Engineering Constraints & Requirements:</span>
           </div>
@@ -237,7 +237,7 @@ export default function ArchitectureExplorer({ isOpen, onClose }) {
             {currentSys.constraints.map((c, i) => (
               <div key={i} className="col-12 col-md-6">
                 <div className="constraint-item">
-                  <i className="fa-solid fa-check text-success me-1.5" />
+                  <i className="fa-solid fa-check text-success flex-shrink-0" style={{ marginTop: '0.2rem' }} />
                   <span>{c}</span>
                 </div>
               </div>
@@ -306,9 +306,9 @@ export default function ArchitectureExplorer({ isOpen, onClose }) {
               {currentSys.caseStudyUrl && (
                 <a
                   href={currentSys.caseStudyUrl}
-                  className="btn btn-secondary-ghost hover-lift py-1.5 px-3 small"
+                  className="btn btn-secondary-ghost hover-lift py-2 px-3 small"
                 >
-                  <i className="fa-solid fa-circle-info me-1" /> View Full Case Study
+                  <i className="fa-solid fa-circle-info me-2" /> View Full Case Study
                 </a>
               )}
               {currentSys.githubUrl && (
@@ -316,9 +316,9 @@ export default function ArchitectureExplorer({ isOpen, onClose }) {
                   href={currentSys.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn btn-primary hover-lift py-1.5 px-3 small"
+                  className="btn btn-primary hover-lift py-2 px-3 small"
                 >
-                  <i className="fa-brands fa-github me-1" /> View Source Code
+                  <i className="fa-brands fa-github me-2" /> View Source Code
                 </a>
               )}
             </div>
